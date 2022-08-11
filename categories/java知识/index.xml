@@ -26,13 +26,6 @@
     <guid>https://hahaen.github.io/spring%E5%AE%B9%E5%99%A8/</guid>
     <description><![CDATA[Spring容器]]></description>
 </item><item>
-    <title>Java网络基础</title>
-    <link>https://hahaen.github.io/java%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</link>
-    <pubDate>Tue, 05 Apr 2022 23:37:18 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hahaen.github.io/java%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</guid>
-    <description><![CDATA[tcp和udp的区别 TCP：是面向连接的流传输控制协议，具有高可靠性，确保传输数据的正确性，有验证重发机制，因此不会出现丢失或乱序。 UDP：]]></description>
-</item><item>
     <title>AOP</title>
     <link>https://hahaen.github.io/aop/</link>
     <pubDate>Mon, 04 Apr 2022 22:14:49 &#43;0800</pubDate>
@@ -74,5 +67,12 @@
     <author>作者</author>
     <guid>https://hahaen.github.io/shiro/</guid>
     <description><![CDATA[Shiro框架 是一个轻量级的安全框架，主要提供了 授权、认证、加密、会话管理这几个功能。 shiro安全数据源有哪些 数据库 静态ini文件 session Shi]]></description>
+</item><item>
+    <title>Redis</title>
+    <link>https://hahaen.github.io/redis/</link>
+    <pubDate>Wed, 16 Mar 2022 22:05:18 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hahaen.github.io/redis/</guid>
+    <description><![CDATA[对Redis 的了解？ Redis（全称：Remote Dictionary Server 远程字典服务）是一个开源的使用 ANSI C 语言编写、 支持网络、可基于内存亦可持久化的日志型、K]]></description>
 </item></channel>
 </rss>

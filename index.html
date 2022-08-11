@@ -38,7 +38,7 @@
             <a href="/" title="哈哈博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>哈哈博客</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="https://github.com/hahaen" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="https://github.com/hahaen" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="请输入关键词..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
                             <i class="fas fa-search fa-fw"></i>
@@ -81,7 +81,7 @@
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         取消
                     </a>
-                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="https://github.com/hahaen" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="https://github.com/hahaen" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw"></i>
             </a></div>
     </div>
@@ -103,34 +103,28 @@
         title="/img/系统图片/avatar.png" /></a></div><h1 class="home-title">hahaen</h1><h2 class="home-subtitle"><div id="id-1" class="typeit"></div></h2></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/minio/">Minio</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hahaen</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2022-06-17">2022-06-17</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw"></i>java教程</a></span></div><div class="content">docker搭建minio单节点 拉取docker镜像 1 docker pull minio/minio 创建挂载文件夹 1 mkdir -p /root/minio/config /root/minio/data 启动容器 1 2 3 4 docker run -p 9000:9000 -p 1314:9001 --name minio --restart=always -e &#34;MINIO_ACCESS_KEY=xxxxxx&#34; -e &#34;MINIO_SECRET_KEY=xxxxxxxx&#34; -v /root/minio/data:/data -v /root/minio/config:/root/.minio -d minio/minio server</div><div class="post-footer">
-        <a href="/minio/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E6%95%99%E7%A8%8B/">教程</a></div></div>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hahaen</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2022-06-17">2022-06-17</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw"></i>工具教程</a></span></div><div class="content">docker搭建minio单节点 拉取docker镜像 1 docker pull minio/minio 创建挂载文件夹 1 mkdir -p /root/minio/config /root/minio/data 启动容器 1 2 3 4 docker run -p 9000:9000 -p 1314:9001 --name minio --restart=always -e &#34;MINIO_ACCESS_KEY=xxxxxx&#34; -e &#34;MINIO_SECRET_KEY=xxxxxxxx&#34; -v /root/minio/data:/data -v /root/minio/config:/root/.minio -d minio/minio server</div><div class="post-footer">
+        <a href="/minio/">阅读全文</a></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8Foverview/">设计模式（Overview）</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hahaen</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2022-06-12">2022-06-12</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E7%9F%A5%E8%AF%86/"><i class="far fa-folder fa-fw"></i>java知识</a></span></div><div class="content">24大设计模式和7个原则 7个原则 1. 单一职责原则 一个类负责一项职责。 2. 开放封闭原则 一个软件实体如类、模块和函数应该对扩展开放，对修改关闭。 3. 里</div><div class="post-footer">
-        <a href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8Foverview/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/java/">java</a></div></div>
+        <a href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8Foverview/">阅读全文</a></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/java%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C-%E9%BB%84%E5%B1%B1%E7%89%88%E7%AC%94%E8%AE%B0/">Java开发手册 黄山版（笔记）</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hahaen</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2022-05-30">2022-05-30</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%AC%94%E8%AE%B0/"><i class="far fa-folder fa-fw"></i>笔记</a></span></div><div class="content">内容</div><div class="post-footer">
-        <a href="/java%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C-%E9%BB%84%E5%B1%B1%E7%89%88%E7%AC%94%E8%AE%B0/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a></div></div>
+        <a href="/java%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C-%E9%BB%84%E5%B1%B1%E7%89%88%E7%AC%94%E8%AE%B0/">阅读全文</a></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/effective-java%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/">effective-java中文（笔记）</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hahaen</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2022-05-30">2022-05-30</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%AC%94%E8%AE%B0/"><i class="far fa-folder fa-fw"></i>笔记</a></span></div><div class="content">01-09 Creating and Destroying Objects （创建和销毁对象） 1. 考虑使用静态工厂方法替代构造方法 优点： 静态工厂方法的一个优点是，与构造方法不同，它们是有名字的。 静态工厂方法的</div><div class="post-footer">
-        <a href="/effective-java%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a></div></div>
+        <a href="/effective-java%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/">阅读全文</a></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/mysql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E7%AC%94%E8%AE%B0/">MySQL必知必会（笔记）</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hahaen</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2022-05-30">2022-05-30</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%AC%94%E8%AE%B0/"><i class="far fa-folder fa-fw"></i>笔记</a></span></div><div class="content">内容</div><div class="post-footer">
-        <a href="/mysql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E7%AC%94%E8%AE%B0/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a></div></div>
+        <a href="/mysql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E7%AC%94%E8%AE%B0/">阅读全文</a></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/idea%E5%90%AF%E5%8A%A8%E5%BC%82%E5%B8%B8/">Idea启动异常</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hahaen</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2022-05-29">2022-05-29</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%90%84%E7%A7%8D%E9%97%AE%E9%A2%98/"><i class="far fa-folder fa-fw"></i>各种问题</a></span></div><div class="content">双击bin目录下的idea.bat 报错 1 ERROR - llij.ide.plugins.PluginManager - java.net.BindException: Address already in use: bind 参考 运行两个命令成功解决。 1 2 3 net stop winnat net start winnat</div><div class="post-footer">
-        <a href="/idea%E5%90%AF%E5%8A%A8%E5%BC%82%E5%B8%B8/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E9%97%AE%E9%A2%98/">问题</a></div></div>
+        <a href="/idea%E5%90%AF%E5%8A%A8%E5%BC%82%E5%B8%B8/">阅读全文</a></div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="/">1</a>
