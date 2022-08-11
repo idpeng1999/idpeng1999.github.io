@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hahaen.github.io\/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4\/"
-        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "java","wordcount":  917 ,
+        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "java","wordcount":  1308 ,
         "url": "https:\/\/hahaen.github.io\/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4\/","datePublished": "2021-09-09T17:07:23+08:00","dateModified": "2021-09-09T17:07:23+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/hahaen.github.io\/images\/avatar.png"},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Linux常用命令行</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hahaen</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E7%9F%A5%E8%AF%86/"><i class="far fa-folder fa-fw"></i>java知识</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-09-09">2021-09-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 917 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-09-09">2021-09-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1308 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -124,7 +124,8 @@
         <li><a href="#rm命令">rm命令</a></li>
         <li><a href="#mv命令">mv命令</a></li>
         <li><a href="#cp命令">cp命令</a></li>
-        <li><a href="#cat命令">cat命令</a></li>
+        <li><a href="#cat命令-查看文件内容">cat命令-查看文件内容</a></li>
+        <li><a href="#chmod-赋予权限">chmod 赋予权限</a></li>
         <li><a href="#more-命令">more 命令</a>
           <ul>
             <li><a href="#命令参数">命令参数：</a></li>
@@ -228,7 +229,7 @@
 </span></span><span class="line"><span class="cl">-a 复制的文件与原文件时间一样
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="cat命令">cat命令</h2>
+</div><h2 id="cat命令-查看文件内容">cat命令-查看文件内容</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -239,6 +240,52 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cat filename 一次显示整个文件
 </span></span><span class="line"><span class="cl">cat &gt; filename 从键盘创建一个文件
 </span></span><span class="line"><span class="cl">cat file1 file2 &gt; file 将几个文件合并为一个文件
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sed -n <span class="s2">&#34;10p&#34;</span> move.sh   <span class="c1"># 显示第10行</span>
+</span></span><span class="line"><span class="cl">sed -n <span class="s2">&#34;7,10p&#34;</span> move.sh <span class="c1"># 显示第7行到第10行</span>
+</span></span><span class="line"><span class="cl">cat recorde <span class="p">|</span> head -n 10<span class="p">|</span>tail -n <span class="m">1</span> <span class="c1"># 显示第10行，先显示前10行，再显示这10行中的最后一行</span>
+</span></span><span class="line"><span class="cl">cat recorde <span class="p">|</span> tail -n +10 <span class="p">|</span> head -n <span class="m">1</span> <span class="c1"># 显示第10行；先显示第10行及以后的内容，再显示这里的第一行</span>
+</span></span><span class="line"><span class="cl">tail -n <span class="m">100</span> <span class="c1">#显示最后100行</span>
+</span></span><span class="line"><span class="cl">tail -n +1000 <span class="c1"># 从1000行开始显示，显示1000行以后所有行</span>
+</span></span><span class="line"><span class="cl">head -n <span class="m">1000</span> <span class="c1"># 显示前面1000行</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="chmod-赋予权限">chmod 赋予权限</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">chmod <span class="m">644</span> mm.txt  即设定文件mm.txt的属性为：-rw-r--r--
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>r(Read，读取，权限值为4)</strong>：对文件而言，具有读取文件内容的权限；对目录来说，具有浏览目 录的权限。</li>
+<li><strong>w(Write,写入，权限值为2)</strong>：对文件而言，具有新增、修改文件内容的权限；对目录来说，具有删除、移动目录内文件的权限。</li>
+<li><strong>x(eXecute，执行，权限值为1)</strong>：对文件而言，具有执行文件的权限；对目录了来说该用户具有进入目录的权限。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">rwx rw- r– <span class="m">764</span>
+</span></span><span class="line"><span class="cl">rw- r– r– <span class="m">644</span>
+</span></span><span class="line"><span class="cl">rw- rw- r– <span class="m">664</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="more-命令">more 命令</h2>

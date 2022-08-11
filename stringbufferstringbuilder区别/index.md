@@ -2,8 +2,8 @@
 
 ### 区别
 
-* StringBuffer更快，但线程不安全，常用
-* StringBuilder稍慢，但线程安全
+* StringBuffer稍慢，但线程安全
+* StringBuilder更快，但线程不安全，常用
 
 ### 线程安全性
 
