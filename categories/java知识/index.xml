@@ -4,7 +4,14 @@
         <link>https://hahaen.github.io/categories/java%E7%9F%A5%E8%AF%86/</link>
         <description>java知识 - 分类 - 哈哈博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>630606938@qq.com (hahaen)</managingEditor>
-            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 12 Jun 2022 10:44:44 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/java%E7%9F%A5%E8%AF%86/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 11 Aug 2022 23:11:19 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/java%E7%9F%A5%E8%AF%86/" rel="self" type="application/rss+xml" /><item>
+    <title>基础知识整理</title>
+    <link>https://hahaen.github.io/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</link>
+    <pubDate>Thu, 11 Aug 2022 23:11:19 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hahaen.github.io/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</guid>
+    <description><![CDATA[==、Equals区别？ 对象类型不同 equals()：是超类Object中的方法。 ==：是操作符。 比较的对象不同 equals()：用来检测两]]></description>
+</item><item>
     <title>设计模式（Overview）</title>
     <link>https://hahaen.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8Foverview/</link>
     <pubDate>Sun, 12 Jun 2022 10:44:44 &#43;0800</pubDate>
@@ -46,13 +53,6 @@
     <author>作者</author>
     <guid>https://hahaen.github.io/springboot%E4%B8%AD%E7%9A%845%E7%A7%8D%E8%B7%A8%E5%9F%9F/</guid>
     <description><![CDATA[为什么会出现跨域问题 出于浏览器的同源策略限制。 同源策略（Sameoriginpolicy）是一种约定，它是浏览器最核心也最基本的安全功能， 如]]></description>
-</item><item>
-    <title>HashMap</title>
-    <link>https://hahaen.github.io/hashmap/</link>
-    <pubDate>Thu, 17 Mar 2022 13:14:21 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hahaen.github.io/hashmap/</guid>
-    <description><![CDATA[相比于JDK7，HashMap在JDK8中做链表结构做了优化（但仍然线程不安全），在一定条件下将链表转为红黑树，提升查询效率。 put()操作]]></description>
 </item><item>
     <title>常用加密算法</title>
     <link>https://hahaen.github.io/%E5%B8%B8%E7%94%A8%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/</link>

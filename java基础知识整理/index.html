@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>基础知识整理 - 哈哈博客</title><meta name="Description" content="关于 哈哈博客"><meta property="og:title" content="基础知识整理" />
+<meta property="og:description" content="==、Equals区别？ 对象类型不同 equals()：是超类Object中的方法。 ==：是操作符。 比较的对象不同 equals()：用来检测两" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hahaen.github.io/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/" /><meta property="og:image" content="https://hahaen.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-11T23:11:19+08:00" />
+<meta property="article:modified_time" content="2022-08-11T23:11:19+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hahaen.github.io/logo.png"/>
+
+<meta name="twitter:title" content="基础知识整理"/>
+<meta name="twitter:description" content="==、Equals区别？ 对象类型不同 equals()：是超类Object中的方法。 ==：是操作符。 比较的对象不同 equals()：用来检测两"/>
+<meta name="application-name" content="哈哈博客">
+<meta name="apple-mobile-web-app-title" content="哈哈博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hahaen.github.io/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/" /><link rel="prev" href="https://hahaen.github.io/minio/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "基础知识整理",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hahaen.github.io\/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86\/"
+        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  5169 ,
+        "url": "https:\/\/hahaen.github.io\/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86\/","datePublished": "2022-08-11T23:11:19+08:00","dateModified": "2022-08-11T23:11:19+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/hahaen.github.io\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "hahaen"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="哈哈博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>哈哈博客</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="https://github.com/hahaen" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="请输入关键词..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="哈哈博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>哈哈博客</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="请输入关键词..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="https://github.com/hahaen" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">基础知识整理</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hahaen</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E7%9F%A5%E8%AF%86/"><i class="far fa-folder fa-fw"></i>java知识</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-11">2022-08-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5169 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 11 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#equals区别">==、Equals区别？</a></li>
+        <li><a href="#continuebreak和return的区别是什么">Continue、break和return的区别是什么？</a></li>
+        <li><a href="#dropdelete区别">Drop、delete区别？</a>
+          <ul>
+            <li><a href="#用法不同">用法不同</a></li>
+          </ul>
+        </li>
+        <li><a href="#final的作用">Final的作用？</a></li>
+        <li><a href="#java异常">Java异常</a></li>
+        <li><a href="#异常基本类型">异常基本类型</a>
+          <ul>
+            <li><a href="#error">Error</a></li>
+            <li><a href="#exception">Exception</a>
+              <ul>
+                <li><a href="#runtimeexception运行时异常">RuntimeException(运行时异常)</a></li>
+                <li><a href="#checkedexception检查时异常">CheckedException(检查时异常)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#异常处理">异常处理</a>
+          <ul>
+            <li><a href="#throws声明异常">throws（声明异常）</a></li>
+            <li><a href="#try-catch捕获异常">try-catch（捕获异常）</a></li>
+          </ul>
+        </li>
+        <li><a href="#throwthrows关键字区别">throw,throws关键字区别</a></li>
+        <li><a href="#常见的几种异常">常见的几种异常</a></li>
+        <li><a href="#java的参数传递是传值还是传引用">Java的参数传递是传值还是传引用？</a></li>
+        <li><a href="#java的基本类型">Java的基本类型</a></li>
+        <li><a href="#java面向对象三大特性封装继承多态">Java面向对象三大特性封装继承多态</a>
+          <ul>
+            <li><a href="#封装">封装</a></li>
+            <li><a href="#继承">继承</a></li>
+            <li><a href="#多态">多态</a></li>
+          </ul>
+        </li>
+        <li><a href="#object有哪些方法">Object有哪些方法？</a></li>
+        <li><a href="#stringbufferstringbuilder区别">StringBuffer、StringBuilder区别?</a>
+          <ul>
+            <li><a href="#区别">区别</a></li>
+            <li><a href="#线程安全性">线程安全性</a></li>
+          </ul>
+        </li>
+        <li><a href="#string中有哪些方法">String中有哪些方法？</a></li>
+        <li><a href="#为什么重写equals时必须重写hashcode方法">为什么重写equals时必须重写hashCode方法？</a></li>
+        <li><a href="#什么时候用接口或抽象类">什么时候用接口或抽象类？</a></li>
+        <li><a href="#重写和重载的作用">重写和重载的作用？</a></li>
+        <li><a href="#静态方法为什么不能调用非静态方法">静态方法为什么不能调用非静态方法？</a></li>
+        <li><a href="#静态方法和实例方法有何不同">静态方法和实例方法有何不同？\</a>
+          <ul>
+            <li><a href="#调用方式">调用方式</a></li>
+            <li><a href="#访问类成员是否存在限制">访问类成员是否存在限制</a></li>
+          </ul>
+        </li>
+        <li><a href="#深拷贝浅拷贝的区别">深拷贝、浅拷贝的区别？</a></li>
+        <li><a href="#自增运算符和自减运算符">自增运算符++和自减运算符</a></li>
+        <li><a href="#接口和抽象类有什么区别or联系">接口和抽象类有什么区别or联系？</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="equals区别">==、Equals区别？</h2>
+<ol>
+<li>对象类型不同</li>
+</ol>
+<ul>
+<li>equals()：是超类Object中的方法。</li>
+<li>==：是操作符。</li>
+</ul>
+<ol start="2">
+<li>比较的对象不同</li>
+</ol>
+<ul>
+<li>equals()：用来检测两个对象是否相等，即两个对象的内容是否相等。</li>
+<li>==：用于比较引用和比较基本数据类型时具有不同的功能</li>
+</ul>
+<ol start="3">
+<li>运行速度不同</li>
+</ol>
+<ul>
+<li>equals()：没有==运行速度快。</li>
+<li>==：运行速度比equals()快，因为==只是比较引用。</li>
+</ul>
+<h2 id="continuebreak和return的区别是什么">Continue、break和return的区别是什么？</h2>
+<p>在循环结构中，当循环条件不满足或者循环次数达到要求时，循环会正常结束。
+但是，有时候可能需要在循环的过程中，当发生了某种条件之后 ，提前终止循环，
+这就需要用到下面几个关键词：</p>
+<ul>
+<li><code>continue</code>：指跳出当前的这一次循环，继续下一次循环。</li>
+<li><code>break</code>：指跳出整个循环体，继续执行循环下面的语句。</li>
+</ul>
+<p><code>return</code>：用于跳出所在方法，结束该方法的运行。return 一般有两种用法：</p>
+<ul>
+<li><code>return;</code> ：直接使用 return 结束方法执行，用于没有返回值函数的方法</li>
+<li><code>return value;</code> ：return 一个特定值，用于有返回值函数的方法</li>
+</ul>
+<p>下列语句的运行结果是什么？</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"> <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">boolean</span> <span class="n">flag</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">3</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;0&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;1&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="k">continue</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">2</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;2&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">flag</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">3</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;3&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">4</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;4&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;xixi&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">flag</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;haha&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;heihei&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>运行结果:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">0
+</span></span><span class="line"><span class="cl">xixi
+</span></span><span class="line"><span class="cl">1
+</span></span><span class="line"><span class="cl">2
+</span></span><span class="line"><span class="cl">xixi
+</span></span><span class="line"><span class="cl">3
+</span></span><span class="line"><span class="cl">haha
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="dropdelete区别">Drop、delete区别？</h2>
+<h3 id="用法不同">用法不同</h3>
+<ul>
+<li><code>drop</code>(丢弃数据):<code>drop table</code>表名 ，直接将表都删除掉，在删除表的时候使用。</li>
+<li><code>delete</code>（删除数据）:<code>delete from 表名 where 列名=值</code>，删除某一列的数据</li>
+</ul>
+<hr>
+<ul>
+<li>不带<code>where</code>子句的<code>delete</code>、以及<code>drop</code>都会删除表内的数据</li>
+<li>但是<code>delete</code>只删除数据不删除表的结构(定义)</li>
+<li>执行<code>drop</code>语句，此表的结构也会删除，也就是执行<code>drop</code>之后对应的表不复存在。</li>
+</ul>
+<h2 id="final的作用">Final的作用？</h2>
+<p>在Java中，final关键字可以用来修饰类、方法和变量（包括成员变量和局部变量）。</p>
+<ol>
+<li>修饰类</li>
+</ol>
+<p>当用final修饰一个类时，表明这个类不能被继承。</p>
+<ol start="2">
+<li>修饰方法</li>
+</ol>
+<p>如果只有在想明确禁止,该方法在子类中被覆盖的情况下才将方法设置为final的。</p>
+<ul>
+<li>即父类的final方法是不能被子类所覆盖的，也就是说子类是不能够存在和父类一模一样的方法的。</li>
+</ul>
+<ol start="3">
+<li>修饰变量</li>
+</ol>
+<ul>
+<li>final成员变量表示常量，只能被赋值一次，赋值后值不再改变。</li>
+<li>当final修饰一个基本数据类型时，表示该基本数据类型的值一旦在初始化后便不能发生变化；</li>
+<li>如果final修饰一个引用类型时，则在对其初始化之后便不能再让其指向其他对象了，但该引用所指向的对象的内容是可以发生变化的。</li>
+<li>final修饰一个成员变量（属性），必须要显示初始化。</li>
+<li>当函数的参数类型声明为final时，说明该参数是只读型的。即你可以读取使用该参数，但是无法改变该参数的值。</li>
+</ul>
+<h2 id="java异常">Java异常</h2>
+<h2 id="异常基本类型">异常基本类型</h2>
+<ul>
+<li>异常类的基本类型是<code>Throwable</code>类</li>
+<li>两大子类分别是<code>Error</code>和<code>Exception</code></li>
+</ul>
+<h3 id="error">Error</h3>
+<ul>
+<li>系统错误由Java虚拟机抛出，用<code>Error</code>类表示。<code>Error</code>类描述的是内部系统错误</li>
+<li>例如：Java虚拟机崩溃。在程序中不会对<code>Error</code>异常进行捕捉和抛出。</li>
+</ul>
+<h3 id="exception">Exception</h3>
+<p>异常<code>Exception</code>又分为<code>RuntimeException</code>(运行时异常)和<code>CheckedException</code>(检查时异常)</p>
+<h4 id="runtimeexception运行时异常">RuntimeException(运行时异常)</h4>
+<ul>
+<li>程序运行过程中才可能发生的异常,一般为代码的逻辑错误</li>
+<li>例如：类型错误转换，空指针异常、找不到指定类等</li>
+</ul>
+<h4 id="checkedexception检查时异常">CheckedException(检查时异常)</h4>
+<ul>
+<li>编译期间可以检查到的异常，必须显式的进行处理（捕获或者抛出到上一层）</li>
+<li>例如：<code>IOException</code>, <code>FileNotFoundException</code>,<code>SQLException</code>等</li>
+</ul>
+<h2 id="异常处理">异常处理</h2>
+<h3 id="throws声明异常">throws（声明异常）</h3>
+<ul>
+<li>在方法头中显式声明该异常，以便于告知方法调用者此方法有异常</li>
+<li>若父类的方法没有声明异常，则子类继承方法后，也不能声明异常</li>
+</ul>
+<h3 id="try-catch捕获异常">try-catch（捕获异常）</h3>
+<ul>
+<li>若执行<code>try</code>块的过程中没有发生异常，则跳过<code>catch</code>子句</li>
+<li>若是出现异常，<code>try</code>块中剩余语句不再执行。</li>
+<li>再判断<code>catch</code>块的异常类是否是捕获的异常类型，匹配后执行相应的<code>catch</code>块中的代码。</li>
+<li>如果有<code>finally</code>的话进入到<code>finally</code>里面继续执行。</li>
+<li><code>try ctach fianally</code>中有<code>return</code>时，会先执行<code>return</code>,但是不会返回。在执行完<code>finally</code>后进行返回</li>
+<li><code>catch</code>语句可以有一个或多个，<code>finally</code>语句最多一个</li>
+</ul>
+<h2 id="throwthrows关键字区别">throw,throws关键字区别</h2>
+<ul>
+<li><code>throw</code>关键字是用于方法体内部，用来抛出一个Throwable类型的异常</li>
+<li><code>throws</code>关键字用于方法体外部的方法声明部分，用来声明方法可能会抛出某些异常</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">()</span><span class="kd">throws</span> <span class="n">Exception</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">throw</span> <span class="k">new</span> <span class="n">Exception</span><span class="o">(</span><span class="s">&#34;方法test中的Exception&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>  
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="常见的几种异常">常见的几种异常</h2>
+<p>RuntimeExceptionjava.lang.ArithmeticException(算术异常)
+<br></p>
+<ul>
+<li>java.lang.<code>NullPointerException</code>(空指针异常)</li>
+<li>java.lang.<code>ClassCastException</code>(类型转换异常)</li>
+<li>java.lang.<code>IllegalArgumentException</code>(不合法的参数异常)</li>
+<li>java.lang.<code>IndexOutOfBoundsException</code>(数组下标越界异常)</li>
+</ul>
+<br>
+<p>java.io.IOException(IO流异常)
+<br></p>
+<ul>
+<li>java.lang.<code>ClassNotFoundException</code>(没找到指定类异常)</li>
+<li>java.lang.<code>NoSuchFieldException</code>(没找到指定字段异常)</li>
+<li>java.lang.<code>NoSuchMetodException</code>(没找到指定方法异常)</li>
+<li>java.lang.<code>IllegalAccessException</code>(非法访问异常)</li>
+<li>java.lang.<code>InterruptedException</code>(中断异常)</li>
+</ul>
+<h2 id="java的参数传递是传值还是传引用">Java的参数传递是传值还是传引用？</h2>
+<ul>
+<li>Java世界中的一切对象都是指针(地址)</li>
+<li>函数调用永远是传值</li>
+</ul>
+<ol>
+<li>基本类型（包括String类）作为参数传递时，是传递值的拷贝，无论你怎么改变这个拷贝，原值是不会改变的</li>
+<li>引用类型（包括数组，对象以及接口）作为参数传递时，是把对象在内存中的地址拷贝了一份传给了参数。</li>
+</ol>
+<ul>
+<li>注意：基本数据类型的封装类Integer、Short、Float、Double、Long、Boolean、Byte、Character虽然是引用类型，但它们在作为参数传递时，也和基本数据类型一样，是值传递。</li>
+</ul>
+<h2 id="java的基本类型">Java的基本类型</h2>
+<p>基本数据类型是CPU可以直接进行运算的类型。Java定义了以下几种基本数据类型：</p>
+<ul>
+<li>整数类型：byte，short，int，long</li>
+<li>浮点数类型：float，double</li>
+<li>字符类型：char</li>
+<li>布尔类型：boolean</li>
+</ul>
+<p>String是基本数据类型吗？答：<strong>不是</strong></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Java%e7%9a%84%e5%9f%ba%e6%9c%ac%e7%b1%bb%e5%9e%8b/1.png"
+        data-srcset="/img/Java%e7%9a%84%e5%9f%ba%e6%9c%ac%e7%b1%bb%e5%9e%8b/1.png, /img/Java%e7%9a%84%e5%9f%ba%e6%9c%ac%e7%b1%bb%e5%9e%8b/1.png 1.5x, /img/Java%e7%9a%84%e5%9f%ba%e6%9c%ac%e7%b1%bb%e5%9e%8b/1.png 2x"
+        data-sizes="auto"
+        alt="/img/Java的基本类型/1.png"
+        title="基本类型" /></p>
+<h2 id="java面向对象三大特性封装继承多态">Java面向对象三大特性封装继承多态</h2>
+<h3 id="封装">封装</h3>
+<ul>
+<li>封装把⼀个对象的属性私有化，同时提供⼀些可以被外界访问的属性的⽅法</li>
+</ul>
+<h3 id="继承">继承</h3>
+<ul>
+<li>继承是使⽤已存在的类的定义作为基础建⽴新类的技术，新类的定义可以增加新的数据或新的功能,</li>
+<li>也可以⽤⽗类的功能，但不能选择性地继承⽗类。通过使⽤继承我们能够⾮常⽅便地复⽤以前的代码。</li>
+</ul>
+<h3 id="多态">多态</h3>
+<ul>
+<li>多态是指程序中定义的引⽤变量所指向的具体类型和通过该引⽤变量发出的⽅法调⽤在编程时并不确定，⽽是在程序运⾏期间才确定，</li>
+<li>即⼀个引⽤变量到底会指向哪个类的实例对象，该引⽤变量发出的⽅法调⽤到底是哪个类中实现的⽅法，必须在由程序运⾏期间才能决定。
+<br>
+<br></li>
+<li>在 Java 中有两种形式可以实现多态：继承（多个⼦类对同⼀⽅法的重写）和接⼝（实现接⼝并覆盖接⼝中同⼀⽅法）。</li>
+</ul>
+<h2 id="object有哪些方法">Object有哪些方法？</h2>
+<ul>
+<li>
+<p>Object类，属于java.lang包，位于类层次结构树的顶部。</p>
+</li>
+<li>
+<p>每个类都是Object类的直接或间接的后代。</p>
+</li>
+<li>
+<p>使用或编写的每个类都继承Object的实例方法。</p>
+</li>
+</ul>
+<p>常用方法：</p>
+<ul>
+<li><code>getClass 方法</code> final 方法、获取对象的运行时 class 对象，class 对象就是描述对象所属类的对象。</li>
+<li><code>hashCode 方法</code> 该方法主要用于获取对象的散列值。Object 中该方法默认返回的是对象的堆内存地址。</li>
+<li><code>equals 方法</code> 该方法用于比较两个对象，如果这两个对象引用指向的是同一个对象，那么返回 true，否则返回 false。</li>
+<li><code>clone 方法</code> 该方法是保护方法，实现对象的浅复制，只有实现了 Cloneable 接口才可以调用该方法，否则抛出 CloneNotSupportedException 异常。</li>
+<li><code>toString 方法</code> 返回一个 String 对象，一般子类都有覆盖。默认返回格式如下：对象的 class 名称 + @ + hashCode 的十六进制字符串。</li>
+<li><code>wait 方法</code> 当timeout 为 0，即不等待。</li>
+</ul>
+<h2 id="stringbufferstringbuilder区别">StringBuffer、StringBuilder区别?</h2>
+<h3 id="区别">区别</h3>
+<ul>
+<li>StringBuffer稍慢，但线程安全</li>
+<li>StringBuilder更快，但线程不安全，常用</li>
+</ul>
+<h3 id="线程安全性">线程安全性</h3>
+<ul>
+<li>如果没有额外声明，所有类的默认都是线程不安全的</li>
+</ul>
+<h2 id="string中有哪些方法">String中有哪些方法？</h2>
+<p>常用方法：</p>
+<ul>
+<li><code>indexOf()</code> 返回指定字符的索引。</li>
+<li><code>charAt()</code> 返回指定索引处的字符。</li>
+<li><code>replace()</code> 字符串替换。</li>
+<li><code>trim()</code> 去除字符串两端空白。</li>
+<li><code>split()</code> 分割字符串，返回一个分割后的字符串数组。</li>
+<li><code>getBytes()</code> 返回字符串的 byte 类型数组。</li>
+<li><code>length()</code> 返回字符串长度。</li>
+<li><code>toLowerCase()</code> 将字符串转成小写字母。</li>
+<li><code>toUpperCase()</code> 将字符串转成大写字符。</li>
+<li><code>substring()</code> 截取字符串。</li>
+<li><code>equals()</code> 字符串比较。</li>
+</ul>
+<h2 id="为什么重写equals时必须重写hashcode方法">为什么重写equals时必须重写hashCode方法？</h2>
+<ul>
+<li>因为两个相等的对象的<code>hashCode</code>值必须是相等。</li>
+<li>也就是说如果<code>equals</code>方法判断两个对象是相等的，那这两个对象的<code>hashCode</code>值也要相等。</li>
+<li>如果重写<code>equals()</code>时没有重写<code>hashCode()</code>方法的话就可能会导致<code>equals</code>方法判断是相等的两个对象,<code>hashCode</code>值却不相等。</li>
+</ul>
+<h2 id="什么时候用接口或抽象类">什么时候用接口或抽象类？</h2>
+<ol>
+<li>如果预计要创建组件的多个版本，则创建<code>抽象类</code>。抽象类提供简单的方法来控制组件版本；</li>
+<li>如果创建的功能将在大范围的全异对象间使用，则使用<code>接口</code>。如果要设计小而简练的功能块，则使用接口；</li>
+<li>如果要设计大的功能单元，则使用<code>抽象类</code>。如果要在组件的所有实现间提供通用的已实现功能，则使用抽象类；</li>
+<li><code>抽象类</code>主要用于关系密切的对象；而<code>接口</code>适合为不相关的类提供通用功能。</li>
+</ol>
+<h2 id="重写和重载的作用">重写和重载的作用？</h2>
+<ul>
+<li><code>override</code>是重写,重写是一种动态绑定的多态机制。</li>
+<li><code>overload</code>是重载，重载是一种参数多态机制，即代码通过参数的类型或个数不同而实现的多态机制。</li>
+</ul>
+<p><code>@Override</code>是伪代码,表示<code>重写</code>(当然不写也可以)，不过写上有如下好处:</p>
+<ol>
+<li>可以当注释用,方便阅读；</li>
+<li>编译器可以给你验证@Override下面的方法名是否是你父类中所有的，如果没有则报错。</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/%e9%87%8d%e5%86%99%e5%92%8c%e9%87%8d%e8%bd%bd%e7%9a%84%e4%bd%9c%e7%94%a8%ef%bc%9f/1.png"
+        data-srcset="/img/%e9%87%8d%e5%86%99%e5%92%8c%e9%87%8d%e8%bd%bd%e7%9a%84%e4%bd%9c%e7%94%a8%ef%bc%9f/1.png, /img/%e9%87%8d%e5%86%99%e5%92%8c%e9%87%8d%e8%bd%bd%e7%9a%84%e4%bd%9c%e7%94%a8%ef%bc%9f/1.png 1.5x, /img/%e9%87%8d%e5%86%99%e5%92%8c%e9%87%8d%e8%bd%bd%e7%9a%84%e4%bd%9c%e7%94%a8%ef%bc%9f/1.png 2x"
+        data-sizes="auto"
+        alt="/img/重写和重载的作用？/1.png"
+        title="比较" /></p>
+<h2 id="静态方法为什么不能调用非静态方法">静态方法为什么不能调用非静态方法？</h2>
+<ol>
+<li>静态方法是属于类的，在类加载的时候就会分配内存，可以通过类名直接访问。而非静态成员属于实例对象，只有在对象实例化之后才存在，需要通过类的实例对象去访问。</li>
+<li>在类的非静态成员不存在的时候静态成员就已经存在了，此时调用在内存中还不存在的非静态成员，属于非法操作。</li>
+</ol>
+<h2 id="静态方法和实例方法有何不同">静态方法和实例方法有何不同？\</h2>
+<h3 id="调用方式">调用方式</h3>
+<ul>
+<li>在外部调用静态方法时，可以使用<code>类名.方法名</code>的方式，也可以使用<code>对象.方法名</code>的方式，而实例方法只有后面这种方式。也就是说，<strong>调用静态方法可以无需创建对象</strong>。</li>
+<li>不过，需要注意的是一般不建议使用<code>对象.方法名</code>的方式来调用静态方法。这种方式非常容易造成混淆，静态方法不属于类的某个对象而是属于这个类。</li>
+</ul>
+<p>因此，一般建议使用<code>类名.方法名</code>的方式来调用静态方法。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">method</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">//......
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">staicMethod</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">//......
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Person</span> <span class="n">person</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 调用实例方法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">person</span><span class="o">.</span><span class="na">method</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 调用静态方法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">Person</span><span class="o">.</span><span class="na">staicMethod</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="访问类成员是否存在限制">访问类成员是否存在限制</h3>
+<ul>
+<li>静态方法在访问本类的成员时，只允许访问静态成员（即静态成员变量和静态方法），不允许访问实例成员（即实例成员变量和实例方法），而实例方法不存在这个限制。</li>
+</ul>
+<h2 id="深拷贝浅拷贝的区别">深拷贝、浅拷贝的区别？</h2>
+<ul>
+<li>浅拷贝是按位拷贝对象，它会创建一个新对象，这个对象有着原始对象属性值的一份精确拷贝。
+简而言之，浅拷贝仅仅复制所考虑的对象，而不复制它所引用的对象。</li>
+<li>深拷贝会拷贝所有的属性,并拷贝属性指向的动态分配的内存。当对象和它所引用的对象一起拷贝时即发生深拷贝。深拷贝相比于浅拷贝速度较慢并且花销较大。
+简而言之，深拷贝把要复制的对象所引用的对象都复制了一遍。</li>
+</ul>
+<h2 id="自增运算符和自减运算符">自增运算符++和自减运算符</h2>
+<ul>
+<li>++ 和 &ndash; 运算符可以放在变量之前，也可以放在变量之后</li>
+<li>当运算符放在变量之前时(前缀)，先自增/减，再赋值 <code>++a</code></li>
+<li>当运算符放在变量之后时(后缀)，先赋值，再自增/减 <code>a--</code></li>
+</ul>
+<p>例如</p>
+<ul>
+<li>
+<p>当 b = ++a 时，先自增（自己增加 1），再赋值（赋值给 b）</p>
+</li>
+<li>
+<p>当 b = a++ 时，先赋值(赋值给 b)，再自增（自己增加 1）</p>
+</li>
+<li>
+<p>++a 输出的是 a+1 的值，a++输出的是 a 值</p>
+</li>
+<li>
+<p><strong>“符号在前就先加/减，符号在后就后加/减”</strong></p>
+</li>
+</ul>
+<h2 id="接口和抽象类有什么区别or联系">接口和抽象类有什么区别or联系？</h2>
+<ul>
+<li>Interface(接口):定义功能，只能包含方法(实现),不能包含成员变量，可以被实现若干次。</li>
+<li>Abstract class(抽象类):定义抽象的骨架实现，可以包含抽象方法或者实现，也可以包含成员变量，只能沿着一条路径继承。</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-08-11</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/minio/" class="prev" rel="prev" title="Minio"><i class="fas fa-angle-left fa-fw"></i>Minio</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">hahaen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":1000},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
