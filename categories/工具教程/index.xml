@@ -4,7 +4,14 @@
         <link>https://hahaen.github.io/categories/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/</link>
         <description>工具教程 - 分类 - 哈哈博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>630606938@qq.com (hahaen)</managingEditor>
-            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 17 Jun 2022 14:57:43 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 20 Aug 2022 22:21:53 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/" rel="self" type="application/rss+xml" /><item>
+    <title>Oracle Docker版教程</title>
+    <link>https://hahaen.github.io/oracle-docker%E7%89%88%E6%95%99%E7%A8%8B/</link>
+    <pubDate>Sat, 20 Aug 2022 22:21:53 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hahaen.github.io/oracle-docker%E7%89%88%E6%95%99%E7%A8%8B/</guid>
+    <description><![CDATA[docker安装Oracle数据库 1 docker pull registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g Docker创建数据库 1 docker run --name oracle_11g -d -p 1521:1521 registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g 配置 进入容器里 1 docker exec -it oracle_11g bash 配置一下环境变量，执行su roo]]></description>
+</item><item>
     <title>Minio</title>
     <link>https://hahaen.github.io/minio/</link>
     <pubDate>Fri, 17 Jun 2022 14:57:43 &#43;0800</pubDate>
