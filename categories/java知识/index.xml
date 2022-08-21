@@ -4,7 +4,49 @@
         <link>https://hahaen.github.io/categories/java%E7%9F%A5%E8%AF%86/</link>
         <description>java知识 - 分类 - 哈哈博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>630606938@qq.com (hahaen)</managingEditor>
-            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 21 Aug 2022 17:35:34 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/java%E7%9F%A5%E8%AF%86/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 21 Aug 2022 20:50:52 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/java%E7%9F%A5%E8%AF%86/" rel="self" type="application/rss+xml" /><item>
+    <title>消息队列</title>
+    <link>https://hahaen.github.io/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</link>
+    <pubDate>Sun, 21 Aug 2022 20:50:52 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hahaen.github.io/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</guid>
+    <description><![CDATA[什么是消息队列？ 首先队列是先进先出，消息队列MQ可以简单理解成把要传输的数据放在队列中，主要解决应用耦合、异步消息、流量削锋等问题， 我认为大]]></description>
+</item><item>
+    <title>双亲委派模型</title>
+    <link>https://hahaen.github.io/%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%A8%A1%E5%9E%8B/</link>
+    <pubDate>Sun, 21 Aug 2022 20:49:55 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hahaen.github.io/%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%A8%A1%E5%9E%8B/</guid>
+    <description><![CDATA[什么是双亲委派模型? 如果一个类加载器收到了类加载的请求，它首先不会自己去加载这个类，而是把这个请求委派给父类加载器去完成， 每一层的类加载器都]]></description>
+</item><item>
+    <title>Elasticsearch</title>
+    <link>https://hahaen.github.io/elasticsearch/</link>
+    <pubDate>Sun, 21 Aug 2022 20:35:31 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hahaen.github.io/elasticsearch/</guid>
+    <description><![CDATA[讲讲Elasticsearch是什么？原理?有什么用？如何使用？ ES是一个分布式、可扩展、实时的搜索与数据分析引擎。ES不仅仅只是全文搜索，]]></description>
+</item><item>
+    <title>Servlet</title>
+    <link>https://hahaen.github.io/servlet/</link>
+    <pubDate>Sun, 21 Aug 2022 20:05:54 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hahaen.github.io/servlet/</guid>
+    <description><![CDATA[讲讲Servlet？ Java Servlet(谁为特) 是运行在 Web 服务器或应用服务器上的程序， 它是作为来自 Web 浏览器或其他 HTTP 客户端的请求和 HTTP 服务器上的数]]></description>
+</item><item>
+    <title>Mybatis</title>
+    <link>https://hahaen.github.io/mybatis/</link>
+    <pubDate>Sun, 21 Aug 2022 19:38:30 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hahaen.github.io/mybatis/</guid>
+    <description><![CDATA[Mybatis的xml,xml这个映射文件，和mybatis内部数据结构之间的这个映射关系是什么样的？ 这个映射关系，就是我们的Mybatis]]></description>
+</item><item>
+    <title>JDBC</title>
+    <link>https://hahaen.github.io/jdbc/</link>
+    <pubDate>Sun, 21 Aug 2022 19:35:15 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hahaen.github.io/jdbc/</guid>
+    <description><![CDATA[1 jdbc:mysql://localhost:3306/wxshop JDBC连接数据库步骤 注册数据库驱动 建立数据库连接 创建一个statement 执行SQL语句 处理结果集 关闭数据库连接]]></description>
+</item><item>
     <title>Java中的锁</title>
     <link>https://hahaen.github.io/java%E4%B8%AD%E7%9A%84%E9%94%81/</link>
     <pubDate>Sun, 21 Aug 2022 17:35:34 &#43;0800</pubDate>
@@ -32,47 +74,5 @@
     <author>作者</author>
     <guid>https://hahaen.github.io/%E9%9B%86%E5%90%88/</guid>
     <description><![CDATA[集合 常见的集合有哪些？ Java集合类主要由两个根接口Collection和Map派生出来的 Collection派生出了三个子接口：List、]]></description>
-</item><item>
-    <title>Spring容器</title>
-    <link>https://hahaen.github.io/spring%E5%AE%B9%E5%99%A8/</link>
-    <pubDate>Fri, 29 Apr 2022 10:27:58 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hahaen.github.io/spring%E5%AE%B9%E5%99%A8/</guid>
-    <description><![CDATA[Spring容器]]></description>
-</item><item>
-    <title>AOP</title>
-    <link>https://hahaen.github.io/aop/</link>
-    <pubDate>Mon, 04 Apr 2022 22:14:49 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hahaen.github.io/aop/</guid>
-    <description><![CDATA[什么是AOP?]]></description>
-</item><item>
-    <title>IOC</title>
-    <link>https://hahaen.github.io/ioc/</link>
-    <pubDate>Mon, 04 Apr 2022 22:14:33 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hahaen.github.io/ioc/</guid>
-    <description><![CDATA[IOC,就是我们的控制反转，就是把我们些好的这个对象的一个控制权交给我们的spring框架，那我们的spring框架来帮我们去控制这个对象的]]></description>
-</item><item>
-    <title>SpringBoot中的5种跨域</title>
-    <link>https://hahaen.github.io/springboot%E4%B8%AD%E7%9A%845%E7%A7%8D%E8%B7%A8%E5%9F%9F/</link>
-    <pubDate>Fri, 01 Apr 2022 20:30:57 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hahaen.github.io/springboot%E4%B8%AD%E7%9A%845%E7%A7%8D%E8%B7%A8%E5%9F%9F/</guid>
-    <description><![CDATA[为什么会出现跨域问题 出于浏览器的同源策略限制。 同源策略（Sameoriginpolicy）是一种约定，它是浏览器最核心也最基本的安全功能， 如]]></description>
-</item><item>
-    <title>常用加密算法</title>
-    <link>https://hahaen.github.io/%E5%B8%B8%E7%94%A8%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/</link>
-    <pubDate>Wed, 16 Mar 2022 22:51:59 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hahaen.github.io/%E5%B8%B8%E7%94%A8%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/</guid>
-    <description><![CDATA[加密盐 加密盐也是比较常听到的一个概念，盐就是一个随机字符串用来和我们的加密串拼接后进行加密。 加盐主要是为了提供加密字符串的安全性。 假如有一个]]></description>
-</item><item>
-    <title>Shiro</title>
-    <link>https://hahaen.github.io/shiro/</link>
-    <pubDate>Wed, 16 Mar 2022 22:48:35 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hahaen.github.io/shiro/</guid>
-    <description><![CDATA[Shiro框架 是一个轻量级的安全框架，主要提供了 授权、认证、加密、会话管理这几个功能。 shiro安全数据源有哪些 数据库 静态ini文件 session Shi]]></description>
 </item></channel>
 </rss>

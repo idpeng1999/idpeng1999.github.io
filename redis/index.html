@@ -6,7 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Redis - 哈哈博客</title><meta name="Description" content="关于 哈哈博客"><meta property="og:title" content="Redis" />
-<meta property="og:description" content="对Redis 的了解？ Redis（全称：Remote Dictionary Server 远程字典服务）是一个开源的使用 ANSI C 语言编写、 支持网络、可基于内存亦可持久化的日志型、K" />
+<meta property="og:description" content="对Redis 的了解？ 基于内存也可持久化的数据库，采用单线程，避免了不必要的上下文切换。 Redis 一般都有哪些使用场景？ Redis 适合的场景 缓存：减轻 MySQL 的查询" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://hahaen.github.io/redis/" /><meta property="og:image" content="https://hahaen.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-03-16T22:05:18+08:00" />
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="https://hahaen.github.io/logo.png"/>
 
 <meta name="twitter:title" content="Redis"/>
-<meta name="twitter:description" content="对Redis 的了解？ Redis（全称：Remote Dictionary Server 远程字典服务）是一个开源的使用 ANSI C 语言编写、 支持网络、可基于内存亦可持久化的日志型、K"/>
+<meta name="twitter:description" content="对Redis 的了解？ 基于内存也可持久化的数据库，采用单线程，避免了不必要的上下文切换。 Redis 一般都有哪些使用场景？ Redis 适合的场景 缓存：减轻 MySQL 的查询"/>
 <meta name="application-name" content="哈哈博客">
 <meta name="apple-mobile-web-app-title" content="哈哈博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hahaen.github.io\/redis\/"
-        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  5169 ,
+        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  4274 ,
         "url": "https:\/\/hahaen.github.io\/redis\/","datePublished": "2022-03-16T22:05:18+08:00","dateModified": "2022-03-16T22:05:18+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/hahaen.github.io\/images\/avatar.png"},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Redis</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hahaen</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E7%9F%A5%E8%AF%86/"><i class="far fa-folder fa-fw"></i>java知识</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-16">2022-03-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5169 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 11 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-16">2022-03-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4274 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -119,37 +119,14 @@
       <ul>
         <li><a href="#对redis-的了解">对Redis 的了解？</a></li>
         <li><a href="#redis-一般都有哪些使用场景">Redis 一般都有哪些使用场景？</a></li>
-        <li><a href="#redis支持哪几种数据类型">Redis支持哪几种数据类型？</a></li>
-        <li><a href="#redis主要有哪些功能">Redis主要有哪些功能？</a></li>
-        <li><a href="#redis-为什么这么快">Redis 为什么这么快？</a></li>
-        <li><a href="#什么是缓存穿透怎么解决">什么是缓存穿透？怎么解决？</a></li>
-        <li><a href="#什么是缓存雪崩该如何解决">什么是缓存雪崩？该如何解决？</a></li>
-        <li><a href="#怎么保证缓存和数据库数据的一致性">怎么保证缓存和数据库数据的一致性？</a></li>
-        <li><a href="#redis-持久化有几种方式">Redis 持久化有几种方式？</a>
-          <ul>
-            <li><a href="#rdb">RDB</a></li>
-            <li><a href="#aof">AOF</a></li>
-            <li><a href="#rdb-和-aof-的区别">RDB 和 AOF 的区别：</a></li>
-          </ul>
-        </li>
-        <li><a href="#redis-常见性能问题和解决方案">Redis 常见性能问题和解决方案？</a></li>
-        <li><a href="#redis的过期键的删除策略">Redis的过期键的删除策略</a></li>
-        <li><a href="#redis如何做内存优化">Redis如何做内存优化？</a></li>
-        <li><a href="#redis事务">Redis事务</a>
-          <ul>
-            <li><a href="#什么是事务">什么是事务？</a></li>
-            <li><a href="#redis事务的三个阶段">Redis事务的三个阶段</a></li>
-            <li><a href="#事务管理概述">事务管理概述</a></li>
-            <li><a href="#redis事务支持隔离性吗">Redis事务支持隔离性吗</a></li>
-            <li><a href="#redis事务保证原子性吗支持回滚吗">Redis事务保证原子性吗，支持回滚吗</a></li>
-          </ul>
-        </li>
-        <li><a href="#redis是单线程的如何提高多核cpu的利用率">Redis是单线程的，如何提高多核CPU的利用率？</a></li>
-        <li><a href="#为什么要用-redis-而不用-mapguava-做缓存">为什么要用 Redis 而不用 map/guava 做缓存?</a></li>
-        <li><a href="#主从复制">主从复制</a></li>
+        <li><a href="#redis的数据类型">Redis的数据类型？</a></li>
+        <li><a href="#讲讲redis主从复制">讲讲Redis主从复制？</a></li>
         <li><a href="#由于主从延迟导致读取到过期数据怎么处理">由于主从延迟导致读取到过期数据怎么处理？</a></li>
         <li><a href="#redis主从架构数据会丢失吗为什么">Redis主从架构数据会丢失吗，为什么？</a></li>
-        <li><a href="#哨兵模式">哨兵模式</a></li>
+        <li><a href="#讲讲redis哨兵模式">讲讲Redis哨兵模式？</a></li>
+        <li><a href="#讲讲redis持久化">讲讲Redis持久化？</a></li>
+        <li><a href="#怎么保证缓存和数据库数据的一致性">怎么保证缓存和数据库数据的一致性？</a></li>
+        <li><a href="#redis是如何使用的或者说redis是如何实现分布式锁的">Redis是如何使用的？或者说Redis是如何实现分布式锁的？</a></li>
         <li><a href="#常见的分布式锁有哪些解决方案">常见的分布式锁有哪些解决方案？</a>
           <ul>
             <li><a href="#基于关系型数据库如mysql">基于关系型数据库，如MySQL</a></li>
@@ -157,13 +134,20 @@
             <li><a href="#基于zookeeper">基于zookeeper</a></li>
           </ul>
         </li>
+        <li><a href="#redis为什么这么的快">Redis为什么这么的快？</a></li>
+        <li><a href="#什么是缓存穿透怎么解决">什么是缓存穿透？怎么解决？</a></li>
+        <li><a href="#什么是缓存雪崩该如何解决">什么是缓存雪崩？该如何解决？</a></li>
+        <li><a href="#redis的过期键的删除策略">Redis的过期键的删除策略</a></li>
+        <li><a href="#为什么要用-redis-而不用-mapguava-做缓存">为什么要用 Redis 而不用 map/guava 做缓存?</a></li>
+        <li><a href="#redis-常见性能问题和解决方案">Redis 常见性能问题和解决方案？</a></li>
       </ul>
     </li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="对redis-的了解">对Redis 的了解？</h2>
-<p>Redis（全称：Remote Dictionary Server 远程字典服务）是一个开源的使用 ANSI C 语言编写、
-支持网络、可基于内存亦可持久化的日志型、Key-Value 数据库，并提供多种语言的 API。</p>
+<ul>
+<li>基于内存也可持久化的数据库，采用单线程，避免了不必要的上下文切换。</li>
+</ul>
 <h2 id="redis-一般都有哪些使用场景">Redis 一般都有哪些使用场景？</h2>
 <p><strong>Redis 适合的场景</strong></p>
 <ul>
@@ -179,177 +163,22 @@
 <li>数据量太大</li>
 <li>数据访问频率非常低的业务</li>
 </ul>
-<h2 id="redis支持哪几种数据类型">Redis支持哪几种数据类型？</h2>
+<h2 id="redis的数据类型">Redis的数据类型？</h2>
 <ol>
-<li>string：最基本的数据类型，二进制安全的字符串，最大512M。</li>
-<li>list：按照添加顺序保持顺序的字符串列表。</li>
-<li>set：无序的字符串集合，不存在重复的元素。</li>
-<li>sorted set：已排序的字符串集合。</li>
-<li>hash：key-value对的一种集合。</li>
+<li>string(字符串)</li>
+<li>list(列表)</li>
+<li>set(集合)</li>
+<li>hash(哈希)</li>
+<li>sorted set(有序集合)</li>
 </ol>
-<h2 id="redis主要有哪些功能">Redis主要有哪些功能？</h2>
+<h2 id="讲讲redis主从复制">讲讲Redis主从复制？</h2>
 <ul>
-<li>数据缓存功能</li>
-<li>分布式锁的功能</li>
-<li>支持数据持久化</li>
-<li>支持事务</li>
-<li>支持消息队列</li>
+<li>当启动一个 slave(死里无) node 的时候，它会发送一个 PSYNC 命令给 master node。 
+如果这是 slave node 初次连接到 master node，那么会触发一次全量复制。此时 master 会启动一个后台线程，开始生成一份 RDB 快照文件， 
+同时还会将从客户端 client 新收到的所有写命令缓存在内存中。RDB 文件生成完毕后， master 会将这个 RDB 发送给 slave，
+slave 会先写入本地磁盘，然后再从本地磁盘加载到内存中， 接着 master 会将内存中缓存的写命令发送到 slave，slave 也会同步这些数据。 
+slave node 如果跟 master node 有网络故障，断开了连接，会自动重连，连接之后 master node 仅会复制给 slave 部分缺少的数据。</li>
 </ul>
-<h2 id="redis-为什么这么快">Redis 为什么这么快？</h2>
-<ul>
-<li>完全基于内存，绝大部分请求是纯粹的内存操作，非常快速；</li>
-<li>数据结构简单，对数据操作也简单；</li>
-<li>采用单线程，避免了不必要的上下文切换和竞争条件，
-也不存在多进程或者多线程导致的切换而消耗 CPU，不用去考虑各种锁的问题，
-不存在加锁释放锁操作，没有因为可能出现死锁而导致的性能消耗；</li>
-<li>使用多路 I/O 复用模型，非阻塞 IO。</li>
-</ul>
-<h2 id="什么是缓存穿透怎么解决">什么是缓存穿透？怎么解决？</h2>
-<p>缓存穿透是指查询一个一定不存在的数据，由于缓存是不命中时需要从数据库查询，查不到数据则不写入缓存，
-这将导致这个不存在的数据每次请求都要到数据库去查询，造成缓存穿透。</p>
-<p>解决办法:</p>
-<ul>
-<li>缓存空对象：如果一个查询返回的数据为空（不管是数据不存在，还是系统故障），我们仍然把这个空结果进行缓存，
-但它的过期时间会很短，最长不超过五分钟。</li>
-<li>布隆过滤器：将所有可能存在的数据哈希到一个足够大的 bitmap 中，一个一定不存在的数据会被这个 bitmap 拦截掉，
-从而避免了对底层存储系统的查询压力。</li>
-</ul>
-<p>缓存空对象带来的问题:</p>
-<ul>
-<li>空值做了缓存，意味着缓存中存了更多的键，需要更多的内存空间</li>
-<li>缓存和存储的数据会有一段时间窗口的不一致，可能会对业务有一定影响</li>
-</ul>
-<h2 id="什么是缓存雪崩该如何解决">什么是缓存雪崩？该如何解决？</h2>
-<p>如果缓存集中在一段时间内失效，所有的查询都落在数据库上，造成了缓存雪崩。</p>
-<p>解决办法：</p>
-<ul>
-<li>加锁排队：在缓存失效后，通过加锁或者队列来控制读数据库写缓存的线程数量。
-比如对某个 key 只允许一个线程查询数据和写缓存，其他线程等待；</li>
-<li>数据预热：可以通过缓存 reload 机制，预先去更新缓存，再即将发生大并发访问前手动触发加载缓存不同的 key，
-设置不同的过期时间，让缓存失效的时间点尽量均匀；</li>
-<li>做二级缓存：Cache1 为原始缓存，Cache2 为拷贝缓存，Cache1 失效时，可以访问 Cache2，
-Cache1 缓存失效时间设置为短期，Cache2 设置为长期。</li>
-<li>在缓存的时候给过期时间加上一个随机值，这样就会大幅度的减少缓存在同一时间过期。</li>
-</ul>
-<h2 id="怎么保证缓存和数据库数据的一致性">怎么保证缓存和数据库数据的一致性？</h2>
-<ol>
-<li>设置了合理的键的过期时间</li>
-<li>新增、更改、删除数据库操作时同步更新 Redis，可以使用事物机制来保证数据的一致性。</li>
-</ol>
-<h2 id="redis-持久化有几种方式">Redis 持久化有几种方式？</h2>
-<p>持久化就是把内存的数据写到磁盘中去，防止服务宕机了内存数据丢失。
-Redis 提供了两种持久化方式：<code>RDB（默认）</code> 和 <code>AOF</code>。</p>
-<h3 id="rdb">RDB</h3>
-<p>RDB 是 Redis DataBase 的缩写。
-按照一定的时间周期策略把内存的数据以快照的形式保存到硬盘的二进制文件。
-即 Snapshot 快照存储，对应产生的数据文件为 dump.rdb，通过配置文件中的 save 参数来定义快照的周期。
-核心函数：rdbSave（生成 RDB 文件）和 rdbLoad（从文件加载内存）两个函数。</p>
-<h3 id="aof">AOF</h3>
-<p>AOF 是 Append-only file 的缩写。
-Redis会将每一个收到的写命令都通过 Write 函数追加到文件最后，类似于 MySQL 的 binlog。
-当 Redis 重启是会通过重新执行文件中保存的写命令来在内存中重建整个数据库的内容。
-每当执行服务器（定时）任务或者函数时，flushAppendOnlyFile 函数都会被调用， 这个函数执行以下两个工作：</p>
-<ul>
-<li>WRITE：根据条件，将 aof_buf 中的缓存写入到 AOF 文件；</li>
-<li>SAVE：根据条件，调用 fsync 或 fdatasync 函数，将 AOF 文件保存到磁盘中。</li>
-</ul>
-<h3 id="rdb-和-aof-的区别">RDB 和 AOF 的区别：</h3>
-<ul>
-<li>AOF 文件比 RDB 更新频率高，优先使用 AOF 还原数据；</li>
-<li>AOF比 RDB 更安全也更大；</li>
-<li>RDB 性能比 AOF 好；</li>
-<li>如果两个都配了优先加载 AOF。</li>
-</ul>
-<h2 id="redis-常见性能问题和解决方案">Redis 常见性能问题和解决方案？</h2>
-<ul>
-<li>Master 最好不要做任何持久化工作，</li>
-<li>为了主从复制的速度和连接的稳定性， Master 和 Slave 最好在同一个局域网内；</li>
-<li>主从复制不要用图状结构，用单向链表结构更为稳定，即：Master &lt;- Slave1 &lt;- Slave2 &lt;- Slave3…</li>
-</ul>
-<h2 id="redis的过期键的删除策略">Redis的过期键的删除策略</h2>
-<p>Redis是key-value数据库，我们可以设置Redis中缓存的key的过期时间。
-Redis的过期策略就是指当Redis中缓存的key过期了，Redis如何处理。</p>
-<p>Redis中同时使用了惰性过期和定期过期两种过期策略。</p>
-<p>过期策略通常有以下三种：</p>
-<ul>
-<li>定时过期：每个设置过期时间的key都需要创建一个定时器，到过期时间就会立即清除。</li>
-<li>惰性过期：只有当访问一个key时，才会判断该key是否已过期，过期则清除。</li>
-<li>定期清楚：每隔一定的时间，会扫描一定数量的数据库的expires字典中一定数量的key，并清除其中已过期的key。</li>
-</ul>
-<h2 id="redis如何做内存优化">Redis如何做内存优化？</h2>
-<ul>
-<li>控制key的数量</li>
-<li>缩减键值对象,降低Redis内存使用最直接的方式就是缩减键（key）和值（value）的长度</li>
-<li>编码优化</li>
-</ul>
-<h2 id="redis事务">Redis事务</h2>
-<h3 id="什么是事务">什么是事务？</h3>
-<p>事务是一个单独的隔离操作：事务中的所有命令都会序列化、按顺序地执行。
-事务在执行的过程中，不会被其他客户端发送来的命令请求所打断。</p>
-<p>事务是一个原子操作：事务中的命令要么全部被执行，要么全部都不执行。</p>
-<h3 id="redis事务的三个阶段">Redis事务的三个阶段</h3>
-<ul>
-<li>事务开始 MULTI</li>
-<li>命令入队</li>
-<li>事务执行 EXEC</li>
-</ul>
-<h3 id="事务管理概述">事务管理概述</h3>
-<ul>
-<li>原子性（Atomicity）</li>
-<li>一致性（Consistency）</li>
-<li>隔离性（Isolation）</li>
-<li>持久性（Durability）</li>
-</ul>
-<h3 id="redis事务支持隔离性吗">Redis事务支持隔离性吗</h3>
-<p>Redis 是单进程程序，并且它保证在执行事务时，不会对事务进行中断，事务可以运行直到执行完所有事务队列中的命令为止。
-因此，Redis 的事务是总是带有隔离性的。</p>
-<h3 id="redis事务保证原子性吗支持回滚吗">Redis事务保证原子性吗，支持回滚吗</h3>
-<p>Redis中，单条命令是原子性执行的，但事务不保证原子性，且没有回滚。事务中任意命令执行失败，其余的命令仍会被执行。</p>
-<h2 id="redis是单线程的如何提高多核cpu的利用率">Redis是单线程的，如何提高多核CPU的利用率？</h2>
-<p>可以在同一个服务器部署多个Redis的实例，并把他们当作不同的服务器来使用，
-在某些时候，无论如何一个服务器是不够的， 所以，如果你想使用多个CPU，你可以考虑一下分片（shard）。</p>
-<h2 id="为什么要用-redis-而不用-mapguava-做缓存">为什么要用 Redis 而不用 map/guava 做缓存?</h2>
-<ul>
-<li>缓存分为本地缓存和分布式缓存。以java为例，使用自带的map或者guava实现的是本地缓存，
-最主要的特点是轻量以及快速，生命周期随着jvm的销毁而结束，并且在多实例的情况下，
-每个实例都需要各自保存一份缓存，缓存不具有一致性。</li>
-<li>使用Redis或memcached之类的称为分布式缓存，在多实例的情况下，各实例共用一份缓存数据，缓存具有一致性。
-缺点是需要保持Redis或memcached服务的高可用，整个程序架构上较为复杂。</li>
-</ul>
-<p>对比:</p>
-<ul>
-<li>Redis 可以用几十 G 内存来做缓存，Map 不行，一般 JVM 也就分几个 G 数据就够大了；</li>
-<li>Redis 的缓存可以持久化，Map 是内存对象，程序一重启数据就没了；</li>
-<li>Redis 可以实现分布式的缓存，Map 只能存在创建它的程序里；</li>
-<li>Redis 可以处理每秒百万级的并发，是专业的缓存服务，Map 只是一个普通的对象；</li>
-<li>Redis 缓存有过期机制，Map 本身无此功能；Redis 有丰富的 API，Map 就简单太多了；</li>
-<li>Redis可单独部署，多个项目之间可以共享，本地内存无法共享；</li>
-<li>Redis有专门的管理工具可以查看缓存数据。</li>
-</ul>
-<h2 id="主从复制">主从复制</h2>
-<ol>
-<li>主从架构的核心原理</li>
-</ol>
-<ul>
-<li>当启动一个slave(从节点) node的时候，它会发送一个PSYNC命令给master(主节点) node,</li>
-<li>开始full resynchronization(完全重新同步)的时候，master会启动一个后台线程，开始生成一份RDB快照文件，
-同时还会将从客户端收到的所有写命令缓存在内存中。</li>
-<li>RDB文件生成完毕之后，master会将这个RDB发送给slave，slave会先写入本地磁盘，然后再从本地磁盘加载到内存中。</li>
-<li>然后master会将内存中缓存的写命令发送给slave，slave也会同步这些数据。</li>
-</ul>
-<ol start="2">
-<li>主从复制的断点续传</li>
-</ol>
-<p>如果主从复制过程中，网络连接断掉了，那么可以接着上次复制的地方，继续复制下去，而不是从头开始复制一份</p>
-<ol start="3">
-<li>无磁盘化复制</li>
-</ol>
-<p>master在内存中直接创建RDB，然后发送给slave，不会在自己本地落地磁盘了</p>
-<ol start="4">
-<li>过期key处理</li>
-</ol>
-<p>slave不会过期key，只会等待master过期key。
-如果master过期了一个key，或者通过LRU淘汰了一个key，那么会模拟一条del命令发送给slave。</p>
 <h2 id="由于主从延迟导致读取到过期数据怎么处理">由于主从延迟导致读取到过期数据怎么处理？</h2>
 <ol>
 <li>
@@ -370,22 +199,42 @@ Redis的过期策略就是指当Redis中缓存的key过期了，Redis如何处�
 <li>脑裂导致的数据丢失: 某个master所在机器突然脱离了正常的网络，跟其他slave机器不能连接，但是实际上master还运行着，此时哨兵可能就会认为master宕机了，
 然后开启选举，将其他slave切换成了master。这个时候，集群里就会有两个master，也就是所谓的脑裂。</li>
 </ol>
-<h2 id="哨兵模式">哨兵模式</h2>
+<h2 id="讲讲redis哨兵模式">讲讲Redis哨兵模式？</h2>
 <ul>
-<li>每个哨兵(Sentinel)以每秒钟一次的频率向它所知的Master，Slave以及其他 Sentinel 实例发送一个 PING 命令。</li>
-<li>如果一个实例（instance）距离最后一次有效回复 PING 命令的时间超过 down-after-milliseconds 选项所指定的值，
-则这个实例会被当前 Sentinel 标记为主观下线。</li>
-<li>如果一个Master被标记为主观下线，则正在监视这个Master的所有 Sentinel 
-要以每秒一次的频率确认Master的确进入了主观下线状态。</li>
-<li>当有足够数量的 Sentinel（大于等于配置文件指定的值）在指定的时间范围内确认Master的确进入了主观下线状态，
-则Master会被标记为客观下线 。</li>
-<li>当Master被 Sentinel 标记为客观下线时，Sentinel 向下线的 Master 的所有 Slave 
-发送 INFO 命令的频率会从 10 秒一次改为每秒一次 （在一般情况下， 
-每个 Sentinel 会以每 10 秒一次的频率向它已知的所有Master，Slave发送 INFO 命令 ）。</li>
-<li>若没有足够数量的 Sentinel 同意 Master 已经下线， Master 的客观下线状态就会变成主观下线。
-若 Master 重新向 Sentinel 的 PING 命令返回有效回复， Master 的主观下线状态就会被移除。</li>
-<li>sentinel节点会与其他sentinel节点进行“沟通”，投票选举一个sentinel节点进行故障处理，
-在从节点中选取一个主节点，其他从节点挂载到新的主节点上自动复制新主节点的数据。</li>
+<li>哨兵主要是用于实现 redis 集群的高可用，哨兵是 redis 集群机构中非常重要的一个组件，他有</li>
+</ul>
+<ol>
+<li>集群监控：负责监控 redis master 和 slave 进程是否正常工作。</li>
+<li>消息通知：如果某个 redis 实例有故障，那么哨兵负责发送消息作为报警通知给管理员。</li>
+<li>故障转移：如果 master node 挂掉了，会自动转移到 slave node 上。</li>
+<li>配置中心：如果故障转移发生了，通知 client 客户端新的 master 地址。</li>
+</ol>
+<h2 id="讲讲redis持久化">讲讲Redis持久化？</h2>
+<ul>
+<li>持久化有RDB和AOF两种机制</li>
+<li>RDB:是Redis的默认持久化，按照一定的时间将内存的数据以快照的形式保存到硬盘中，对应产生的数据文件为 dump.rdb。
+通过配置文件中的 save 参数来定义快照的周期。</li>
+<li>AOF:是将 Redis 执行的每次写命令记录到单独的日志文件中，当重启 Redis 会重新将持久化的日志中文件恢复数据。</li>
+</ul>
+<ol>
+<li>AOF 文件比 RDB 更新频率高，优先使用 AOF 还原数据。</li>
+<li>AOF 比 RDB 更安全也更大</li>
+<li>RDB 性能比 AOF 好</li>
+<li>如果两个都配了优先加载 AOF</li>
+</ol>
+<h2 id="怎么保证缓存和数据库数据的一致性">怎么保证缓存和数据库数据的一致性？</h2>
+<ol>
+<li>设置了合理的键的过期时间</li>
+<li>新增、更改、删除数据库操作时同步更新 Redis，可以使用事物机制来保证数据的一致性。</li>
+</ol>
+<h2 id="redis是如何使用的或者说redis是如何实现分布式锁的">Redis是如何使用的？或者说Redis是如何实现分布式锁的？</h2>
+<ul>
+<li>就是我们要用这个分布式锁的话，就是我们要满足几个条件，首先我们要保证他们要有一个互刺性，
+在任意时刻呢，只能有一个客户端，他是只能持有这个锁，然后我们也要避免说是不能发生死锁，
+就是即使我们只有一个客户端，有他在持有锁的期间内啊，然后崩溃了然后没有主动解锁的话，
+也要保证后续的这些客户端呢，他们也是能够持续可以去加锁的，然后我们还要保证的是说他还有一个容错性，
+就是我们这个绝大部分的一个Redis，要保证他这个节点正常运行嘛，然后我们客户端就可以加锁跟解锁，那我们加锁和解锁呢，
+必须是一个同一个客服端，这样的话客服端自己呢，他是不能把别人的锁给解了啊，差不多就是这样。</li>
 </ul>
 <h2 id="常见的分布式锁有哪些解决方案">常见的分布式锁有哪些解决方案？</h2>
 <h3 id="基于关系型数据库如mysql">基于关系型数据库，如MySQL</h3>
@@ -418,6 +267,79 @@ Redis的过期策略就是指当Redis中缓存的key过期了，Redis如何处�
 <p>缺点：</p>
 <ul>
 <li>在高请求高并发下，系统疯狂的加锁释放锁，最后 zookeeper 承受不住这么大的压力可能会存在宕机的风险。</li>
+</ul>
+<h2 id="redis为什么这么的快">Redis为什么这么的快？</h2>
+<ul>
+<li>因为绝大部分Redis请求，都是我们的内存操作，所以他会非常的快，然后因为我们Redis，
+他是基于一个内存的一个数据库，那可以跟我们这种磁盘数据库，可以去做一个对比，
+比如说我们的MySQL数据库，想我们的MySQL数据库呢，他就是一个关系型数据库，他主要是用于存放我们一个持久化的一个数据，
+然后把我们的数据呢，存放在这个硬盘中，然后读取速度就会比较慢，因为每次请求这种，MySQL数据库的时候，
+他其实是存在一个I/O操作，如果我们反复啊，频繁啊，去访问这种数据库的话，会在数据库过程中会花费一个时间嘛，
+而且我们反复的访问这种数据库的话，会导致我们这个，数据库的一个负载过高，那我们的Redis是基于内存的嘛，
+所以他这种内存型的这种缓存数据库，就是用于存储我们这种使用频繁的数据啊，这样可以减少我们去访问，这种数据库的一种次数，
+提升我们的一个运行效率，然后因为他是存在采用这个单线程的嘛，然后就避免了不必要的上下文切换，还有我们的一些竞争条件，
+还有个特点，Redis这边是非阻塞的IO，就是我们的IO的一个多路互用，就这些。</li>
+</ul>
+<h2 id="什么是缓存穿透怎么解决">什么是缓存穿透？怎么解决？</h2>
+<p>缓存穿透是指查询一个一定不存在的数据，由于缓存是不命中时需要从数据库查询，查不到数据则不写入缓存，
+这将导致这个不存在的数据每次请求都要到数据库去查询，造成缓存穿透。</p>
+<p>解决办法:</p>
+<ul>
+<li>缓存空对象：如果一个查询返回的数据为空（不管是数据不存在，还是系统故障），我们仍然把这个空结果进行缓存，
+但它的过期时间会很短，最长不超过五分钟。</li>
+<li>布隆过滤器：将所有可能存在的数据哈希到一个足够大的 bitmap 中，一个一定不存在的数据会被这个 bitmap 拦截掉，
+从而避免了对底层存储系统的查询压力。</li>
+</ul>
+<p>缓存空对象带来的问题:</p>
+<ul>
+<li>空值做了缓存，意味着缓存中存了更多的键，需要更多的内存空间</li>
+<li>缓存和存储的数据会有一段时间窗口的不一致，可能会对业务有一定影响</li>
+</ul>
+<h2 id="什么是缓存雪崩该如何解决">什么是缓存雪崩？该如何解决？</h2>
+<p>如果缓存集中在一段时间内失效，所有的查询都落在数据库上，造成了缓存雪崩。</p>
+<p>解决办法：</p>
+<ul>
+<li>加锁排队：在缓存失效后，通过加锁或者队列来控制读数据库写缓存的线程数量。
+比如对某个 key 只允许一个线程查询数据和写缓存，其他线程等待；</li>
+<li>数据预热：可以通过缓存 reload 机制，预先去更新缓存，再即将发生大并发访问前手动触发加载缓存不同的 key，
+设置不同的过期时间，让缓存失效的时间点尽量均匀；</li>
+<li>做二级缓存：Cache1 为原始缓存，Cache2 为拷贝缓存，Cache1 失效时，可以访问 Cache2，
+Cache1 缓存失效时间设置为短期，Cache2 设置为长期。</li>
+<li>在缓存的时候给过期时间加上一个随机值，这样就会大幅度的减少缓存在同一时间过期。</li>
+</ul>
+<h2 id="redis的过期键的删除策略">Redis的过期键的删除策略</h2>
+<p>Redis是key-value数据库，我们可以设置Redis中缓存的key的过期时间。
+Redis的过期策略就是指当Redis中缓存的key过期了，Redis如何处理。</p>
+<p>Redis中同时使用了惰性过期和定期过期两种过期策略。</p>
+<p>过期策略通常有以下三种：</p>
+<ul>
+<li>定时过期：每个设置过期时间的key都需要创建一个定时器，到过期时间就会立即清除。</li>
+<li>惰性过期：只有当访问一个key时，才会判断该key是否已过期，过期则清除。</li>
+<li>定期清楚：每隔一定的时间，会扫描一定数量的数据库的expires字典中一定数量的key，并清除其中已过期的key。</li>
+</ul>
+<h2 id="为什么要用-redis-而不用-mapguava-做缓存">为什么要用 Redis 而不用 map/guava 做缓存?</h2>
+<ul>
+<li>缓存分为本地缓存和分布式缓存。以java为例，使用自带的map或者guava实现的是本地缓存，
+最主要的特点是轻量以及快速，生命周期随着jvm的销毁而结束，并且在多实例的情况下，
+每个实例都需要各自保存一份缓存，缓存不具有一致性。</li>
+<li>使用Redis或memcached之类的称为分布式缓存，在多实例的情况下，各实例共用一份缓存数据，缓存具有一致性。
+缺点是需要保持Redis或memcached服务的高可用，整个程序架构上较为复杂。</li>
+</ul>
+<p>对比:</p>
+<ul>
+<li>Redis 可以用几十 G 内存来做缓存，Map 不行，一般 JVM 也就分几个 G 数据就够大了；</li>
+<li>Redis 的缓存可以持久化，Map 是内存对象，程序一重启数据就没了；</li>
+<li>Redis 可以实现分布式的缓存，Map 只能存在创建它的程序里；</li>
+<li>Redis 可以处理每秒百万级的并发，是专业的缓存服务，Map 只是一个普通的对象；</li>
+<li>Redis 缓存有过期机制，Map 本身无此功能；Redis 有丰富的 API，Map 就简单太多了；</li>
+<li>Redis可单独部署，多个项目之间可以共享，本地内存无法共享；</li>
+<li>Redis有专门的管理工具可以查看缓存数据。</li>
+</ul>
+<h2 id="redis-常见性能问题和解决方案">Redis 常见性能问题和解决方案？</h2>
+<ul>
+<li>Master 最好不要做任何持久化工作，</li>
+<li>为了主从复制的速度和连接的稳定性， Master 和 Slave 最好在同一个局域网内；</li>
+<li>主从复制不要用图状结构，用单向链表结构更为稳定，即：Master &lt;- Slave1 &lt;- Slave2 &lt;- Slave3…</li>
 </ul>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">

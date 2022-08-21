@@ -24,7 +24,7 @@
     <pubDate>Mon, 21 Mar 2022 13:35:30 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hahaen.github.io/sql%E4%BC%98%E5%8C%96/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[MYSQL优化经验 比较浅的层面上。 首先我们对这个查询去进行一些优化，要避免这些全表的一个扫描嘛，首先就是考虑到我们的where还有我们的or]]></description>
 </item><item>
     <title>Sql注入</title>
     <link>https://hahaen.github.io/sql%E6%B3%A8%E5%85%A5/</link>

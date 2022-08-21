@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hahaen.github.io\/jvm%E7%9F%A5%E8%AF%86\/"
-        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  754 ,
+        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  1200 ,
         "url": "https:\/\/hahaen.github.io\/jvm%E7%9F%A5%E8%AF%86\/","datePublished": "2022-08-21T17:25:09+08:00","dateModified": "2022-08-21T17:25:09+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/hahaen.github.io\/images\/avatar.png"},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">JVM知识</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hahaen</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/jvm/"><i class="far fa-folder fa-fw"></i>JVM</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-21">2022-08-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 754 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-21">2022-08-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1200 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -119,6 +119,7 @@
       <ul>
         <li><a href="#jvm的内存模型">JVM的内存模型</a></li>
         <li><a href="#jvm加载class文件的原理机制">JVM加载class文件的原理机制</a></li>
+        <li><a href="#java回收机制讲讲">java回收机制讲讲？</a></li>
       </ul>
     </li>
   </ul>
@@ -145,6 +146,17 @@
 所以类的加载，是把我们类的class文件啊，中的一个数据呢，持续的把它读入到我们的内存中，
 通常就是我们要创建一个节点嘛，数组嘛，然后去就是他的一个底层是创建一个节点数组，然后把他读入到我们的class文件中，
 然后产生跟我们这个所加载的类相对应的一个class对象，差不多这样。</li>
+</ul>
+<h2 id="java回收机制讲讲">java回收机制讲讲？</h2>
+<ul>
+<li>使用Java的时候，会创建很多对象，但我们没手动将这些对象进行清除，如果用C/C++语言的时候，用完是需要自己释放掉，</li>
+<li>Java不用我们自己手动释放&quot;垃圾&quot;是因为JVM帮我们做了自动回收垃圾，</li>
+<li>我个人对垃圾的定义：只要对象不再被使用了，那我们就认为该对象就是垃圾，对象所占用的空间就可以被回收。</li>
+<li>判断对象不再被使用用的是 引用计数法 和 可达性分析法。</li>
+<li>引用计数法:当对象被引用则+1，但对象引用失败则-1。当计数器为0时，说明对象不再被引用，可以被可回收,缺点是如果循环依赖，比如A依赖B,B依赖A,就无法判断是否被回收。</li>
+<li>可达性分析法:从「GC Roots」开始向下搜索，当对象到「GC Roots」都没有任何引用相连时，说明对象是不可用的，可以被回收。</li>
+<li>JVM用的就是「可达性分析算法」来判断对象是否垃圾。</li>
+<li>垃圾回收的第一步就是「标记」，标记哪些没有被「GC Roots」引用的对象，标记完之后，我们就可以选择直接「清除」，只要不被「GC Roots」关联的，都可以干掉。</li>
 </ul>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">

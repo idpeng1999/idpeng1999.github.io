@@ -6,7 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>SpringBoot - 哈哈博客</title><meta name="Description" content="关于 哈哈博客"><meta property="og:title" content="SpringBoot" />
-<meta property="og:description" content="什么是 SpringBoot？ Spring Boot 是 Spring 开源组织下的子项目， 是 Spring 组件一站式解决方案，主要是简化了使用 Spring 的难度， 简省了繁重的配置，提供了各种启动器" />
+<meta property="og:description" content="SpringBoot与SpringCloud的区别 SpringBoot是快速开发的Spring框架 SpringCloud是完整的微服务框架，" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://hahaen.github.io/springboot/" /><meta property="og:image" content="https://hahaen.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-03-12T19:07:56+08:00" />
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="https://hahaen.github.io/logo.png"/>
 
 <meta name="twitter:title" content="SpringBoot"/>
-<meta name="twitter:description" content="什么是 SpringBoot？ Spring Boot 是 Spring 开源组织下的子项目， 是 Spring 组件一站式解决方案，主要是简化了使用 Spring 的难度， 简省了繁重的配置，提供了各种启动器"/>
+<meta name="twitter:description" content="SpringBoot与SpringCloud的区别 SpringBoot是快速开发的Spring框架 SpringCloud是完整的微服务框架，"/>
 <meta name="application-name" content="哈哈博客">
 <meta name="apple-mobile-web-app-title" content="哈哈博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hahaen.github.io\/springboot\/"
-        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  6167 ,
+        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  6206 ,
         "url": "https:\/\/hahaen.github.io\/springboot\/","datePublished": "2022-03-12T19:07:56+08:00","dateModified": "2022-03-12T19:07:56+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/hahaen.github.io\/images\/avatar.png"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">SpringBoot</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hahaen</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E7%9F%A5%E8%AF%86/"><i class="far fa-folder fa-fw"></i>java知识</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-12">2022-03-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 6167 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-12">2022-03-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 6206 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 13 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -117,11 +117,10 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#什么是-springboot">什么是 SpringBoot？</a></li>
-        <li><a href="#为什么要用springboot">为什么要用SpringBoot?</a></li>
         <li><a href="#springboot与springcloud的区别">SpringBoot与SpringCloud的区别</a></li>
         <li><a href="#springboot有哪些优点">SpringBoot有哪些优点？</a></li>
         <li><a href="#springboot-的核心注解是哪个它主要由哪几个注解组成的">SpringBoot 的核心注解是哪个？它主要由哪几个注解组成的？</a></li>
+        <li><a href="#springboot常用注解">SpringBoot常用注解？</a></li>
         <li><a href="#springboot-starter的工作原理">SpringBoot Starter的工作原理</a></li>
         <li><a href="#spring-boot-2x-有什么新特性与-1x-有什么区别">Spring Boot 2.X 有什么新特性？与 1.X 有什么区别？</a></li>
         <li><a href="#springboot支持什么前端模板">SpringBoot支持什么前端模板?</a></li>
@@ -164,17 +163,7 @@
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="什么是-springboot">什么是 SpringBoot？</h2>
-<ul>
-<li>Spring Boot 是 Spring 开源组织下的子项目，
-是 Spring 组件一站式解决方案，主要是简化了使用 Spring 的难度，
-简省了繁重的配置，提供了各种启动器，使开发者能快速上手。</li>
-</ul>
-<h2 id="为什么要用springboot">为什么要用SpringBoot?</h2>
-<ul>
-<li>快速开发，快速整合，配置简化、内嵌服务容器</li>
-</ul>
-<h2 id="springboot与springcloud的区别">SpringBoot与SpringCloud的区别</h2>
+            </div><div class="content" id="content"><h2 id="springboot与springcloud的区别">SpringBoot与SpringCloud的区别</h2>
 <ul>
 <li>SpringBoot是快速开发的Spring框架</li>
 <li>SpringCloud是完整的微服务框架，SpringCloud依赖于SpringBoot。</li>
@@ -198,6 +187,15 @@
 <code>@SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })</code>。</li>
 <li><code>@ComponentScan</code>：Spring组件扫描。</li>
 </ol>
+<h2 id="springboot常用注解">SpringBoot常用注解？</h2>
+<ul>
+<li>@SpringBootApplication 启动类</li>
+<li>@RestController 控制器,@Controller和@ResponseBody的合集</li>
+<li>@RequestMapping(锐快四特) 负责URL的映射</li>
+<li>@PathVariable(怕死锐了要不) 获取URL上的参数</li>
+<li>@Service 修饰service层</li>
+<li>@Inject(印姐可特)  @AutoWired(奥头为要) 自动导入依赖</li>
+</ul>
 <h2 id="springboot-starter的工作原理">SpringBoot Starter的工作原理</h2>
 <ul>
 <li>在sprinBoot启动时由<code>@SpringBootApplication</code>注解会自动去maven中读取每个starter中的<code>spring.factories</code>文件,

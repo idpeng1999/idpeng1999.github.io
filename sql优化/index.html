@@ -6,7 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>SQL优化 - 哈哈博客</title><meta name="Description" content="关于 哈哈博客"><meta property="og:title" content="SQL优化" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="MYSQL优化经验 比较浅的层面上。 首先我们对这个查询去进行一些优化，要避免这些全表的一个扫描嘛，首先就是考虑到我们的where还有我们的or" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://hahaen.github.io/sql%E4%BC%98%E5%8C%96/" /><meta property="og:image" content="https://hahaen.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-03-21T13:35:30+08:00" />
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="https://hahaen.github.io/logo.png"/>
 
 <meta name="twitter:title" content="SQL优化"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="MYSQL优化经验 比较浅的层面上。 首先我们对这个查询去进行一些优化，要避免这些全表的一个扫描嘛，首先就是考虑到我们的where还有我们的or"/>
 <meta name="application-name" content="哈哈博客">
 <meta name="apple-mobile-web-app-title" content="哈哈博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hahaen.github.io\/sql%E4%BC%98%E5%8C%96\/"
-        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  0 ,
+        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  854 ,
         "url": "https:\/\/hahaen.github.io\/sql%E4%BC%98%E5%8C%96\/","datePublished": "2022-03-21T13:35:30+08:00","dateModified": "2022-03-21T13:35:30+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/hahaen.github.io\/images\/avatar.png"},"author": {
@@ -106,15 +106,49 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">SQL优化</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hahaen</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/mysql%E7%9F%A5%E8%AF%86/"><i class="far fa-folder fa-fw"></i>MySQL知识</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-21">2022-03-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 0 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 0 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-21">2022-03-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 854 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"><p><img
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#mysql优化经验">MYSQL优化经验</a></li>
+        <li><a href="#如何判断sql查询中是否使用了索引">如何判断SQL查询中是否使用了索引？</a></li>
+        <li><a href="#图">图</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="mysql优化经验">MYSQL优化经验</h2>
+<ul>
+<li>比较浅的层面上。</li>
+<li>首先我们对这个查询去进行一些优化，要避免这些全表的一个扫描嘛，首先就是考虑到我们的where还有我们的order by ,
+这些设计的这些列上面去建立这个索引，就是我们要去避免在where子句中呢，去使用到这些!=或者说&gt;、&lt;这些操作符啊，否则我们的引擎呢，将会放弃使用我们的索引呢，也就是最左原则，
+然后去进行我们的一个全表扫描，然后也要尽量的使用我们的一些，数字型的一些字段，如果我们只是含这些数值类型的字段的话，
+尽量不要设置为这个字符型，这样会降低我们的一个查询，和我们的性能的一个，我们连接的一个性能嘛，
+然后也会增加我们的一个存储开销，这个是因为引擎在我们的处理查询和连接的，
+这会呢会逐个去比较我们的一个字符串中一个，每个字符嘛，然后对我们的这个数字型的话呢，就是只需要比较一次就够了，
+然后我在学习的时候呢，我们老师有建议我不要使用到我们的select * from ,用这个具体的这个字列，去代表我们的*，
+然后是不要去返回我们用不到的这些任何字段，然后避免我们这个频繁的创建和删除我们的一个临时表，以使用来减少我们这个系统表资源的这个消耗。</li>
+<li>也要尽量少用我们的这个in关键字，可以通过我们的left join呢，
+或者其他关键字去取代，然后像我们的数据库服务器集群嘛，
+然后我们读写分离啊，如果对数据不经常更新，然后查询方式比较固定的这些情况下呢，可以修改我们的数据库的这个配置文件，
+然后去实现我们的一个查询缓存，JVM也有做一些简单的垃圾的一个收集器，还有我们禁用类验证的一些调优，
+这些都是有做过一些性能还有压力测试的一些功能的一些工具，然后去测试分析过。</li>
+</ul>
+<h2 id="如何判断sql查询中是否使用了索引">如何判断SQL查询中是否使用了索引？</h2>
+<p>首先查找到SQL的瓶颈，MySQL使用explain，查看里面的type(数据访问)，ALL全表、index索引、range范围</p>
+<p><strong>优化：</strong></p>
+<ul>
+<li>例如一个业务场景特别慢，先执行这个慢SQL，使用explain,分析常见场景，在where里面有针对性的为他创建索引，使查询都走这个索引，然后具体分析。</li>
+</ul>
+<h2 id="图">图</h2>
+<p><img
         class="lazyload"
         src="/svg/loading.min.svg"
         data-src="/img/SQL%e4%bc%98%e5%8c%96/1.png"

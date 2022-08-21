@@ -4,7 +4,14 @@
         <link>https://hahaen.github.io/categories/%E5%89%8D%E7%AB%AF/</link>
         <description>前端 - 分类 - 哈哈博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>630606938@qq.com (hahaen)</managingEditor>
-            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 29 Oct 2021 20:25:40 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/%E5%89%8D%E7%AB%AF/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 21 Aug 2022 20:28:15 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/%E5%89%8D%E7%AB%AF/" rel="self" type="application/rss+xml" /><item>
+    <title>Ajax</title>
+    <link>https://hahaen.github.io/ajax/</link>
+    <pubDate>Sun, 21 Aug 2022 20:28:15 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hahaen.github.io/ajax/</guid>
+    <description><![CDATA[Ajax原理 通过XmlHttpRequest对象来向服务器发送异步请求，从服务器获得数据，然后用JS来操作DOM而更新页面。]]></description>
+</item><item>
     <title>浅析URL</title>
     <link>https://hahaen.github.io/%E6%B5%85%E6%9E%90url/</link>
     <pubDate>Fri, 29 Oct 2021 20:25:40 &#43;0800</pubDate>

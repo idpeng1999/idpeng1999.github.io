@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Mybatis - 哈哈博客</title><meta name="Description" content="关于 哈哈博客"><meta property="og:title" content="Mybatis" />
+<meta property="og:description" content="Mybatis的xml,xml这个映射文件，和mybatis内部数据结构之间的这个映射关系是什么样的？ 这个映射关系，就是我们的Mybatis" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hahaen.github.io/mybatis/" /><meta property="og:image" content="https://hahaen.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-21T19:38:30+08:00" />
+<meta property="article:modified_time" content="2022-08-21T19:38:30+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hahaen.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Mybatis"/>
+<meta name="twitter:description" content="Mybatis的xml,xml这个映射文件，和mybatis内部数据结构之间的这个映射关系是什么样的？ 这个映射关系，就是我们的Mybatis"/>
+<meta name="application-name" content="哈哈博客">
+<meta name="apple-mobile-web-app-title" content="哈哈博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hahaen.github.io/mybatis/" /><link rel="prev" href="https://hahaen.github.io/jdbc/" /><link rel="next" href="https://hahaen.github.io/nginx/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Mybatis",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hahaen.github.io\/mybatis\/"
+        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  1544 ,
+        "url": "https:\/\/hahaen.github.io\/mybatis\/","datePublished": "2022-08-21T19:38:30+08:00","dateModified": "2022-08-21T19:38:30+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/hahaen.github.io\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "hahaen"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="哈哈博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>哈哈博客</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="https://github.com/hahaen" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="请输入关键词..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="哈哈博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>哈哈博客</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="请输入关键词..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="https://github.com/hahaen" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Mybatis</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hahaen</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E7%9F%A5%E8%AF%86/"><i class="far fa-folder fa-fw"></i>java知识</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-21">2022-08-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1544 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#mybatis的xmlxml这个映射文件和mybatis内部数据结构之间的这个映射关系是什么样的">Mybatis的xml,xml这个映射文件，和mybatis内部数据结构之间的这个映射关系是什么样的？</a></li>
+        <li><a href="#mybatis是如何进行分页的分页插件的原理是什么">Mybatis是如何进行分页的？分页插件的原理是什么？</a></li>
+        <li><a href="#mybatis和mybatis-plus有啥区别">mybatis和mybatis plus有啥区别？</a></li>
+        <li><a href="#mybatis是怎么和数据库交互的">mybatis是怎么和数据库交互的？</a></li>
+        <li><a href="#和的区别是什么">#{}和${}的区别是什么？</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="mybatis的xmlxml这个映射文件和mybatis内部数据结构之间的这个映射关系是什么样的">Mybatis的xml,xml这个映射文件，和mybatis内部数据结构之间的这个映射关系是什么样的？</h2>
+<ul>
+<li>这个映射关系，就是我们的Mybatis,他就是把我们的这个所有的xml的一个配置信息都封装到一个重量级对象里面，
+这个重量级对象就是封装到我们的Configguration的内部，然后在我们的这个xml映射文件中呢，
+我们的parameterMap呢，这个标签会被我们解析成我们的parameterMap对象，然后他这里的每一个子元素，
+都会被我们解析，解析成我们的ParameterMapping对象，然后我们返回的结果级嘛，我们的<ResultMap>嘛，
+这个标签，会被我们解析成一个ResultMap一个对象，他这里面的每个子元素啊，都会被我们解析成ResultMapping一个对象，
+所以他这些标签的话，就是每一个我们的增删改查嘛，我们的select、insert、update、delete这些标签呢，
+都会被我们解析成我们的MappedStatement这么一个对象，然后我们标签内的这些sql,会被我们解析成BoundSql 的Sql对象。</li>
+</ul>
+<h2 id="mybatis是如何进行分页的分页插件的原理是什么">Mybatis是如何进行分页的？分页插件的原理是什么？</h2>
+<ul>
+<li>
+<p>这个是比较常用的一个功能，就是我们的Mybatis是使用我们的这个RowBounds对象去进行一个分页的，
+他主要是针对我们的ResultSet一个结果级，去执行的一个内存分页，所以他这个其实不是一个物理分页，
+这个可以在我们sql里面去直接写带有这个物理分页的参数，然后去完成我们的物理分页功能，也可以呢使用我们的一个分页插件，
+这个也是比较常用的，来去实现我们的一个物理分页，那就是我们在用这个分页插件，他的基本原理，
+其实就是使用我们Mybatis里面提供给我们的这些插件啊这些接口，然后去实现我们的一个自定义插件，
+然后我们在这个插件的拦截方法内，去拦截我们这个待执行的sql语句嘛，那我们就重写sql语句，
+然后根据像我们的一个dalect方言，也可以去添加这个对应的这些物理分页语句，和我们的物理分页的一些参数，这些原理就这样。</p>
+<p><code>pageHelper</code></p>
+</li>
+</ul>
+<h2 id="mybatis和mybatis-plus有啥区别">mybatis和mybatis plus有啥区别？</h2>
+<ul>
+<li>MyBatis前身是iBatis，是java的持久层框架，可以使用XML或者注解进行映射和配置，
+通过将参数映射到配置的SQL最终解析为执行的SQL语句，查询后将SQl结果集映射成java对象返回。</li>
+<li>MyBatis-plus相当于是MyBatis的增强工具，例如内置 Sql 注入剥离器，预防了Sql注入攻击，
+也支持代码生成，内置了分页插件、性能分析插件和全局拦截插件。</li>
+</ul>
+<h2 id="mybatis是怎么和数据库交互的">mybatis是怎么和数据库交互的？</h2>
+<ul>
+<li>
+<p>通过dao层进入到mapper，然后用id去关联的。Resulttype(锐肉太不)是它所在的路径。还有用到resultMap。
+如果是使用的mybatis-Plus，我们可以直接调save等方法，不用手写sql，会用plus封装好的方法直接查询数据。
+当使用resultType做SQL语句返回结果类型处理时，对于SQL语句查询出的字段在相应的路径中必须有和它相同的字段对应，
+而resultType中的内容就是在本项目中的位置。当使用resultMap做SQL语句返回结果类型处理时，
+通常需要在mapper.xml中定义resultMap进行路径和相应表字段的对应。</p>
+</li>
+<li>
+<p>常用的sql标签有test，if，choose，when等</p>
+</li>
+</ul>
+<h2 id="和的区别是什么">#{}和${}的区别是什么？</h2>
+<ul>
+<li>${}:是变量占位符，它可以用于标签属性值和 sql 内部，属于静态文本替换，比如${driver}会被静态替换为com.mysql.jdbc.Driver。</li>
+<li>而#{}:是 sql 的参数占位符，MyBatis 会将 sql 中的#{}替换为?号，然后会将参数替换</li>
+<li>另外使用 #{} 可以有效的防止SQL注入，提高系统安全性。</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-08-21</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/jdbc/" class="prev" rel="prev" title="JDBC"><i class="fas fa-angle-left fa-fw"></i>JDBC</a>
+            <a href="/nginx/" class="next" rel="next" title="Nginx">Nginx<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">hahaen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":1000},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

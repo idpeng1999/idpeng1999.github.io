@@ -1,14 +1,5 @@
 # SpringBoot
 
-## 什么是 SpringBoot？
-
-* Spring Boot 是 Spring 开源组织下的子项目，
-是 Spring 组件一站式解决方案，主要是简化了使用 Spring 的难度，
-简省了繁重的配置，提供了各种启动器，使开发者能快速上手。
-
-## 为什么要用SpringBoot?
-
-* 快速开发，快速整合，配置简化、内嵌服务容器
 
 ## SpringBoot与SpringCloud的区别
 
@@ -32,6 +23,15 @@
 例如：java 如关闭数据源自动配置功能： 
 `@SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })`。 
 3. `@ComponentScan`：Spring组件扫描。
+
+## SpringBoot常用注解？
+
+* @SpringBootApplication 启动类 
+* @RestController 控制器,@Controller和@ResponseBody的合集 
+* @RequestMapping(锐快四特) 负责URL的映射 
+* @PathVariable(怕死锐了要不) 获取URL上的参数 
+* @Service 修饰service层 
+* @Inject(印姐可特)  @AutoWired(奥头为要) 自动导入依赖
 
 ## SpringBoot Starter的工作原理
 
