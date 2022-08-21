@@ -6,7 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>DNS的原理 - 哈哈博客</title><meta name="Description" content="关于 哈哈博客"><meta property="og:title" content="DNS的原理" />
-<meta property="og:description" content="DNS DNS 的全称是 Domain Name System 或者 Domain Name Service， 它主要的作用就是将人们所熟悉的网址 (域名) “翻译”成电脑可以理解的 IP 地址， 这个过程叫做 DNS 域名解析。" />
+<meta property="og:description" content="DNS DNS 主要的作用就是将域名 “翻译”成电脑可以理解的 IP 地址， 这个过程叫做 DNS 域名解析。 打个比方，我们登百度的地址的时候，都是敲www.baidu." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://hahaen.github.io/dns%E7%9A%84%E5%8E%9F%E7%90%86/" /><meta property="og:image" content="https://hahaen.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-03-14T15:46:42+08:00" />
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="https://hahaen.github.io/logo.png"/>
 
 <meta name="twitter:title" content="DNS的原理"/>
-<meta name="twitter:description" content="DNS DNS 的全称是 Domain Name System 或者 Domain Name Service， 它主要的作用就是将人们所熟悉的网址 (域名) “翻译”成电脑可以理解的 IP 地址， 这个过程叫做 DNS 域名解析。"/>
+<meta name="twitter:description" content="DNS DNS 主要的作用就是将域名 “翻译”成电脑可以理解的 IP 地址， 这个过程叫做 DNS 域名解析。 打个比方，我们登百度的地址的时候，都是敲www.baidu."/>
 <meta name="application-name" content="哈哈博客">
 <meta name="apple-mobile-web-app-title" content="哈哈博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hahaen.github.io\/dns%E7%9A%84%E5%8E%9F%E7%90%86\/"
-        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  259 ,
+        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  229 ,
         "url": "https:\/\/hahaen.github.io\/dns%E7%9A%84%E5%8E%9F%E7%90%86\/","datePublished": "2022-03-14T15:46:42+08:00","dateModified": "2022-03-14T15:46:42+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/hahaen.github.io\/images\/avatar.png"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">DNS的原理</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hahaen</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%BD%91%E7%BB%9C/"><i class="far fa-folder fa-fw"></i>网络</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-14">2022-03-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 259 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-14">2022-03-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 229 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -125,8 +125,7 @@
 </nav></div>
             </div><div class="content" id="content"><h2 id="dns">DNS</h2>
 <ul>
-<li>DNS 的全称是 Domain Name System 或者 Domain Name Service，
-它主要的作用就是将人们所熟悉的网址 (域名) “翻译”成电脑可以理解的 IP 地址， 这个过程叫做 DNS 域名解析。</li>
+<li>DNS 主要的作用就是将域名 “翻译”成电脑可以理解的 IP 地址， 这个过程叫做 DNS 域名解析。</li>
 <li>打个比方，我们登百度的地址的时候，都是敲www.baidu.com，进行登陆，难道你会去敲IP地址登百度？明显，域名容易记忆。</li>
 </ul>
 <p>而且，一个域名往往对应多个DNS地址</p>

@@ -6,7 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>AOP - 哈哈博客</title><meta name="Description" content="关于 哈哈博客"><meta property="og:title" content="AOP" />
-<meta property="og:description" content="什么是AOP? AOP：面向切面编程,面向切面编程是一种编程范式，它作为OOP面向对象编程的一种补充， 用于处理系统中分布于各个模块的横切关注点" />
+<meta property="og:description" content="什么是AOP?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://hahaen.github.io/aop/" /><meta property="og:image" content="https://hahaen.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-04-04T22:14:49+08:00" />
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="https://hahaen.github.io/logo.png"/>
 
 <meta name="twitter:title" content="AOP"/>
-<meta name="twitter:description" content="什么是AOP? AOP：面向切面编程,面向切面编程是一种编程范式，它作为OOP面向对象编程的一种补充， 用于处理系统中分布于各个模块的横切关注点"/>
+<meta name="twitter:description" content="什么是AOP?"/>
 <meta name="application-name" content="哈哈博客">
 <meta name="apple-mobile-web-app-title" content="哈哈博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hahaen.github.io\/aop\/"
-        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  1031 ,
+        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  7 ,
         "url": "https:\/\/hahaen.github.io\/aop\/","datePublished": "2022-04-04T22:14:49+08:00","dateModified": "2022-04-04T22:14:49+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/hahaen.github.io\/images\/avatar.png"},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">AOP</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hahaen</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E7%9F%A5%E8%AF%86/"><i class="far fa-folder fa-fw"></i>java知识</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-04-04">2022-04-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1031 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-04-04">2022-04-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 7 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -118,55 +118,19 @@
     <li>
       <ul>
         <li><a href="#什么是aop">什么是AOP?</a></li>
-        <li><a href="#aop-好处">AOP 好处</a></li>
-        <li><a href="#aop的术语">AOP的术语</a></li>
-        <li><a href="#advice注解">Advice注解</a></li>
-        <li><a href="#什么是面以及什么面向切面编程">什么是“面”？以及什么“面向切面编程”？</a></li>
       </ul>
     </li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="什么是aop">什么是AOP?</h2>
-<p>AOP：<code>面向切面编程</code>,面向切面编程是一种编程范式，它作为OOP面向对象编程的一种补充，
-用于处理系统中分布于各个模块的横切关注点，比如事务管理、权限控制、缓存控制、日志打印等等。</p>
-<h2 id="aop-好处">AOP 好处</h2>
-<ul>
-<li>每个事物逻辑位于一个位置, 代码不分散, 便于维护和升级</li>
-<li>业务模块更简洁, 只包含核心业务代码。</li>
-<li>侵入性少，增强代码可读性及可维护性。</li>
-</ul>
-<h2 id="aop的术语">AOP的术语</h2>
-<ol>
-<li>Join point（连接点）:程序执行过程中的一个点，如方法的执行或异常的处理。
-在Spring AOP中，连接点总是表示方法的执行。通俗的讲，连接点即表示类里面可以被增强的方法</li>
-<li>Pointcut（切入点）:切入点是与连接点匹配的表达式，用于确定是否需要执行通知。
-切入点使用与连接点匹配的不同类型的表达式，Spring框架使用AspectJ切入点表达式语言。
-我们可以将切入点理解为需要被拦截的Join point</li>
-<li>Advice（增强/通知）:所谓通知是指拦截到Joinpoint(连接点)之后所要做的事情就是通知，
-通知分为前置通知、后置通知、异常通知、最终通知和环绕通知(切面要完成的功能)</li>
-<li>Aspect（切面）:Aspect切面表示Pointcut（切入点）和Advice（增强/通知）的结合</li>
-</ol>
-<h2 id="advice注解">Advice注解</h2>
-<ol>
-<li><code>@Before前置通知</code>:
-前置通知在切入点运行前执行，不会影响切入点的逻辑</li>
-<li><code>@After后置通知</code>:
-后置通知在切入点正常运行结束后执行，如果切入点抛出异常，则在抛出异常前执行</li>
-<li><code>@AfterThrowing异常通知</code>:
-异常通知在切入点抛出异常前执行，如果切入点正常运行（未抛出异常），则不执行</li>
-<li><code>@AfterReturning返回通知</code>:
-返回通知在切入点正常运行结束后执行，如果切入点抛出异常，则不执行</li>
-<li><code>@Around环绕通知</code>:
-环绕通知是功能最强大的通知，可以在切入点执行前后自定义一些操作。
-环绕通知需要负责决定是继续处理join point(调用ProceedingJoinPoint的proceed方法)还是中断执行</li>
-</ol>
-<h2 id="什么是面以及什么面向切面编程">什么是“面”？以及什么“面向切面编程”？</h2>
-<p>从字面上理解，“切面”来自几何学，在立体几何中，
-切面是指用一个平面去截一个几何体（包括圆柱，圆锥，球，棱柱，棱锥、长方体，正方体等等），得到的平面图形。</p>
-<p><code>面向切面编程</code>例子：</p>
-<p>第一把不知道谁是地主，于是我们将一张牌，反过来查入到扑克牌当中。本来应该按照顺序摸牌，
-并不能知道谁是地主，但是因为你在某个位置插入了一个特殊操作（将一张牌反插入），
-因为多了一个逻辑（谁摸到这张反插的排，谁就是地主），所以可以知道谁是地主。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/AOP/img.png"
+        data-srcset="/img/AOP/img.png, /img/AOP/img.png 1.5x, /img/AOP/img.png 2x"
+        data-sizes="auto"
+        alt="/img/AOP/img.png"
+        title="AOP" /></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">

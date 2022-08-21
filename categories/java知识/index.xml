@@ -4,20 +4,27 @@
         <link>https://hahaen.github.io/categories/java%E7%9F%A5%E8%AF%86/</link>
         <description>java知识 - 分类 - 哈哈博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>630606938@qq.com (hahaen)</managingEditor>
-            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 11 Aug 2022 23:11:19 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/java%E7%9F%A5%E8%AF%86/" rel="self" type="application/rss+xml" /><item>
-    <title>基础知识整理</title>
+            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 21 Aug 2022 17:35:34 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/java%E7%9F%A5%E8%AF%86/" rel="self" type="application/rss+xml" /><item>
+    <title>Java中的锁</title>
+    <link>https://hahaen.github.io/java%E4%B8%AD%E7%9A%84%E9%94%81/</link>
+    <pubDate>Sun, 21 Aug 2022 17:35:34 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hahaen.github.io/java%E4%B8%AD%E7%9A%84%E9%94%81/</guid>
+    <description><![CDATA[你都了解java一些什么锁？ 锁的话比如说Synchronized，然后还有我们的ren，还有我们的ReentrantLock,读写锁了解的不]]></description>
+</item><item>
+    <title>java基础知识整理</title>
     <link>https://hahaen.github.io/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</link>
     <pubDate>Thu, 11 Aug 2022 23:11:19 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hahaen.github.io/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%95%B4%E7%90%86/</guid>
-    <description><![CDATA[==、Equals区别？ 对象类型不同 equals()：是超类Object中的方法。 ==：是操作符。 比较的对象不同 equals()：用来检测两]]></description>
+    <description><![CDATA[Java面向对象三大特性封装继承多态 封装 封装把⼀个对象的属性私有化，同时提供⼀些可以被外界访问的属性的⽅法 继承 继承是使⽤已存在的类的定义作为]]></description>
 </item><item>
     <title>设计模式（Overview）</title>
     <link>https://hahaen.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8Foverview/</link>
     <pubDate>Sun, 12 Jun 2022 10:44:44 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hahaen.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8Foverview/</guid>
-    <description><![CDATA[24大设计模式和7个原则 7个原则 1. 单一职责原则 一个类负责一项职责。 2. 开放封闭原则 一个软件实体如类、模块和函数应该对扩展开放，对修改关闭。 3. 里]]></description>
+    <description><![CDATA[java常用设计模式 24大设计模式和7个原则 7个原则 1. 单一职责原则 一个类负责一项职责。 2. 开放封闭原则 一个软件实体如类、模块和函数应该对扩展开]]></description>
 </item><item>
     <title>集合</title>
     <link>https://hahaen.github.io/%E9%9B%86%E5%90%88/</link>
@@ -38,14 +45,14 @@
     <pubDate>Mon, 04 Apr 2022 22:14:49 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hahaen.github.io/aop/</guid>
-    <description><![CDATA[什么是AOP? AOP：面向切面编程,面向切面编程是一种编程范式，它作为OOP面向对象编程的一种补充， 用于处理系统中分布于各个模块的横切关注点]]></description>
+    <description><![CDATA[什么是AOP?]]></description>
 </item><item>
     <title>IOC</title>
     <link>https://hahaen.github.io/ioc/</link>
     <pubDate>Mon, 04 Apr 2022 22:14:33 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hahaen.github.io/ioc/</guid>
-    <description><![CDATA[控制反转（Inversion of Control，简称IoC） 是面向对象编程中的一种设计原则，可以用来减低计算机代码之间的耦合度。 其中最常见的方]]></description>
+    <description><![CDATA[IOC,就是我们的控制反转，就是把我们些好的这个对象的一个控制权交给我们的spring框架，那我们的spring框架来帮我们去控制这个对象的]]></description>
 </item><item>
     <title>SpringBoot中的5种跨域</title>
     <link>https://hahaen.github.io/springboot%E4%B8%AD%E7%9A%845%E7%A7%8D%E8%B7%A8%E5%9F%9F/</link>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://hahaen.github.io/shiro/</guid>
     <description><![CDATA[Shiro框架 是一个轻量级的安全框架，主要提供了 授权、认证、加密、会话管理这几个功能。 shiro安全数据源有哪些 数据库 静态ini文件 session Shi]]></description>
-</item><item>
-    <title>Redis</title>
-    <link>https://hahaen.github.io/redis/</link>
-    <pubDate>Wed, 16 Mar 2022 22:05:18 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hahaen.github.io/redis/</guid>
-    <description><![CDATA[对Redis 的了解？ Redis（全称：Remote Dictionary Server 远程字典服务）是一个开源的使用 ANSI C 语言编写、 支持网络、可基于内存亦可持久化的日志型、K]]></description>
 </item></channel>
 </rss>

@@ -6,7 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Java多线程原理 - 哈哈博客</title><meta name="Description" content="关于 哈哈博客"><meta property="og:title" content="Java多线程原理" />
-<meta property="og:description" content="Java多线程原理 为什么需要多线程？ 可以提高程序的执行性能 例如：一个人洗菜做法，和多个人一起洗菜做饭效率不一样。 多线程带来了什么问题，如何避" />
+<meta property="og:description" content="你知道java中有几种方式实现一个线程？ 实现一个线程的话有三种方法，首先前面两种的话是比较常用的， 我们首先第一种，我们可以去实现我们的线程（" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://hahaen.github.io/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%8E%9F%E7%90%86/" /><meta property="og:image" content="https://hahaen.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-09-28T16:22:01+08:00" />
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="https://hahaen.github.io/logo.png"/>
 
 <meta name="twitter:title" content="Java多线程原理"/>
-<meta name="twitter:description" content="Java多线程原理 为什么需要多线程？ 可以提高程序的执行性能 例如：一个人洗菜做法，和多个人一起洗菜做饭效率不一样。 多线程带来了什么问题，如何避"/>
+<meta name="twitter:description" content="你知道java中有几种方式实现一个线程？ 实现一个线程的话有三种方法，首先前面两种的话是比较常用的， 我们首先第一种，我们可以去实现我们的线程（"/>
 <meta name="application-name" content="哈哈博客">
 <meta name="apple-mobile-web-app-title" content="哈哈博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hahaen.github.io\/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%8E%9F%E7%90%86\/"
-        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  3132 ,
+        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  1115 ,
         "url": "https:\/\/hahaen.github.io\/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%8E%9F%E7%90%86\/","datePublished": "2021-09-28T16:22:01+08:00","dateModified": "2021-09-28T16:22:01+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/hahaen.github.io\/images\/avatar.png"},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Java多线程原理</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hahaen</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E7%9F%A5%E8%AF%86/"><i class="far fa-folder fa-fw"></i>java知识</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-09-28">2021-09-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3132 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-09-28">2021-09-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1115 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -117,9 +117,12 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#java多线程原理">Java多线程原理</a>
+        <li><a href="#你知道java中有几种方式实现一个线程">你知道java中有几种方式实现一个线程？</a></li>
+        <li><a href="#创建线程池的方法">创建线程池的方法</a></li>
+        <li><a href="#线程池的七大参数">线程池的七大参数</a></li>
+        <li><a href="#那线程池有用过吗知道他有什么作用吗">那线程池有用过吗？知道他有什么作用吗？</a></li>
+        <li><a href="#java多线程">Java多线程</a>
           <ul>
-            <li><a href="#为什么需要多线程">为什么需要多线程？</a></li>
             <li><a href="#多线程带来了什么问题如何避免">多线程带来了什么问题，如何避免？</a>
               <ul>
                 <li><a href="#线程安全问题">线程安全问题</a></li>
@@ -127,33 +130,48 @@
                 <li><a href="#死锁">死锁</a></li>
               </ul>
             </li>
-            <li><a href="#线程的属性状态生命周期详解">线程的属性、状态、生命周期详解</a>
-              <ul>
-                <li><a href="#new新建">New(新建)</a></li>
-                <li><a href="#runnable就绪">Runnable（就绪）</a></li>
-                <li><a href="#running运行">Running(运行)</a></li>
-                <li><a href="#blocked被阻塞">blocked(被阻塞)</a></li>
-                <li><a href="#dead死亡">Dead(死亡)</a></li>
-              </ul>
-            </li>
-            <li><a href="#什么是threadlocal">什么是ThreadLocal？</a></li>
-            <li><a href="#为什么需要线程池">为什么需要线程池？</a>
-              <ul>
-                <li><a href="#线程池">线程池</a></li>
-                <li><a href="#java的4种默认线程池">Java的4种默认线程池</a></li>
-              </ul>
-            </li>
-            <li><a href="#线程池的构造函数中的参数都是什么含义">线程池的构造函数中的参数都是什么含义？</a></li>
           </ul>
         </li>
       </ul>
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="java多线程原理">Java多线程原理</h2>
-<h3 id="为什么需要多线程">为什么需要多线程？</h3>
-<p>可以提高程序的执行性能</p>
-<p>例如：一个人洗菜做法，和多个人一起洗菜做饭效率不一样。</p>
+            </div><div class="content" id="content"><h2 id="你知道java中有几种方式实现一个线程">你知道java中有几种方式实现一个线程？</h2>
+<ul>
+<li>实现一个线程的话有三种方法，首先前面两种的话是比较常用的，
+我们首先第一种，我们可以去实现我们的线程（Thread）类，然后第二种是实现我们的Runnable接口，那这两种方式的话，都是去重写我们的run方法，
+然后还有我们的第三种，我们可以去实现我们的Callable一个接口，那这里面需要我们去实现的是一个call()方法，就这些。</li>
+</ul>
+<h2 id="创建线程池的方法">创建线程池的方法</h2>
+<p>通过ThreadPoolExecutor类自定义</p>
+<p>好处:避免使用重复的线程来创建线程产生的额外的开销。</p>
+<h2 id="线程池的七大参数">线程池的七大参数</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Java%e5%a4%9a%e7%ba%bf%e7%a8%8b%e5%8e%9f%e7%90%86/img.png"
+        data-srcset="/img/Java%e5%a4%9a%e7%ba%bf%e7%a8%8b%e5%8e%9f%e7%90%86/img.png, /img/Java%e5%a4%9a%e7%ba%bf%e7%a8%8b%e5%8e%9f%e7%90%86/img.png 1.5x, /img/Java%e5%a4%9a%e7%ba%bf%e7%a8%8b%e5%8e%9f%e7%90%86/img.png 2x"
+        data-sizes="auto"
+        alt="/img/Java多线程原理/img.png"
+        title="七大参数" /><br></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Java%e5%a4%9a%e7%ba%bf%e7%a8%8b%e5%8e%9f%e7%90%86/img_1.png"
+        data-srcset="/img/Java%e5%a4%9a%e7%ba%bf%e7%a8%8b%e5%8e%9f%e7%90%86/img_1.png, /img/Java%e5%a4%9a%e7%ba%bf%e7%a8%8b%e5%8e%9f%e7%90%86/img_1.png 1.5x, /img/Java%e5%a4%9a%e7%ba%bf%e7%a8%8b%e5%8e%9f%e7%90%86/img_1.png 2x"
+        data-sizes="auto"
+        alt="/img/Java多线程原理/img_1.png"
+        title="七大参数" /><br></p>
+<h2 id="那线程池有用过吗知道他有什么作用吗">那线程池有用过吗？知道他有什么作用吗？</h2>
+<ul>
+<li>线程池的话是为了解决我们这个突然爆发的一个线程，去大量爆发的线程去设计的嘛，
+他是通过几个有限的一个、几个固定的线程，去给我们的一个大量的操作去服务的，他主要是要去减少我们的创建和销毁线程去需要的时间，
+就是我们要提高我们的效率嘛，那我在项目里面用的过程中，
+其实我是感觉说如果一个线程所需要执行的时间非常长的话，其实没有必要用这个线程池的。
+因为我觉得这个并不是说线程池他不能长时间去操作，而是我感觉不适合嘛，因为我们本来要降低这个线程创建的销毁，
+结果这个线程呢，他如果时间很久的话还不好控制，所以还不如直接去创建线程，因为我们是不能直接控制线程池里面的线程的开始啊挂起啊终止啊这些状态的嘛。</li>
+</ul>
+<h2 id="java多线程">Java多线程</h2>
 <h3 id="多线程带来了什么问题如何避免">多线程带来了什么问题，如何避免？</h3>
 <p><img
         class="lazyload"
@@ -173,7 +191,8 @@
 <h4 id="上下文切换">上下文切换</h4>
 <ol>
 <li>线程与 CPU 单核执行是一对一的</li>
-<li>CPU 是通过时间片算法来执行任务的，不同的线程活跃状态不同，CPU 会在多个线程间切换执行，在切换时会保存上一个任务的状态，以便下次切换回这个任务时可以再加载到这个任务的状态</li>
+<li>CPU 是通过时间片算法来执行任务的，不同的线程活跃状态不同，CPU 会在多个线程间切换执行，
+在切换时会保存上一个任务的状态，以便下次切换回这个任务时可以再加载到这个任务的状态</li>
 <li>线程数越多，带来的上下文切换越严重，上下文切换会带来 CPU 系统态使用率占用</li>
 <li>这就是当我们开启大量线程，系统反而更慢</li>
 </ol>
@@ -192,143 +211,11 @@
         data-sizes="auto"
         alt="/img/Java多线程原理/死锁.png"
         title="死锁" /><br></p>
-<ol>
-<li>线程 A 和线程 B 都拥有一份锁，而线程 A 和线程 B 恰好同时去获取对方拥有的那把锁，</li>
-<li>导致两个线程永远无法执行，</li>
-<li>要避免死锁有一个方法即获取锁的顺序是固定的，</li>
-<li>比如只能先获取锁 X 再获取锁 Y，不允许出现相反的顺序。</li>
-</ol>
-<h3 id="线程的属性状态生命周期详解">线程的属性、状态、生命周期详解</h3>
-<p>线程可以分为5个状态：</p>
 <ul>
-<li>New(新建)</li>
-<li>Runnable（就绪）</li>
-<li>Running(运行)</li>
-<li>blocked(被阻塞)</li>
-<li>Dead(死亡)</li>
-</ul>
-<h4 id="new新建">New(新建)</h4>
-<ul>
-<li>当创建Thread类的一个实例（对象）时，此线程进入新建状态（未被启动）。</li>
-<li><strong>Thread t1=new Thread();</strong></li>
-</ul>
-<h4 id="runnable就绪">Runnable（就绪）</h4>
-<ul>
-<li>线程已经被启动，正在等待被分配给CPU时间片，</li>
-<li>也就是说此时线程正在就绪队列中排队等候得到CPU资源。</li>
-<li><strong>t1.start();</strong></li>
-</ul>
-<h4 id="running运行">Running(运行)</h4>
-<ul>
-<li>线程获得CPU资源正在执行任务（run()方法），</li>
-<li>此时除非此线程自动放弃CPU资源或者有优先级更高的线程进入，</li>
-<li>线程将一直运行到结束。</li>
-</ul>
-<h4 id="blocked被阻塞">blocked(被阻塞)</h4>
-<ul>
-<li>由于某种原因导致正在运行的线程让出CPU并暂停自己的执行，即进入堵塞状态。</li>
-<li>正在睡眠：用sleep(long t)  方法可使线程进入睡眠方式。一个睡眠着的线程在指定的时间过去可进入就绪状态。</li>
-<li>正在等待：调用wait()方法。（调用motify()方法回到就绪状态）</li>
-<li>被另一个线程所阻塞：调用suspend()方法。（调用resume()方法恢复）</li>
-</ul>
-<h4 id="dead死亡">Dead(死亡)</h4>
-<ul>
-<li>当线程执行完毕或被其它线程杀死，线程就进入死亡状态，这时线程不可能再进入就绪状态等待执行。</li>
-<li>自然终止：正常运行run()方法后终止</li>
-<li>异常终止：调用stop()方法让一个线程终止运行</li>
-</ul>
-<h3 id="什么是threadlocal">什么是ThreadLocal？</h3>
-<p>每个线程自己独有的，不与其它线程共享的变量。</p>
-<p>常用的两内部类，四个方法：</p>
-<ul>
-<li>get()方法是用来获取ThreadLocal在当前线程中保存的变量副本。</li>
-<li>set()用来设置当前线程中变量的副本。</li>
-<li>remove()用来移除当前线程中变量的副本。</li>
-<li>initialValue()是一个protected方法，一般是用来在使用时进行重写的，它是一个延迟加载方法。ThreadLocal没有被当前线程赋值时或当前线程刚调用remove方法后调用get方法，返回此方法值。</li>
-</ul>
-<h3 id="为什么需要线程池">为什么需要线程池？</h3>
-<h4 id="线程池">线程池</h4>
-<p>在Java 5之后，Java通过Executor来启动线程，比使用Thread的start方法更好，
-除了更易管理，效率更好（用线程池实现，节约开销）外，还有关键的一点：有助于避免this逃逸问题。</p>
-<p>简单的说就是把线程统一管理。</p>
-<p>线程池优势：</p>
-<ol>
-<li>降低系统资源消耗，通过重用已存在的线程，降低线程创建和销毁造成的消耗；</li>
-<li>提高系统响应速度，当有任务到达时，通过复用已存在的线程，无需等待新线程的创建便能立即执行；</li>
-<li>方便线程并发数的管控。因为线程若是无限制的创建，可能会导致内存占用过多而产生OOM，并且会造成cpu过度切换（cpu切换线程是有时间成本的（需要保持当前执行线程的现场，并恢复要执行线程的现场））。</li>
-<li>提供更强大的功能，延时定时线程池。</li>
-</ol>
-<h4 id="java的4种默认线程池">Java的4种默认线程池</h4>
-<ol>
-<li>newSingleThreadExecutor <br>
-创建一个单线程的线程池。这个线程池只有一个线程在工作，也就是相当于单线程串行执行所有任务。如果这个唯一的线程因为异常结束，那么会有一个新的线程来替代它。此线程池保证所有任务的执行顺序按照任务的提交顺序执行。</li>
-<li>newFixeThreadPool <br>
-创建固定大小的线程池。每次提交一个任务就创建一个线程，直到线程达到线程池的最大大小。线程池的大小一旦达到最大值就会保持不变，如果某个线程因为执行异常而结束，那么线程池会补充一个新线程。</li>
-<li>newCachedThreadPool <br>
-创建一个可缓存的线程池。如果线程池的大小超过了处理任务所需要的线程，那么就会回收部分空闲（60秒不执行任务）的线程，当任务数增加时，此线程池又可以智能的添加新线程来处理任务。此线程池不会对线程池大小做限制，线程池大小完全依赖于操作系统（或者说JVM）能够创建的最大线程大小。</li>
-<li>newScheduledThreadPool <br>
-创建一个大小无限的线程池。此线程池支持定时以及周期性执行任务的需求</li>
-</ol>
-<h3 id="线程池的构造函数中的参数都是什么含义">线程池的构造函数中的参数都是什么含义？</h3>
-<p><strong>ThreadPollExecutor</strong>中的所有的构造函数最终都会调用上面这个构造函数，接下来我们来分析一下这些参数的含义：</p>
-<p><strong>corePoolSize</strong>：</p>
-<ul>
-<li>线程池启动后，在池中保持的线程的最小数量。</li>
-<li>需要说明的是线程数量是逐步到达corePoolSize值的。</li>
-<li>例如corePoolSize被设置为10，而任务数量只有5，则线程池中最多会启动5个线程，而不是一次性地启动10个线程。</li>
-</ul>
-<p><strong>maxinumPoolSize</strong>：</p>
-<ul>
-<li>线程池中能容纳的最大线程数量，</li>
-<li>如果超出，则使用RejectedExecutionHandler拒绝策略处理。</li>
-</ul>
-<p><strong>keepAliveTime</strong>：</p>
-<ul>
-<li>线程的最大生命周期。这里的生命周期有两个约束条件：</li>
-<li>一：该参数针对的是超过corePoolSize数量的线程；</li>
-<li>二：处于非运行状态的线程。</li>
-<li>例：如果corePoolSize（最小线程数）为10，maxinumPoolSize（最大线程数）为20，而此时线程池中有15个线程在运行，过了一段时间后，其中有3个线程处于等待状态的时间超过keepAliveTime指定的时间，则结束这3个线程，此时线程池中则还有12个线程正在运行。</li>
-</ul>
-<p><strong>unit</strong>：</p>
-<ul>
-<li>这是keepAliveTime的时间单位</li>
-<li>可以是纳秒，毫秒，秒，分钟等。</li>
-</ul>
-<p><strong>workQueue</strong>：</p>
-<ul>
-<li>任务队列。</li>
-<li>当线程池中的线程都处于运行状态，而此时任务数量继续增加，则需要一个容器来容纳这些任务，这就是任务队列。</li>
-<li>这个任务队列是一个阻塞式的单端队列。</li>
-</ul>
-<p><strong>newFixedThreadPool</strong>和<strong>newSingleThreadExector</strong>使用的是<strong>LinkedBlockingQueue</strong>的无界模式。</p>
-<p><strong>threadFactory</strong>：</p>
-<ul>
-<li>定义如何启动一个线程，可以设置线程的名称，并且可以确定是否是后台线程等。</li>
-</ul>
-<p><strong>handler</strong>：</p>
-<ul>
-<li>拒绝任务处理器。</li>
-<li>由于超出线程数量和队列容量而对继续增加的任务进行处理的程序。</li>
-</ul>
-<p><strong>线程的管理过程</strong>：</p>
-<ul>
-<li>首先创建一个线程池，</li>
-<li>然后根据任务的数量逐步将线程增大到corePoolSize，</li>
-<li>如果此时仍有任务增加，则放置到workQueue中，直到workQueue爆满为止，</li>
-<li>然后继续增加池中的线程数量（增强处理能力），最终达到maxinumPoolSize。</li>
-<li>那如果此时还有任务要增加进来，需要handler来处理，</li>
-<li>或者丢弃新任务，或者拒绝新任务，或者挤占已有的任务。</li>
-<li>在任务队列和线程池都饱和的情况下，一旦有线程处于等待（任务处理完毕，没有新任务）状态的时间超过keepAliveTime，则该线程终止，</li>
-<li>也就是说池中的线程数量会逐渐降低，直至为corePoolSize数量为止。</li>
-</ul>
-<p><strong>总结</strong></p>
-<ul>
-<li>corePoolSize: 线程池维护线程的最少线程数,也是核心线程数,包括空闲线程</li>
-<li>maximumPoolSize: 线程池维护线程的最大线程数</li>
-<li>keepAliveTime: 线程池维护线程所允许的空闲时间</li>
-<li>unit: 程池维护线程所允许的空闲时间的单位</li>
-<li>workQueue: 线程池所使用的缓冲队列</li>
-<li>handler: 线程池对拒绝任务的处理策略</li>
+<li>就是比如说，我们有两个或者两个以上的这个进程或者线程，都在等待对方释放资源的话，那其实没有一方提起这个释放资源的操作的话呢，就从而造成了一种阻塞的现象，
+这个称之为死锁。结果就是说我们两个进程或者两个线程他们都会陷入到一个无限等待中，
+我也可以简单的说一下，就是，就是面试官您给我说，如果我回答上这个问题的话，你就给我这个offer，
+那如果玩说如果你给我这个offer的话，我就回答您这个问题，那咱俩都在等待对方释放这个锁嘛，那这样就造成了一个死锁问题，就是这样的。</li>
 </ul>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">

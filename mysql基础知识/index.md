@@ -3,7 +3,7 @@
 ## 数据增删改查
 
 
-创建 USER表
+### 创建 USER表
 
 * `PRIMARY KEY` 主键
 * `AUTO_INCREMENT` AUTO_INCREMENT就可以从小到大自动生成
@@ -28,7 +28,7 @@ CREATE TABLE USER
 ```
 
 
-**增**
+### **增**
 
 ```mysql
 INSERT [INTO] 表名 [(字段列表)] VALUES (值列表)[, (值列表), ...]
@@ -43,7 +43,7 @@ insert into person(id,name,age,phone,address)
 values (1,'yang',22,'123232323','中国上海');
 ```
 
-**删**
+### **删**
 
 ```mysql
 DELETE FROM 表名[ 删除条件子句]
@@ -54,7 +54,7 @@ DELETE FROM 表名[ 删除条件子句]
 delete from person where id = 1;
 ```
 
-**改**
+### **改**
 
 ```mysql
 UPDATE 表名 SET 字段名=新值[, 字段名=新值] [更新条件]
@@ -64,7 +64,7 @@ UPDATE 表名 SET 字段名=新值[, 字段名=新值] [更新条件]
 update person set address='浙江杭州';
 ```
 
-**查**
+### **查**
 
 ```mysql
 SELECT 字段列表 FROM 表名[ 其他子句]
@@ -77,14 +77,23 @@ SELECT 字段列表 FROM 表名[ 其他子句]
 select * FROM person;
 ```
 
+## Drop、delete区别？
+ 
+**用法不同**
+
+* `drop`(丢弃数据):`drop table`表名 ，直接将表都删除掉，在删除表的时候使用。
+* `delete`（删除数据）:`delete from 表名 where 列名=值`，删除某一列的数据
+
+---
+
+* 不带`where`子句的`delete`、以及`drop`都会删除表内的数据
+* 但是`delete`只删除数据不删除表的结构(定义)
+* 执行`drop`语句，此表的结构也会删除，也就是执行`drop`之后对应的表不复存在。
 
 ## 数据库主键和外键的区别
 
 * 主键(主码) ：主键用于唯一标识一个元组，不能有重复，不允许为空。一个表只能有一个主键。
 * 外键(外码) ：外键用来和其他表建立联系用，外键是另一表的主键，外键是可以有重复的，可以是空值。一个表可以有多个外键。
-
-## 
-
 
 
 

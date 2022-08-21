@@ -6,7 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Java网络基础 - 哈哈博客</title><meta name="Description" content="关于 哈哈博客"><meta property="og:title" content="Java网络基础" />
-<meta property="og:description" content="tcp和udp的区别 TCP：是面向连接的流传输控制协议，具有高可靠性，确保传输数据的正确性，有验证重发机制，因此不会出现丢失或乱序。 UDP：" />
+<meta property="og:description" content="tcp和udp的区别 三次握手与四次挥手" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://hahaen.github.io/java%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" /><meta property="og:image" content="https://hahaen.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-04-05T23:37:18+08:00" />
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="https://hahaen.github.io/logo.png"/>
 
 <meta name="twitter:title" content="Java网络基础"/>
-<meta name="twitter:description" content="tcp和udp的区别 TCP：是面向连接的流传输控制协议，具有高可靠性，确保传输数据的正确性，有验证重发机制，因此不会出现丢失或乱序。 UDP："/>
+<meta name="twitter:description" content="tcp和udp的区别 三次握手与四次挥手"/>
 <meta name="application-name" content="哈哈博客">
 <meta name="apple-mobile-web-app-title" content="哈哈博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hahaen.github.io\/java%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80\/"
-        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  154 ,
+        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  19 ,
         "url": "https:\/\/hahaen.github.io\/java%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80\/","datePublished": "2022-04-05T23:37:18+08:00","dateModified": "2022-04-05T23:37:18+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/hahaen.github.io\/images\/avatar.png"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Java网络基础</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hahaen</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%BD%91%E7%BB%9C/"><i class="far fa-folder fa-fw"></i>网络</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-04-05">2022-04-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 154 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-04-05">2022-04-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 19 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -118,16 +118,21 @@
     <li>
       <ul>
         <li><a href="#tcp和udp的区别">tcp和udp的区别</a></li>
+        <li><a href="#三次握手与四次挥手">三次握手与四次挥手</a></li>
       </ul>
     </li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="tcp和udp的区别">tcp和udp的区别</h2>
-<ul>
-<li>TCP：是面向连接的流传输控制协议，具有高可靠性，确保传输数据的正确性，有验证重发机制，因此不会出现丢失或乱序。</li>
-<li>UDP：是无连接的数据报服务，不对数据报进行检查与修改，无须等待对方的应答，会出现分组丢失、重复、乱序，
-但具有较好的实时性，UDP段结构比TCP的段结构简单，因此网络开销也小。</li>
-</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/%e7%bd%91%e7%bb%9c%e5%9f%ba%e7%a1%80/img.png"
+        data-srcset="/img/%e7%bd%91%e7%bb%9c%e5%9f%ba%e7%a1%80/img.png, /img/%e7%bd%91%e7%bb%9c%e5%9f%ba%e7%a1%80/img.png 1.5x, /img/%e7%bd%91%e7%bb%9c%e5%9f%ba%e7%a1%80/img.png 2x"
+        data-sizes="auto"
+        alt="/img/网络基础/img.png"
+        title="tcp和udp的区别" /><br></p>
+<h2 id="三次握手与四次挥手">三次握手与四次挥手</h2>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">

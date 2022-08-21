@@ -32,12 +32,5 @@
     <author>作者</author>
     <guid>https://hahaen.github.io/idea%E4%B8%AA%E4%BA%BA%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
     <description><![CDATA[idea版本2021.2.1 连接mysql报错 删除这三个就测试成功]]></description>
-</item><item>
-    <title>Docker Run Mysql映射</title>
-    <link>https://hahaen.github.io/docker-run-mysql%E6%98%A0%E5%B0%84/</link>
-    <pubDate>Tue, 02 Nov 2021 16:35:07 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hahaen.github.io/docker-run-mysql%E6%98%A0%E5%B0%84/</guid>
-    <description><![CDATA[例： 1 docker run --name mymysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql:5.7.27 1 2 3 4 5 6 7 docker run --name=mediawiki_mysql \ -e MYSQL_DATABASE=wikidb \ -e MYSQL_USER=wikiuser \ -e MYSQL_PASSWORD=mysecret \ -e MYSQL_ROOT_PASSWORD=zhang123 \ -v /var/mediawiki/mysql:/var/lib/mysql \ -d mysql:5.7.27 上面命令中的 \ 是换行 -d 是指定镜像，本地没有的话会从dock]]></description>
 </item></channel>
 </rss>

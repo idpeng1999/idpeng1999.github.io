@@ -17,7 +17,7 @@
     <pubDate>Mon, 30 May 2022 09:15:05 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hahaen.github.io/effective-java%E4%B8%AD%E6%96%87%E7%AC%94%E8%AE%B0/</guid>
-    <description><![CDATA[01-09 Creating and Destroying Objects （创建和销毁对象） 1. 考虑使用静态工厂方法替代构造方法 优点： 静态工厂方法的一个优点是，与构造方法不同，它们是有名字的。 静态工厂方法的]]></description>
+    <description><![CDATA[内容]]></description>
 </item><item>
     <title>MySQL必知必会（笔记）</title>
     <link>https://hahaen.github.io/mysql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E7%AC%94%E8%AE%B0/</link>
@@ -39,12 +39,5 @@
     <author>作者</author>
     <guid>https://hahaen.github.io/github%E6%8F%90%E4%BA%A4%E6%8C%87%E5%8D%97/</guid>
     <description><![CDATA[提交指南 例子：]]></description>
-</item><item>
-    <title>Hugo指南</title>
-    <link>https://hahaen.github.io/hugo%E6%8C%87%E5%8D%97/</link>
-    <pubDate>Thu, 31 Mar 2022 17:00:46 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hahaen.github.io/hugo%E6%8C%87%E5%8D%97/</guid>
-    <description><![CDATA[启动hugo服务(预览) 1 hugo server -D 创建MD 1 hugo new posts/名字.md 构建页面 1 hugo -D]]></description>
 </item></channel>
 </rss>
