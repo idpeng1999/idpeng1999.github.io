@@ -16,7 +16,7 @@ docker run --name oracle_11g -d -p 1521:1521 registry.cn-hangzhou.aliyuncs.com/h
 1. 进入容器里
 
 ```dockerfile
-docker exec -it oracle_11g bash
+winpty docker exec -it oracle_11g bash
 ```
 
 2. 配置一下环境变量，执行`su root`后，输入密码 `helowin`(数据库名字)

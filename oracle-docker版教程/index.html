@@ -6,7 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Oracle Docker版教程 - 哈哈博客</title><meta name="Description" content="关于 哈哈博客"><meta property="og:title" content="Oracle Docker版教程" />
-<meta property="og:description" content="docker安装Oracle数据库 1 docker pull registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g Docker创建数据库 1 docker run --name oracle_11g -d -p 1521:1521 registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g 配置 进入容器里 1 docker exec -it oracle_11g bash 配置一下环境变量，执行su roo" />
+<meta property="og:description" content="docker安装Oracle数据库 1 docker pull registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g Docker创建数据库 1 docker run --name oracle_11g -d -p 1521:1521 registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g 配置 进入容器里 1 winpty docker exec -it oracle_11g bash 配置一下环境变量，执行su ro" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://hahaen.github.io/oracle-docker%E7%89%88%E6%95%99%E7%A8%8B/" /><meta property="og:image" content="https://hahaen.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-08-20T22:21:53+08:00" />
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="https://hahaen.github.io/logo.png"/>
 
 <meta name="twitter:title" content="Oracle Docker版教程"/>
-<meta name="twitter:description" content="docker安装Oracle数据库 1 docker pull registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g Docker创建数据库 1 docker run --name oracle_11g -d -p 1521:1521 registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g 配置 进入容器里 1 docker exec -it oracle_11g bash 配置一下环境变量，执行su roo"/>
+<meta name="twitter:description" content="docker安装Oracle数据库 1 docker pull registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g Docker创建数据库 1 docker run --name oracle_11g -d -p 1521:1521 registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g 配置 进入容器里 1 winpty docker exec -it oracle_11g bash 配置一下环境变量，执行su ro"/>
 <meta name="application-name" content="哈哈博客">
 <meta name="apple-mobile-web-app-title" content="哈哈博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hahaen.github.io\/oracle-docker%E7%89%88%E6%95%99%E7%A8%8B\/"
-        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  267 ,
+        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  268 ,
         "url": "https:\/\/hahaen.github.io\/oracle-docker%E7%89%88%E6%95%99%E7%A8%8B\/","datePublished": "2022-08-20T22:21:53+08:00","dateModified": "2022-08-20T22:21:53+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/hahaen.github.io\/images\/avatar.png"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Oracle Docker版教程</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hahaen</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw"></i>工具教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-20">2022-08-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 267 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-08-20">2022-08-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 268 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -151,7 +151,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it oracle_11g bash<span class="err">
+<pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl">winpty docker <span class="nb">exec</span> -it oracle_11g bash<span class="err">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="2">
