@@ -6,7 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Sql注入 - 哈哈博客</title><meta name="Description" content="关于 哈哈博客"><meta property="og:title" content="Sql注入" />
-<meta property="og:description" content="万能密码 原验证登陆语句: 1 SELECT*FROMadminWHEREUsername=&#39;&#34;.$username.&#34;&#39;ANDPassword=&#39;&#34;.md5($password).&#34;&#39; 输入 1′ or 1=1 or ‘1’=’1万能密码语句变为: 1 SELECT*FROMadminWHEREUsername=&#39;1&#39;OR1=1OR&#39;1&#39;=&#39;1&#39;ANDPassword=&#39;EDFKGMZDFSDFDSFRRQWERRFGGG&#39; 即得到优先级关系：or&lt;and&lt;not，同一优先级默" />
+<meta property="og:description" content="万能密码 原验证登陆语句: 1 SELECT * FROM admin WHERE Username= &#39;&#34;.$username.&#34;&#39; AND Password= &#39;&#34;.md5($password).&#34;&#39; 输入 1′ or 1=1 or ‘1’=’1万能密码语句变为: 1 SELECT * FROM admin WHERE Username=&#39;1&#39; OR 1=1 OR &#39;1&#39;=&#39;1&#39; AND Password=&#39;EDFKGMZDFSDFDSFRRQWERRFGGG&#39; 即得到优先级关系：or&" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://hahaen.github.io/sql%E6%B3%A8%E5%85%A5/" /><meta property="og:image" content="https://hahaen.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-03-14T15:25:04+08:00" />
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="https://hahaen.github.io/logo.png"/>
 
 <meta name="twitter:title" content="Sql注入"/>
-<meta name="twitter:description" content="万能密码 原验证登陆语句: 1 SELECT*FROMadminWHEREUsername=&#39;&#34;.$username.&#34;&#39;ANDPassword=&#39;&#34;.md5($password).&#34;&#39; 输入 1′ or 1=1 or ‘1’=’1万能密码语句变为: 1 SELECT*FROMadminWHEREUsername=&#39;1&#39;OR1=1OR&#39;1&#39;=&#39;1&#39;ANDPassword=&#39;EDFKGMZDFSDFDSFRRQWERRFGGG&#39; 即得到优先级关系：or&lt;and&lt;not，同一优先级默"/>
+<meta name="twitter:description" content="万能密码 原验证登陆语句: 1 SELECT * FROM admin WHERE Username= &#39;&#34;.$username.&#34;&#39; AND Password= &#39;&#34;.md5($password).&#34;&#39; 输入 1′ or 1=1 or ‘1’=’1万能密码语句变为: 1 SELECT * FROM admin WHERE Username=&#39;1&#39; OR 1=1 OR &#39;1&#39;=&#39;1&#39; AND Password=&#39;EDFKGMZDFSDFDSFRRQWERRFGGG&#39; 即得到优先级关系：or&"/>
 <meta name="application-name" content="哈哈博客">
 <meta name="apple-mobile-web-app-title" content="哈哈博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hahaen.github.io\/sql%E6%B3%A8%E5%85%A5\/"
-        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  218 ,
+        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  238 ,
         "url": "https:\/\/hahaen.github.io\/sql%E6%B3%A8%E5%85%A5\/","datePublished": "2022-03-14T15:25:04+08:00","dateModified": "2022-03-14T15:25:04+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/hahaen.github.io\/images\/avatar.png"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Sql注入</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hahaen</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/mysql%E7%9F%A5%E8%AF%86/"><i class="far fa-folder fa-fw"></i>MySQL知识</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-14">2022-03-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 218 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-14">2022-03-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 238 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -176,7 +176,7 @@
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.104.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">hahaen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

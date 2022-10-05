@@ -152,7 +152,7 @@
 <hr>
 <p>区别</p>
 <ul>
-<li>异步：在异步模式下，当我们使用AJAX发送完请求后，可能还有代码需要执行。这个时候可能由于种种原因导致服务器还没有响应我们的请求，但是因为我们采用了异步执行方式，所有包含AJAX请求代码的函数中的剩余代码将继续执行。如果我们是将请求结果交由另外一个JS函数去处理的，那么，这个时候就好比两条线程同时执行一样。 
+<li>异步：在异步模式下，当我们使用AJAX发送完请求后，可能还有代码需要执行。这个时候可能由于种种原因导致服务器还没有响应我们的请求，但是因为我们采用了异步执行方式，所有包含AJAX请求代码的函数中的剩余代码将继续执行。如果我们是将请求结果交由另外一个JS函数去处理的，那么，这个时候就好比两条线程同时执行一样。
 <br></li>
 <li>同步：在同步模式下，当我们使用AJAX发送完请求后，后续还有代码需要执行，我们同样将服务器响应交由另一个JS函数去处理，但是这时的代码执行情况是：在服务器没有响应或者处理响应结果的JS函数还没有处理完成return时，包含请求代码的函数的剩余代码是不能够执行的。就好比单线程一样，请求发出后就进入阻塞状态，知道接触阻塞余下的代码才会继续执行。</li>
 </ul>
@@ -187,7 +187,7 @@
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.104.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">hahaen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

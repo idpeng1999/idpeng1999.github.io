@@ -31,7 +31,7 @@
     <pubDate>Mon, 14 Mar 2022 15:25:04 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hahaen.github.io/sql%E6%B3%A8%E5%85%A5/</guid>
-    <description><![CDATA[万能密码 原验证登陆语句: 1 SELECT*FROMadminWHEREUsername=&#39;&#34;.$username.&#34;&#39;ANDPassword=&#39;&#34;.md5($password).&#34;&#39; 输入 1′ or 1=1 or ‘1’=’1万能密码语句变为: 1 SELECT*FROMadminWHEREUsername=&#39;1&#39;OR1=1OR&#39;1&#39;=&#39;1&#39;ANDPassword=&#39;EDFKGMZDFSDFDSFRRQWERRFGGG&#39; 即得到优先级关系：or&lt;and&lt;not，同一优先级默]]></description>
+    <description><![CDATA[万能密码 原验证登陆语句: 1 SELECT * FROM admin WHERE Username= &#39;&#34;.$username.&#34;&#39; AND Password= &#39;&#34;.md5($password).&#34;&#39; 输入 1′ or 1=1 or ‘1’=’1万能密码语句变为: 1 SELECT * FROM admin WHERE Username=&#39;1&#39; OR 1=1 OR &#39;1&#39;=&#39;1&#39; AND Password=&#39;EDFKGMZDFSDFDSFRRQWERRFGGG&#39; 即得到优先级关系：or&]]></description>
 </item><item>
     <title>数据库左连接内连接</title>
     <link>https://hahaen.github.io/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B7%A6%E8%BF%9E%E6%8E%A5%E5%86%85%E8%BF%9E%E6%8E%A5/</link>
@@ -45,6 +45,6 @@
     <pubDate>Thu, 10 Mar 2022 21:17:25 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hahaen.github.io/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
-    <description><![CDATA[where(条件) 1 2 select*frompersonwherename=&#39;yang&#39;&amp;&amp;age=22; like(搜索查询) 搜索查询，或者说模糊匹配，表达式主要涉及到两个符号： 百分号 %：匹配任意多个字符 下划线 _：匹配固定]]></description>
+    <description><![CDATA[where(条件) 1 2 select * from person where name=&#39;yang&#39;&amp;&amp; age=22; like(搜索查询) 搜索查询，或者说模糊匹配，表达式主要涉及到两个符号： 百分号 %：匹配任意多个字符 下划线]]></description>
 </item></channel>
 </rss>

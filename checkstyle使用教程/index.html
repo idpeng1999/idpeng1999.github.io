@@ -443,328 +443,328 @@
 </span><span class="lnt">322
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
-</span></span><span class="line"><span class="cl">&lt;!DOCTYPE module PUBLIC &#34;-//Puppy Crawl//DTD Check Configuration 1.3//EN&#34;
-</span></span><span class="line"><span class="cl">        &#34;http://www.puppycrawl.com/dtds/configuration_1_3.dtd&#34;&gt;
-</span></span><span class="line"><span class="cl">&lt;module name=&#34;Checker&#34;&gt;
-</span></span><span class="line"><span class="cl">    &lt;!-- 官方主页：https://checkstyle.sourceforge.io --&gt;
-</span></span><span class="line"><span class="cl">    &lt;!-- 检查文件是否以一个空行结束 --&gt;
-</span></span><span class="line"><span class="cl">    &lt;module name=&#34;NewlineAtEndOfFile&#34;/&gt;
-</span></span><span class="line"><span class="cl">    &lt;!-- 文件长度不超过1500行 --&gt;
-</span></span><span class="line"><span class="cl">    &lt;module name=&#34;FileLength&#34;&gt;
-</span></span><span class="line"><span class="cl">        &lt;property name=&#34;max&#34; value=&#34;1500&#34;/&gt;
-</span></span><span class="line"><span class="cl">    &lt;/module&gt;
-</span></span><span class="line"><span class="cl">    &lt;!-- 每行不超过120个字 --&gt;
-</span></span><span class="line"><span class="cl">    &lt;module name=&#34;LineLength&#34;&gt;
-</span></span><span class="line"><span class="cl">        &lt;property name=&#34;max&#34; value=&#34;150&#34;/&gt;
-</span></span><span class="line"><span class="cl">    &lt;/module&gt;
+<pre tabindex="0" class="chroma"><code class="language-v" data-lang="v"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="kd">?</span><span class="nv">xml</span> <span class="nv">version</span><span class="o">=</span><span class="s2">&#34;1.0&#34;</span> <span class="nv">encoding</span><span class="o">=</span><span class="s2">&#34;UTF-8&#34;</span><span class="kd">?</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="o">!</span><span class="nc">DOCTYPE</span> <span class="kn">module</span> <span class="nc">PUBLIC</span> <span class="s2">&#34;-//Puppy Crawl//DTD Check Configuration 1.3//EN&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;http://www.puppycrawl.com/dtds/configuration_1_3.dtd&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;Checker&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">官方主页</span><span class="err">：</span><span class="nv">https</span><span class="p">:</span><span class="c1">//checkstyle.sourceforge.io --&gt;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查文件是否以一个空行结束</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;NewlineAtEndOfFile&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">文件长度不超过1500行</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;FileLength&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;max&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;1500&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">每行不超过120个字</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;LineLength&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;max&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;150&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    &lt;module name=&#34;TreeWalker&#34;&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 想严格对文件头进行检查，请把文件头定义在一个外部文件中，如：java_header_file.txt 然后使 用&#34;headerFile&#34;属性：
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;Header&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;headerFile&#34; value=&#34;java_header_file.txt&#34;/&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;ignoreLines&#34; value=&#34;1, 5&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">        --&gt;
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;TreeWalker&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">想严格对文件头进行检查</span><span class="err">，</span><span class="nv">请把文件头定义在一个外部文件中</span><span class="err">，</span><span class="nv">如</span><span class="err">：</span><span class="nv">java_header_file</span><span class="p">.</span><span class="nv">txt</span> <span class="nv">然后使</span> <span class="nv">用</span><span class="s2">&#34;headerFile&#34;</span><span class="nv">属性</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;Header&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;headerFile&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;java_header_file.txt&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;ignoreLines&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;1, 5&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">--</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        &lt;!-- 忽略掉文件头的几行声明  不指定外部文件时出错，暂不使用
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;Header&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;ignoreLines&#34; value=&#34;1, 5&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">         --&gt;
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">忽略掉文件头的几行声明</span>  <span class="nv">不指定外部文件时出错</span><span class="err">，</span><span class="nv">暂不使用</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;Header&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;ignoreLines&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;1, 5&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">         <span class="o">--</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        &lt;!-- ********************************javadoc的检查********************--&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查Javadoc --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;JavadocStyle&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;!-- 忽略句号结尾检查 --&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#39;checkFirstSentence&#39; value=&#39;false&#39;/&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#39;checkEmptyJavadoc&#39; value=&#39;true&#39;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查所有的interface和class的doc --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;JavadocType&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;!-- 注释里允许所有注解 --&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#39;allowUnknownTags&#39; value=&#39;true&#39;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查所有方法的javadoc 注意方法上的@param XXX后必须跟参数说明检查才能通过 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#39;MissingJavadocMethod&#39;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;allowMissingPropertyJavadoc&#34; value=&#34;true&#34;/&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;allowedAnnotations&#34; value=&#34;Override,Deprecated,ApiOperation&#34;/&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;ignoreMethodNamesRegex&#34; value=&#34;main&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;JavadocMethod&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 变量的javadoc --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;JavadocVariable&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;!-- 忽略检查的变量名 --&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#39;ignoreNamePattern&#39; value=&#39;.*Business|.*Service|.*Handler|.*Mapper|.*Template|.*Client|.*Util.*|LOG|LOGGER&#39;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="o">********************************</span><span class="nv">javadoc的检查</span><span class="o">********************--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查Javadoc</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;JavadocStyle&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">忽略句号结尾检查</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s1">&#39;checkFirstSentence&#39;</span> <span class="nv">value</span><span class="o">=</span><span class="s1">&#39;false&#39;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s1">&#39;checkEmptyJavadoc&#39;</span> <span class="nv">value</span><span class="o">=</span><span class="s1">&#39;true&#39;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查所有的interface和class的doc</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;JavadocType&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">注释里允许所有注解</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s1">&#39;allowUnknownTags&#39;</span> <span class="nv">value</span><span class="o">=</span><span class="s1">&#39;true&#39;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查所有方法的javadoc</span> <span class="nv">注意方法上的</span><span class="o">@</span><span class="nv">param</span> <span class="nc">XXX后必须跟参数说明检查才能通过</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s1">&#39;MissingJavadocMethod&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;allowMissingPropertyJavadoc&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;true&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;allowedAnnotations&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;Override,Deprecated,ApiOperation&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;ignoreMethodNamesRegex&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;main&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;JavadocMethod&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">变量的javadoc</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;JavadocVariable&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">忽略检查的变量名</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s1">&#39;ignoreNamePattern&#39;</span> <span class="nv">value</span><span class="o">=</span><span class="s1">&#39;.*Business|.*Service|.*Handler|.*Mapper|.*Template|.*Client|.*Util.*|LOG|LOGGER&#39;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        &lt;!-- ********************************import方面的检查*********** --&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- import中避免星号&#34;*&#34; --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;AvoidStarImport&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查是否从非法的包中导入了类 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;IllegalImport&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查是否导入了多余的包 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;RedundantImport&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!--没用的import检查，比如：1.没有被用到 2.重复的 3.import java.lang的 4.import与该类在同一个package的--&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;UnusedImports&#34;/&gt;
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="o">********************************</span><span class="nv">import方面的检查</span><span class="o">***********</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">import中避免星号</span><span class="s2">&#34;*&#34;</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;AvoidStarImport&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查是否从非法的包中导入了类</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;IllegalImport&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查是否导入了多余的包</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;RedundantImport&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span><span class="nv">没用的import检查</span><span class="err">，</span><span class="nv">比如</span><span class="err">：</span><span class="mi">1</span><span class="p">.</span><span class="nv">没有被用到</span> <span class="mi">2</span><span class="p">.</span><span class="nv">重复的</span> <span class="mi">3</span><span class="p">.</span><span class="kn">import</span> <span class="nv">java</span><span class="p">.</span><span class="nv">lang的</span> <span class="mi">4</span><span class="p">.</span><span class="nv">import与该类在同一个package的</span><span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;UnusedImports&#34;</span><span class="o">/</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        &lt;!-- ********************************命名规则检查****************** --&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 包名检查 ^[a-z]+(\.[a-z][a-z0-9]*)*$ --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;PackageName&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;format&#34; value=&#34;^[a-z]+(\.[a-z][a-z0-9]*)*$&#34;/&gt;
-</span></span><span class="line"><span class="cl">            &lt;message key=&#34;name.invalidPattern&#34; value=&#34;包名 &#39;&#39;{0}&#39;&#39; 要符合 &#39;&#39;{1}&#39;&#39;格式.&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 类型(Class或Interface)名  ^[A-Z][a-zA-Z0-9]*$--&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;TypeName&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;severity&#34; value=&#34;warning&#34;/&gt;
-</span></span><span class="line"><span class="cl">            &lt;message key=&#34;name.invalidPattern&#34; value=&#34;名称 &#39;&#39;{0}&#39;&#39; 要符合 &#39;&#39;{1}&#39;&#39;格式.&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 方法名  ^[a-z][a-zA-Z0-9]*$--&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;MethodName&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 方法的参数命名 ^[a-z][a-zA-Z0-9]*$--&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;ParameterName &#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 非static型变量  ^[a-z][a-zA-Z0-9]*$--&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;MemberName&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 常量(static , final 字段)  ^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$--&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;ConstantName&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 局部的final变量，包括catch中的参数  ^[a-z][a-zA-Z0-9]*$ --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;LocalFinalVariableName&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 局部的非final型的变量，包括catch中的参数  ^[a-z][a-zA-Z0-9]*$ --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;LocalVariableName&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 仅仅是static型的变量（不包括staticfinal型）  ^[a-z][a-zA-Z0-9]*$ --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;StaticVariableName&#34;/&gt;
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="o">********************************</span><span class="nv">命名规则检查</span><span class="o">******************</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">包名检查</span> <span class="o">^</span><span class="p">[</span><span class="nv">a</span><span class="o">-</span><span class="nv">z</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="err">\</span><span class="p">.[</span><span class="nv">a</span><span class="o">-</span><span class="nv">z</span><span class="p">][</span><span class="nv">a</span><span class="o">-</span><span class="nv">z0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="p">)</span><span class="o">*</span><span class="err">$</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;PackageName&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;format&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;^[a-z]+(\.[a-z][a-z0-9]*)*</span><span class="o">$</span><span class="s2">&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">message</span> <span class="nv">key</span><span class="o">=</span><span class="s2">&#34;name.invalidPattern&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;包名 &#39;&#39;{0}&#39;&#39; 要符合 &#39;&#39;{1}&#39;&#39;格式.&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nf">类型</span><span class="p">(</span><span class="nc">Class或Interface</span><span class="p">)</span><span class="nv">名</span>  <span class="o">^</span><span class="p">[</span><span class="nc">A</span><span class="o">-</span><span class="nc">Z</span><span class="p">][</span><span class="nv">a</span><span class="o">-</span><span class="nv">zA</span><span class="o">-</span><span class="nc">Z0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="err">$</span><span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;TypeName&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;severity&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;warning&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">message</span> <span class="nv">key</span><span class="o">=</span><span class="s2">&#34;name.invalidPattern&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;名称 &#39;&#39;{0}&#39;&#39; 要符合 &#39;&#39;{1}&#39;&#39;格式.&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">方法名</span>  <span class="o">^</span><span class="p">[</span><span class="nv">a</span><span class="o">-</span><span class="nv">z</span><span class="p">][</span><span class="nv">a</span><span class="o">-</span><span class="nv">zA</span><span class="o">-</span><span class="nc">Z0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="err">$</span><span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;MethodName&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">方法的参数命名</span> <span class="o">^</span><span class="p">[</span><span class="nv">a</span><span class="o">-</span><span class="nv">z</span><span class="p">][</span><span class="nv">a</span><span class="o">-</span><span class="nv">zA</span><span class="o">-</span><span class="nc">Z0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="err">$</span><span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;ParameterName &#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">非static型变量</span>  <span class="o">^</span><span class="p">[</span><span class="nv">a</span><span class="o">-</span><span class="nv">z</span><span class="p">][</span><span class="nv">a</span><span class="o">-</span><span class="nv">zA</span><span class="o">-</span><span class="nc">Z0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="err">$</span><span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;MemberName&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nf">常量</span><span class="p">(</span><span class="k">static</span> <span class="p">,</span> <span class="nv">final</span> <span class="nv">字段</span><span class="p">)</span>  <span class="o">^</span><span class="p">[</span><span class="nc">A</span><span class="o">-</span><span class="nc">Z</span><span class="p">][</span><span class="nc">A</span><span class="o">-</span><span class="nc">Z0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="nv">_</span><span class="p">[</span><span class="nc">A</span><span class="o">-</span><span class="nc">Z0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">+</span><span class="p">)</span><span class="o">*</span><span class="err">$</span><span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;ConstantName&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">局部的final变量</span><span class="err">，</span><span class="nv">包括catch中的参数</span>  <span class="o">^</span><span class="p">[</span><span class="nv">a</span><span class="o">-</span><span class="nv">z</span><span class="p">][</span><span class="nv">a</span><span class="o">-</span><span class="nv">zA</span><span class="o">-</span><span class="nc">Z0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="err">$</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;LocalFinalVariableName&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">局部的非final型的变量</span><span class="err">，</span><span class="nv">包括catch中的参数</span>  <span class="o">^</span><span class="p">[</span><span class="nv">a</span><span class="o">-</span><span class="nv">z</span><span class="p">][</span><span class="nv">a</span><span class="o">-</span><span class="nv">zA</span><span class="o">-</span><span class="nc">Z0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="err">$</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;LocalVariableName&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">仅仅是static型的变量</span><span class="err">（</span><span class="nv">不包括staticfinal型</span><span class="err">）</span>  <span class="o">^</span><span class="p">[</span><span class="nv">a</span><span class="o">-</span><span class="nv">z</span><span class="p">][</span><span class="nv">a</span><span class="o">-</span><span class="nv">zA</span><span class="o">-</span><span class="nc">Z0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">*</span><span class="err">$</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;StaticVariableName&#34;</span><span class="o">/</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        &lt;!-- **************方法的参数个数不超过5个。 并且不对构造方法和重写方法进行检查*******--&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;ParameterNumber&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;tokens&#34; value=&#34;METHOD_DEF&#34;/&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;ignoreOverriddenMethods&#34; value=&#34;true&#34;/&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;max&#34; value=&#34;5&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="o">**************</span><span class="nv">方法的参数个数不超过5个</span><span class="err">。</span> <span class="nv">并且不对构造方法和重写方法进行检查</span><span class="o">*******--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;ParameterNumber&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;tokens&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;METHOD_DEF&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;ignoreOverriddenMethods&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;true&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;max&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;5&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        &lt;!-- ************************代码行数及行代码长度限制****************** --&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 文件长度不超过1500行，放在TreeWalker前面 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 方法不超过300行 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;MethodLength&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;tokens&#34; value=&#34;METHOD_DEF&#34;/&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;max&#34; value=&#34;300&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 每行不超过120个字
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;LineLength&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;max&#34; value=&#34;150&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">        --&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- ****************************空格限定***************************** --&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查约定方法名与左边圆括号之间不许出现空格
-</span></span><span class="line"><span class="cl">            public void wrongStyleMethod (){
-</span></span><span class="line"><span class="cl">            public void wrongStyleMethod
-</span></span><span class="line"><span class="cl">                                        (String para1, String para2){
-</span></span><span class="line"><span class="cl">            都是不能通过的，只允许方法名后紧跟左边圆括号&#34;(&#34;--&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;MethodParamPad&#34;/&gt;
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="o">************************</span><span class="nv">代码行数及行代码长度限制</span><span class="o">******************</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">文件长度不超过1500行</span><span class="err">，</span><span class="nv">放在TreeWalker前面</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">方法不超过300行</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;MethodLength&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;tokens&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;METHOD_DEF&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;max&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;300&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">每行不超过120个字</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;LineLength&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;max&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;150&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="o">****************************</span><span class="nv">空格限定</span><span class="o">*****************************</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查约定方法名与左边圆括号之间不许出现空格</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">public</span> <span class="nv">void</span> <span class="nv">wrongStyleMethod</span> <span class="p">(){</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">public</span> <span class="nv">void</span> <span class="nv">wrongStyleMethod</span>
+</span></span><span class="line"><span class="cl">                                        <span class="p">(</span><span class="nc">String</span> <span class="nv">para1</span><span class="p">,</span> <span class="nc">String</span> <span class="nv">para2</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">都是不能通过的</span><span class="err">，</span><span class="nv">只允许方法名后紧跟左边圆括号</span><span class="s2">&#34;(&#34;</span><span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;MethodParamPad&#34;</span><span class="o">/</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        &lt;!-- 不允许左圆括号右边有空格，也不允许与右圆括号左边有空格
-</span></span><span class="line"><span class="cl">            public void wrongStyleMethod( String para1, String para2 ){
-</span></span><span class="line"><span class="cl">            public void correctStyleMethod(String para1, String para2){
-</span></span><span class="line"><span class="cl">            都不能通过--&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;ParenPad&#34;/&gt;
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">不允许左圆括号右边有空格</span><span class="err">，</span><span class="nv">也不允许与右圆括号左边有空格</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">public</span> <span class="nv">void</span> <span class="nf">wrongStyleMethod</span><span class="p">(</span> <span class="nc">String</span> <span class="nv">para1</span><span class="p">,</span> <span class="nc">String</span> <span class="nv">para2</span> <span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">public</span> <span class="nv">void</span> <span class="nf">correctStyleMethod</span><span class="p">(</span><span class="nc">String</span> <span class="nv">para1</span><span class="p">,</span> <span class="nc">String</span> <span class="nv">para2</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">都不能通过</span><span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;ParenPad&#34;</span><span class="o">/</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        &lt;!-- 在类型转换时，不允许左圆括号右边有空格，也不允许与右圆括号左边有空格
-</span></span><span class="line"><span class="cl">            Object myObject = ( Object )other;
-</span></span><span class="line"><span class="cl">            不能通过--&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;TypecastParenPad&#34;/&gt;
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">在类型转换时</span><span class="err">，</span><span class="nv">不允许左圆括号右边有空格</span><span class="err">，</span><span class="nv">也不允许与右圆括号左边有空格</span>
+</span></span><span class="line"><span class="cl">            <span class="nc">Object</span> <span class="nv">myObject</span> <span class="o">=</span> <span class="p">(</span> <span class="nc">Object</span> <span class="p">)</span><span class="nv">other</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">不能通过</span><span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;TypecastParenPad&#34;</span><span class="o">/</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        &lt;!--  代码中不允许使用&#34;tab&#34;键。(&#39;\t&#39;) 因为在不同的编辑器下有的tab占8个空格（如windows记事
-</span></span><span class="line"><span class="cl">                  本），有的占4个（如当前大多数IDE）。
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;TabCharacter&#34;/&gt;
-</span></span><span class="line"><span class="cl">        --&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查在某个特定关键字之后应保留空格 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;NoWhitespaceAfter&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查在某个特定关键字之前应保留空格 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;NoWhitespaceBefore&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 操作符换行策略检查 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;OperatorWrap&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查分隔符是否在空白之后 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;WhitespaceAfter&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查分隔符周围是否有空白 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;WhitespaceAround&#34;/&gt;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        &lt;!-- **********************关键字********************************** --&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 每个关键字都有正确的出现顺序。比如 public static final XXX 是对一个常量的声明。如果使用
-</span></span><span class="line"><span class="cl">            static public final 就是错误的 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;ModifierOrder&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 过滤多于的关键字--&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;RedundantModifier&#34;/&gt;
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span>  <span class="nv">代码中不允许使用</span><span class="s2">&#34;tab&#34;</span><span class="nv">键</span><span class="err">。</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span> <span class="nv">因为在不同的编辑器下有的tab占8个空格</span><span class="err">（</span><span class="nv">如windows记事</span>
+</span></span><span class="line"><span class="cl">                  <span class="nv">本</span><span class="err">），</span><span class="nv">有的占4个</span><span class="err">（</span><span class="nv">如当前大多数IDE</span><span class="err">）。</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;TabCharacter&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查在某个特定关键字之后应保留空格</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;NoWhitespaceAfter&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查在某个特定关键字之前应保留空格</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;NoWhitespaceBefore&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">操作符换行策略检查</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;OperatorWrap&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查分隔符是否在空白之后</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;WhitespaceAfter&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查分隔符周围是否有空白</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;WhitespaceAround&#34;</span><span class="o">/</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        &lt;!-- ***********************空白域************************************* --&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 不能出现空白区域 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;EmptyBlock&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 所有区域都要使用大括号 if(true)System.out.println(&#34;if 嵌套浓度限定&#34;);不能通过--&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;NeedBraces&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 多余的括号 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;AvoidNestedBlocks&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;allowInSwitchCase&#34; value=&#34;true&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查左大括号位置 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;LeftCurly&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查右大括号位置 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;RightCurly&#34;/&gt;
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="o">**********************</span><span class="nv">关键字</span><span class="o">**********************************</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">每个关键字都有正确的出现顺序</span><span class="err">。</span><span class="nv">比如</span> <span class="nv">public</span> <span class="k">static</span> <span class="nv">final</span> <span class="nc">XXX</span> <span class="nv">是对一个常量的声明</span><span class="err">。</span><span class="nv">如果使用</span>
+</span></span><span class="line"><span class="cl">            <span class="k">static</span> <span class="nv">public</span> <span class="nv">final</span> <span class="nv">就是错误的</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;ModifierOrder&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">过滤多于的关键字</span><span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;RedundantModifier&#34;</span><span class="o">/</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        &lt;!-- ******************************编码方面的检查 **********************--&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查空的代码段
-</span></span><span class="line"><span class="cl">            不许出现空语句
-</span></span><span class="line"><span class="cl">            int a = 0; //正常
-</span></span><span class="line"><span class="cl">            ; // 这里就是一个空的语句
-</span></span><span class="line"><span class="cl">            int b = 0; //正常
-</span></span><span class="line"><span class="cl">        --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;EmptyStatement&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 如果某个变量一直都没变，那么它就应该是final型的
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;FinalLocalVariable&#34;/&gt;
-</span></span><span class="line"><span class="cl">        --&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查在重写了equals方法后是否重写了hashCode方法 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;EqualsHashCode&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 不允许使用switch语句
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;IllegalToken&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;tokens&#34; value=&#34;LITERAL_SWITCH&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">        --&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查switch语句是否有default --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;MissingSwitchDefault&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查局部变量或参数是否隐藏了类中的变量 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;HiddenField&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;tokens&#34; value=&#34;VARIABLE_DEF&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 内部赋值语句 ：String s = Integer.toString(i = 2); --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;InnerAssignment&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 绝对不能容忍魔法数 ，即数据标识常量化
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;MagicNumber&#34;/&gt;
-</span></span><span class="line"><span class="cl">        --&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 循环控制变量不能被修改
-</span></span><span class="line"><span class="cl">        for (int i = 0; i &lt; 1; i++) {
-</span></span><span class="line"><span class="cl">            i++; // 这里是极可能是程序员大意写出来的。
-</span></span><span class="line"><span class="cl">        }
-</span></span><span class="line"><span class="cl">        --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;ModifiedControlVariable&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 多余的throw
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;RedundantThrows&#34;/&gt;
-</span></span><span class="line"><span class="cl">        --&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 未被简化的条件表达式 检查过度复杂的条件表达式，
-</span></span><span class="line"><span class="cl">            比如： (b == true), b || true, !false, 难读且容易出错 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;SimplifyBooleanExpression&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 未被简化的布尔返回值
-</span></span><span class="line"><span class="cl">            if (valid()){
-</span></span><span class="line"><span class="cl">                return false;
-</span></span><span class="line"><span class="cl">            }else{
-</span></span><span class="line"><span class="cl">                return true;
-</span></span><span class="line"><span class="cl">            }
-</span></span><span class="line"><span class="cl">            就可以写成：
-</span></span><span class="line"><span class="cl">            return !valid();
-</span></span><span class="line"><span class="cl">         --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;SimplifyBooleanReturn&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- String的比较不能用!= 和 == --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;StringLiteralEquality&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 限制for循环最多嵌套2层 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;NestedForDepth&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;max&#34; value=&#34;4&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- if最多嵌套3层 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;NestedIfDepth&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;max&#34; value=&#34;5&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- try最多被嵌套2层 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;NestedTryDepth&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;max&#34; value=&#34;5&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">        &lt;!--重载方法是否在同个地方--&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;OverloadMethodsDeclarationOrder&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查并确认一个类的clone()方法调用了父类的clone() --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;SuperClone&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查并确认一个类的finalize()调用了父类的finalize() --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;SuperFinalize&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 不能catch java.lang.Exception,异常分类处理
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;IllegalCatch&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;illegalClassNames&#34; value=&#34;java.lang.Exception&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">         --&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 确保一个类有package声明 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;PackageDeclaration&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 一个方法中最多有10个return --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;ReturnCount&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;max&#34; value=&#34;10&#34;/&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;maxForVoid&#34; value=&#34;10&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 确保某个class 在被使用时都已经被初始化成默认值(对象是null ,
-</span></span><span class="line"><span class="cl">            数字和字符是0 , boolean 变量是false.)了 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;ExplicitInitialization&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 不许有同样内容的String
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;MultipleStringLiterals&#34;/&gt;
-</span></span><span class="line"><span class="cl">        --&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 同一行不能有多个声明 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;MultipleVariableDeclarations&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 不必要的圆括号 检查不必要的圆括号”(,)”。比如， if(((((true))))) --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;UnnecessaryParentheses&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 限制一个布尔表达式中的 &amp;&amp;, || 和^的个数。可以让代码看起来更清晰，容易排错和维护  --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;BooleanExpressionComplexity&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;max&#34; value=&#34;8&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 一个类中如果使用太多其他的类，是肯定会增加系统复杂度的。使用其他的类越少，耦合度就越少 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;ClassDataAbstractionCoupling&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;max&#34; value=&#34;50&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 确保函数的分支复杂度没有超出限制
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;CyclomaticComplexity&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;max&#34; value=&#34;20&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">        --&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- NPATH 量度计算了一个函数的可执行的分支个数
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;NPathComplexity&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;max&#34; value=&#34;20&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">        --&gt;
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        &lt;!-- 类设计检查 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查只有private构造函数的类是否声明为final --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;FinalClass&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查接口是否仅定义类型
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;InterfaceIsType&#34;/&gt;
-</span></span><span class="line"><span class="cl">    	--&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查类成员的可见度 检查类成员的可见性。只有static final 成员是public的除非在本检查的protectedAllowed和packagedAllowed属性中进行了设置--&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;VisibilityModifier&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;packageAllowed&#34; value=&#34;true&#34;/&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;protectedAllowed&#34; value=&#34;true&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="o">***********************</span><span class="nv">空白域</span><span class="o">*************************************</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">不能出现空白区域</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;EmptyBlock&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">所有区域都要使用大括号</span> <span class="k">if</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="nc">System</span><span class="p">.</span><span class="nv">out</span><span class="p">.</span><span class="nb">println</span><span class="p">(</span><span class="s2">&#34;if 嵌套浓度限定&#34;</span><span class="p">);</span><span class="nv">不能通过</span><span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;NeedBraces&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">多余的括号</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;AvoidNestedBlocks&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;allowInSwitchCase&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;true&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查左大括号位置</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;LeftCurly&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查右大括号位置</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;RightCurly&#34;</span><span class="o">/</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        &lt;!-- 禁止使用System.out.println --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;Regexp&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;format&#34; value=&#34;.printStackTrace&#34;/&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;illegalPattern&#34; value=&#34;true&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;Regexp&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;format&#34; value=&#34;System.out.println&#34;/&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;illegalPattern&#34; value=&#34;true&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="o">******************************</span><span class="nv">编码方面的检查</span> <span class="o">**********************--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查空的代码段</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">不许出现空语句</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="nv">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//正常
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="p">;</span> <span class="c1">// 这里就是一个空的语句
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="kt">int</span> <span class="nv">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//正常
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;EmptyStatement&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">如果某个变量一直都没变</span><span class="err">，</span><span class="nv">那么它就应该是final型的</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;FinalLocalVariable&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查在重写了equals方法后是否重写了hashCode方法</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;EqualsHashCode&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">不允许使用switch语句</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;IllegalToken&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;tokens&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;LITERAL_SWITCH&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查switch语句是否有default</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;MissingSwitchDefault&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查局部变量或参数是否隐藏了类中的变量</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;HiddenField&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;tokens&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;VARIABLE_DEF&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">内部赋值语句</span> <span class="err">：</span><span class="nc">String</span> <span class="nv">s</span> <span class="o">=</span> <span class="nc">Integer</span><span class="p">.</span><span class="nf">toString</span><span class="p">(</span><span class="nv">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">);</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;InnerAssignment&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">绝对不能容忍魔法数</span> <span class="err">，</span><span class="nv">即数据标识常量化</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;MagicNumber&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">循环控制变量不能被修改</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nv">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">i</span> <span class="p">&lt;</span> <span class="mi">1</span><span class="p">;</span> <span class="nv">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">i</span><span class="o">++</span><span class="p">;</span> <span class="c1">// 这里是极可能是程序员大意写出来的。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;ModifiedControlVariable&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">多余的throw</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;RedundantThrows&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">未被简化的条件表达式</span> <span class="nv">检查过度复杂的条件表达式</span><span class="err">，</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">比如</span><span class="err">：</span> <span class="p">(</span><span class="nv">b</span> <span class="o">==</span> <span class="kc">true</span><span class="p">),</span> <span class="nv">b</span> <span class="o">||</span> <span class="kc">true</span><span class="p">,</span> <span class="o">!</span><span class="kc">false</span><span class="p">,</span> <span class="nv">难读且容易出错</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;SimplifyBooleanExpression&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">未被简化的布尔返回值</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nf">valid</span><span class="p">()){</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">就可以写成</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="o">!</span><span class="nf">valid</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">         <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;SimplifyBooleanReturn&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nc">String的比较不能用</span><span class="o">!=</span> <span class="nv">和</span> <span class="o">==</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;StringLiteralEquality&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">限制for循环最多嵌套2层</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;NestedForDepth&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;max&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;4&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">if最多嵌套3层</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;NestedIfDepth&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;max&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;5&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">try最多被嵌套2层</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;NestedTryDepth&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;max&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;5&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span><span class="nv">重载方法是否在同个地方</span><span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;OverloadMethodsDeclarationOrder&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nf">检查并确认一个类的clone</span><span class="p">()</span><span class="nf">方法调用了父类的clone</span><span class="p">()</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;SuperClone&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nf">检查并确认一个类的finalize</span><span class="p">()</span><span class="nf">调用了父类的finalize</span><span class="p">()</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;SuperFinalize&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">不能catch</span> <span class="nv">java</span><span class="p">.</span><span class="nv">lang</span><span class="p">.</span><span class="nc">Exception</span><span class="p">,</span><span class="nv">异常分类处理</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;IllegalCatch&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;illegalClassNames&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;java.lang.Exception&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">         <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">确保一个类有package声明</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;PackageDeclaration&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">一个方法中最多有10个return</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;ReturnCount&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;max&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;10&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;maxForVoid&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;10&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">确保某个class</span> <span class="nf">在被使用时都已经被初始化成默认值</span><span class="p">(</span><span class="nv">对象是null</span> <span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">数字和字符是0</span> <span class="p">,</span> <span class="nv">boolean</span> <span class="nv">变量是false</span><span class="p">.)</span><span class="nv">了</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;ExplicitInitialization&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">不许有同样内容的String</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;MultipleStringLiterals&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">同一行不能有多个声明</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;MultipleVariableDeclarations&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">不必要的圆括号</span> <span class="nv">检查不必要的圆括号</span><span class="err">”</span><span class="p">(,)</span><span class="err">”。</span><span class="nv">比如</span><span class="err">，</span> <span class="k">if</span><span class="p">(((((</span><span class="kc">true</span><span class="p">)))))</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;UnnecessaryParentheses&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">限制一个布尔表达式中的</span> <span class="o">&amp;&amp;</span><span class="p">,</span> <span class="o">||</span> <span class="nv">和</span><span class="o">^</span><span class="nv">的个数</span><span class="err">。</span><span class="nv">可以让代码看起来更清晰</span><span class="err">，</span><span class="nv">容易排错和维护</span>  <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;BooleanExpressionComplexity&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;max&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;8&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">一个类中如果使用太多其他的类</span><span class="err">，</span><span class="nv">是肯定会增加系统复杂度的</span><span class="err">。</span><span class="nv">使用其他的类越少</span><span class="err">，</span><span class="nv">耦合度就越少</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;ClassDataAbstractionCoupling&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;max&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;50&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">确保函数的分支复杂度没有超出限制</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;CyclomaticComplexity&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;max&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;20&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nc">NPATH</span> <span class="nv">量度计算了一个函数的可执行的分支个数</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;NPathComplexity&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;max&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;20&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">--</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        &lt;!-- ************************其他*********************************** --&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查并确保所有的常量中的L都是大写的。因为小写的字母l跟数字1太象了 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;UpperEll&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查数组类型的定义是String[] args，而不是String args[] --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;ArrayTypeStyle&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 不许使用与代码同行的注释
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;TrailingComment&#34;/&gt;
-</span></span><span class="line"><span class="cl">        --&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 不许存在TO DO
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;TodoComment&#34;/&gt;
-</span></span><span class="line"><span class="cl">        --&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 除了正常的程序入口之外，所有的main方法都应该被删掉或注释掉 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;UncommentedMain&#34;&gt;
-</span></span><span class="line"><span class="cl">            &lt;property name=&#34;excludedClasses&#34; value=&#34;.*[Application,Test]$&#34;/&gt;
-</span></span><span class="line"><span class="cl">        &lt;/module&gt;
-</span></span><span class="line"><span class="cl">        &lt;!-- 检查并确保所有的常量中的L都是大写的。也就是在常量中没有使用”l”而是用的”L”，比如long型常
-</span></span><span class="line"><span class="cl">            量，都要以”L”结尾。这与Sun编码规范 3.10.1 相一致。小写的字母l 跟数字1 太象了 --&gt;
-</span></span><span class="line"><span class="cl">        &lt;module name=&#34;UpperEll&#34;/&gt;
-</span></span><span class="line"><span class="cl">    &lt;/module&gt;
-</span></span><span class="line"><span class="cl">&lt;/module&gt;
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">类设计检查</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查只有private构造函数的类是否声明为final</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;FinalClass&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查接口是否仅定义类型</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;InterfaceIsType&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    	<span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查类成员的可见度</span> <span class="nv">检查类成员的可见性</span><span class="err">。</span><span class="nv">只有static</span> <span class="nv">final</span> <span class="nv">成员是public的除非在本检查的protectedAllowed和packagedAllowed属性中进行了设置</span><span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;VisibilityModifier&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;packageAllowed&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;true&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;protectedAllowed&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;true&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">禁止使用System</span><span class="p">.</span><span class="nv">out</span><span class="p">.</span><span class="nv">println</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;Regexp&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;format&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;.printStackTrace&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;illegalPattern&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;true&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;Regexp&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;format&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;System.out.println&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;illegalPattern&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;true&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="o">************************</span><span class="nv">其他</span><span class="o">***********************************</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查并确保所有的常量中的L都是大写的</span><span class="err">。</span><span class="nv">因为小写的字母l跟数字1太象了</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;UpperEll&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查数组类型的定义是String</span><span class="p">[]</span> <span class="nv">args</span><span class="err">，</span><span class="nv">而不是String</span> <span class="nv">args</span><span class="p">[]</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;ArrayTypeStyle&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">不许使用与代码同行的注释</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;TrailingComment&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">不许存在TO</span> <span class="nc">DO</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;TodoComment&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">除了正常的程序入口之外</span><span class="err">，</span><span class="nv">所有的main方法都应该被删掉或注释掉</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;UncommentedMain&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nv">property</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;excludedClasses&#34;</span> <span class="nv">value</span><span class="o">=</span><span class="s2">&#34;.*[Application,Test]</span><span class="o">$</span><span class="s2">&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="o">!--</span> <span class="nv">检查并确保所有的常量中的L都是大写的</span><span class="err">。</span><span class="nv">也就是在常量中没有使用</span><span class="err">”</span><span class="nv">l</span><span class="err">”</span><span class="nv">而是用的</span><span class="err">”</span><span class="nc">L</span><span class="err">”，</span><span class="nv">比如long型常</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">量</span><span class="err">，</span><span class="nv">都要以</span><span class="err">”</span><span class="nc">L</span><span class="err">”</span><span class="nv">结尾</span><span class="err">。</span><span class="nv">这与Sun编码规范</span> <span class="mf">3.10.1</span> <span class="nv">相一致</span><span class="err">。</span><span class="nv">小写的字母l</span> <span class="nv">跟数字1</span> <span class="nv">太象了</span> <span class="o">--</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="kn">module</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;UpperEll&#34;</span><span class="o">/</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="o">/</span><span class="kn">module</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><img
@@ -827,7 +827,7 @@
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.104.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">hahaen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

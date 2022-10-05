@@ -154,7 +154,7 @@
 然后前端限流，后端也要限流，就是我们限制他次数，限制它的总量啊，然后快速的一个失败降级运行啊，还要我们的熔断隔离防止这个雪崩，
 就比如说我们一万个商品嘛，然后每个是1000件去秒杀，那考虑到这些所有的一个秒杀成功的请求呢，其实我们是要去进入队列啊，就是要去写一个队列，
 慢慢去创建我们的订单，再去扣减我们的这个库存嘛，那库存那边也要去做一个预热嘛，就放到我们的redis，然后信号量去控制我们的秒杀请求，
-然后我们的nginx去做好我们的一个动静分离，静态资源啊，我们的nginx要直接返回，要保证我们的秒杀和我们的这个商品详情页的一个动态请求， 
+然后我们的nginx去做好我们的一个动静分离，静态资源啊，我们的nginx要直接返回，要保证我们的秒杀和我们的这个商品详情页的一个动态请求，
 请求后才可以打开我们这么个后端服务集群，差不多就这样。</p>
 </li>
 <li>
@@ -202,7 +202,7 @@
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.104.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">hahaen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

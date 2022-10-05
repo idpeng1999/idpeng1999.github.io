@@ -33,6 +33,13 @@
     <guid>https://hahaen.github.io/apidoc%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</guid>
     <description><![CDATA[官方教程 配置 安装node.js 安装apidoc 1 npm install apidoc -g 在项目根目录下新建apidoc.json文件 1 2 3 4 5 6 7 { &#34;name&#34;: &#34;wxshop&#34;, &#34;version&#34;: &#34;1.0.0&#34;, &#34;description&#34;: &#34;小微]]></description>
 </item><item>
+    <title>Git快捷配置</title>
+    <link>https://hahaen.github.io/git%E5%BF%AB%E6%8D%B7%E9%85%8D%E7%BD%AE/</link>
+    <pubDate>Thu, 12 May 2022 13:34:41 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hahaen.github.io/git%E5%BF%AB%E6%8D%B7%E9%85%8D%E7%BD%AE/</guid>
+    <description><![CDATA[查看git快捷配置 1 cat ~/.bashrc 修改git快捷配置 1 vi ~/.bashrc 例子 1 2 3 4 5 6 7 8 alias ga=&#34;git add&#34; alias gm=&#34;git commit -m&#34; alias gc=&#34;git commit -v&#34; alias gl=&#34;git pull&#34; alias gp=&#34;git push&#34; alias gco=&#34;git checkout&#34; alias gst=&#34;git status -sb&#34; alias glog=&#34;git log --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit --]]></description>
+</item><item>
     <title>Jacoco使用教程</title>
     <link>https://hahaen.github.io/jacoco%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</link>
     <pubDate>Sun, 10 Apr 2022 23:21:11 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://hahaen.github.io/hugo%E6%8C%87%E5%8D%97/</guid>
     <description><![CDATA[启动hugo服务(预览) 1 hugo server -D 创建MD 1 hugo new posts/名字.md 构建页面 1 hugo -D]]></description>
-</item><item>
-    <title>Mysql Docker版教程</title>
-    <link>https://hahaen.github.io/mysql-docker%E7%89%88%E6%95%99%E7%A8%8B/</link>
-    <pubDate>Tue, 02 Nov 2021 16:35:07 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://hahaen.github.io/mysql-docker%E7%89%88%E6%95%99%E7%A8%8B/</guid>
-    <description><![CDATA[例： 1 docker run --name mymysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql:5.7.27 1 2 3 4 5 6 7 docker run --name=mediawiki_mysql \ -e MYSQL_DATABASE=wikidb \ -e MYSQL_USER=wikiuser \ -e MYSQL_PASSWORD=mysecret \ -e MYSQL_ROOT_PASSWORD=zhang123 \ -v /var/mediawiki/mysql:/var/lib/mysql \ -d mysql:5.7.27 上面命令中的 \ 是换行 -d 是指定镜像，本地没有的话会从dock]]></description>
 </item></channel>
 </rss>

@@ -299,9 +299,9 @@ Eureka Service会进入自我保护模式，在该模式下Eureka Service会保�
 </ul>
 <h2 id="eureka和zookeeper都可以提供服务注册与发现的功能请说说两个的区别">Eureka和ZooKeeper都可以提供服务注册与发现的功能,请说说两个的区别</h2>
 <ol>
-<li>ZooKeeper中的节点服务挂了就要选举,在选举期间注册服务瘫痪,虽然服务最终会恢复,但是选举期间不可用的， 
+<li>ZooKeeper中的节点服务挂了就要选举,在选举期间注册服务瘫痪,虽然服务最终会恢复,但是选举期间不可用的，
 选举就是改微服务做了集群</li>
-<li>Eureka各个节点是平等关系,服务器挂了没关系，只要有一台Eureka就可以保证服务可用，数据都是最新的。 
+<li>Eureka各个节点是平等关系,服务器挂了没关系，只要有一台Eureka就可以保证服务可用，数据都是最新的。
 如果查询到的数据并不是最新的，就是因为Eureka的自我保护模式导致的</li>
 <li>Eureka本质上是一个工程,而ZooKeeper只是一个进程</li>
 <li>Eureka可以很好的应对因网络故障导致部分节点失去联系的情况,而不会像ZooKeeper 一样使得整个注册系统瘫痪</li>
@@ -380,13 +380,13 @@ Ribbon会自动的帮助你基于某种规则（如简单轮询，随即连接�
 </ul>
 <h2 id="nginx与ribbon的区别">Nginx与Ribbon的区别</h2>
 <ul>
-<li>Nginx是反向代理同时可以实现负载均衡， 
+<li>Nginx是反向代理同时可以实现负载均衡，
 nginx拦截客户端请求采用负载均衡策略根据upstream配置进行转发，相当于请求通过nginx服务器进行转发。</li>
 <li>Ribbon是客户端负载均衡，从注册中心读取目标服务器信息，
 然后客户端采用轮询策略对服务直接访问，全程在客户端操作。</li>
 </ul>
 <h2 id="ribbon底层实现原理">Ribbon底层实现原理</h2>
-<p>Ribbon使用discoveryClient从注册中心读取目标服务信息，对同一接口请求进行计数， 
+<p>Ribbon使用discoveryClient从注册中心读取目标服务信息，对同一接口请求进行计数，
 使用%取余算法获取目标服务集群索引，返回获取到的目标服务信息。</p>
 <h2 id="loadbalanced注解的作用">@LoadBalanced注解的作用</h2>
 <p>开启客户端负载均衡。</p>
@@ -605,7 +605,7 @@ Spring Cloud Gateway作为Spring Cloud生态系统中的网关，
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.104.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">hahaen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
