@@ -35,4 +35,26 @@ HINT:
 Access key length should be at least 3, and secret key length at least 8 characters
 ```
 
+## win搭建minio本地
+
+[minio官网](https://min.io/)
+
+[minio官网下载](https://min.io/download#/windows)
+
+
+```shell
+minio.exe server  D:\java\minio\store --console-address "127.0.0.1:9000"  --address "127.0.0.1:9001"
+
+set MINIO_ACCESS_KEY=haha
+set MINIO_SECRET_KEY=haha123
+```
+
+1. cmd启动
+2. `D:\java\minio\store` 本地启动目录
+3. 9000 客户端端口
+4. 9001 服务端端口
+5. `set MINIO_ACCESS_KEY=haha` 设置登录用户名为haha
+6. `set MINIO_SECRET_KEY=haha123` 设置登录密码haha123
+
+
 

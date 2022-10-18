@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hahaen.github.io\/minio\/"
-        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  200 ,
+        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  296 ,
         "url": "https:\/\/hahaen.github.io\/minio\/","datePublished": "2022-06-17T14:57:43+08:00","dateModified": "2022-06-17T14:57:43+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/hahaen.github.io\/images\/avatar.png"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Minio</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hahaen</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw"></i>工具教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-06-17">2022-06-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 200 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-06-17">2022-06-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 296 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -118,6 +118,7 @@
     <li>
       <ul>
         <li><a href="#docker搭建minio单节点">docker搭建minio单节点</a></li>
+        <li><a href="#win搭建minio本地">win搭建minio本地</a></li>
       </ul>
     </li>
   </ul>
@@ -183,7 +184,32 @@
 </span></span><span class="line"><span class="cl">Access key length should be at least 3, and secret key length at least 8 characters
 </span></span></code></pre></td></tr></table>
 </div>
-</div></div><div class="post-footer" id="post-footer">
+</div><h2 id="win搭建minio本地">win搭建minio本地</h2>
+<p><a href="https://min.io/" target="_blank" rel="noopener noreffer">minio官网</a></p>
+<p><a href="https://min.io/download#/windows" target="_blank" rel="noopener noreffer">minio官网下载</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">minio.exe server  D:<span class="se">\j</span>ava<span class="se">\m</span>inio<span class="se">\s</span>tore --console-address <span class="s2">&#34;127.0.0.1:9000&#34;</span>  --address <span class="s2">&#34;127.0.0.1:9001&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">MINIO_ACCESS_KEY</span><span class="o">=</span>haha
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">MINIO_SECRET_KEY</span><span class="o">=</span>haha123
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>cmd启动</li>
+<li><code>D:\java\minio\store</code> 本地启动目录</li>
+<li>9000 客户端端口</li>
+<li>9001 服务端端口</li>
+<li><code>set MINIO_ACCESS_KEY=haha</code> 设置登录用户名为haha</li>
+<li><code>set MINIO_SECRET_KEY=haha123</code> 设置登录密码haha123</li>
+</ol>
+</div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

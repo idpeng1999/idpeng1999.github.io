@@ -4,12 +4,19 @@
         <link>https://hahaen.github.io/categories/%E5%89%8D%E7%AB%AF/</link>
         <description>前端 - 分类 - 哈哈博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>630606938@qq.com (hahaen)</managingEditor>
-            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 31 Aug 2022 23:14:18 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/%E5%89%8D%E7%AB%AF/" rel="self" type="application/rss+xml" /><item>
-    <title>CSS基础概念</title>
-    <link>https://hahaen.github.io/css%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/</link>
+            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 19 Oct 2022 00:10:55 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/%E5%89%8D%E7%AB%AF/" rel="self" type="application/rss+xml" /><item>
+    <title>Js基础用法</title>
+    <link>https://hahaen.github.io/js%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</link>
+    <pubDate>Wed, 19 Oct 2022 00:10:55 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://hahaen.github.io/js%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</guid>
+    <description><![CDATA[内容]]></description>
+</item><item>
+    <title>CSS基础用法</title>
+    <link>https://hahaen.github.io/css%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</link>
     <pubDate>Wed, 31 Aug 2022 23:14:18 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://hahaen.github.io/css%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/</guid>
+    <guid>https://hahaen.github.io/css%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</guid>
     <description><![CDATA[内容]]></description>
 </item><item>
     <title>Element</title>

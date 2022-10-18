@@ -6,7 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Mysql Docker版教程 - 哈哈博客</title><meta name="Description" content="关于 哈哈博客"><meta property="og:title" content="Mysql Docker版教程" />
-<meta property="og:description" content="例： 1 docker run --name mymysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql:5.7.27 1 2 3 4 5 6 7 docker run --name=mediawiki_mysql \ -e MYSQL_DATABASE=wikidb \ -e MYSQL_USER=wikiuser \ -e MYSQL_PASSWORD=mysecret \ -e MYSQL_ROOT_PASSWORD=zhang123 \ -v /var/mediawiki/mysql:/var/lib/mysql \ -d mysql:5.7.27 上面命令中的 \ 是换行 -d 是指定镜像，本地没有的话会从dock" />
+<meta property="og:description" content="例： 1 docker run --name mymysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql:5.7.27 1 docker run --name mysql-5.5 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql --lower_case_table_names=1 1 2 3 4 5 6 7 8 9 docker run --name=mediawiki_mysql \ -e MYSQL_DATABASE=wikidb \ -e MYSQL_USER=wikiuser \ -e MYSQL_PASSWORD=mysecret \ -e MYSQL_ROOT_PASSWORD=zhang123 \ -v /var/mediawiki/mysql:/var/lib/mysql \ -d mysql:5.7.27 --lower_case_table_names=1 上面命令中的 \ 是换行 -d 是指定" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://hahaen.github.io/mysql-docker%E7%89%88%E6%95%99%E7%A8%8B/" /><meta property="og:image" content="https://hahaen.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-11-02T16:35:07+08:00" />
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="https://hahaen.github.io/logo.png"/>
 
 <meta name="twitter:title" content="Mysql Docker版教程"/>
-<meta name="twitter:description" content="例： 1 docker run --name mymysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql:5.7.27 1 2 3 4 5 6 7 docker run --name=mediawiki_mysql \ -e MYSQL_DATABASE=wikidb \ -e MYSQL_USER=wikiuser \ -e MYSQL_PASSWORD=mysecret \ -e MYSQL_ROOT_PASSWORD=zhang123 \ -v /var/mediawiki/mysql:/var/lib/mysql \ -d mysql:5.7.27 上面命令中的 \ 是换行 -d 是指定镜像，本地没有的话会从dock"/>
+<meta name="twitter:description" content="例： 1 docker run --name mymysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql:5.7.27 1 docker run --name mysql-5.5 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql --lower_case_table_names=1 1 2 3 4 5 6 7 8 9 docker run --name=mediawiki_mysql \ -e MYSQL_DATABASE=wikidb \ -e MYSQL_USER=wikiuser \ -e MYSQL_PASSWORD=mysecret \ -e MYSQL_ROOT_PASSWORD=zhang123 \ -v /var/mediawiki/mysql:/var/lib/mysql \ -d mysql:5.7.27 --lower_case_table_names=1 上面命令中的 \ 是换行 -d 是指定"/>
 <meta name="application-name" content="哈哈博客">
 <meta name="apple-mobile-web-app-title" content="哈哈博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hahaen.github.io\/mysql-docker%E7%89%88%E6%95%99%E7%A8%8B\/"
-        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  257 ,
+        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  307 ,
         "url": "https:\/\/hahaen.github.io\/mysql-docker%E7%89%88%E6%95%99%E7%A8%8B\/","datePublished": "2021-11-02T16:35:07+08:00","dateModified": "2021-11-02T16:35:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/hahaen.github.io\/images\/avatar.png"},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Mysql Docker版教程</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>hahaen</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw"></i>工具教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-11-02">2021-11-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 257 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-11-02">2021-11-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 307 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -123,6 +123,14 @@
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">docker run --name mymysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql:5.7.27
 </span></span></code></pre></td></tr></table>
 </div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">docker run --name mysql-5.5 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql --lower_case_table_names=1
+</span></span></code></pre></td></tr></table>
+</div>
 </div><br/>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -133,23 +141,30 @@
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">docker run --name=mediawiki_mysql \
 </span></span><span class="line"><span class="cl">-e MYSQL_DATABASE=wikidb \
 </span></span><span class="line"><span class="cl">-e MYSQL_USER=wikiuser \
 </span></span><span class="line"><span class="cl">-e MYSQL_PASSWORD=mysecret \
-</span></span><span class="line"><span class="cl">-e MYSQL_ROOT_PASSWORD=zhang123 \
+</span></span><span class="line"><span class="cl">-e MYSQL_ROOT_PASSWORD=zhang123 \ 
 </span></span><span class="line"><span class="cl">-v /var/mediawiki/mysql:/var/lib/mysql \
 </span></span><span class="line"><span class="cl">-d mysql:5.7.27
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">--lower_case_table_names=1
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>上面命令中的 \ 是换行</p>
-<p>-d 是指定镜像，本地没有的话会从docker服务器下载</p>
-<p>-p 映射容器的3306到本地3306，前面是本地端口，-p 3306:3306</p>
-<p>这里已经设置了一组管理数据库的用户名:wikiuser 密码:mysecret</p>
-<p>通常使用-e MYSQL_RANDOM_ROOT_PASSWORD=1 把root设置为随机，只使用wikiuser用户来管理</p>
-<p>-v 是映射本地目录到容器，目录需要提前创建，或者sudo chmod 777 /var/mediawiki，启动容器会自己创建mysql目录</p>
+</div><ol>
+<li>上面命令中的 \ 是换行</li>
+<li>-d 是指定镜像，本地没有的话会从docker服务器下载</li>
+<li>-p 映射容器的3306到本地3306，前面是本地端口，-p 3306:3306</li>
+<li>这里已经设置了一组管理数据库的用户名:wikiuser 密码:mysecret   (管理员root密码zhang123)</li>
+<li>通常使用-e MYSQL_RANDOM_ROOT_PASSWORD=1 把root设置为随机，只使用wikiuser用户来管理</li>
+<li>-v 是映射本地目录到容器，目录需要提前创建，或者sudo chmod 777 /var/mediawiki，启动容器会自己创建mysql目录</li>
+<li><code>--lower_case_table_names=1</code> 设置数据库不敏感，不区分大小写</li>
+</ol>
 <br/>
 进入容器：
 <p>docker exec -it [容器名或容器ID] bash</p>
