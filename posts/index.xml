@@ -17,14 +17,14 @@
     <pubDate>Wed, 19 Oct 2022 00:10:55 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hahaen.github.io/js%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</guid>
-    <description><![CDATA[内容]]></description>
+    <description><![CDATA[Js基础用法 join 数组 转 &lsquo;,&lsquo;分割的字符串(&rsquo;,&lsquo;可换) 1 2 3 4 5 [1,2,3].join() &#39;1,2,3&#39; [1,2,3].join(&#39;-&#39;) &#39;1-2-3&#39; split &lsquo;,&l]]></description>
 </item><item>
     <title>CSS基础用法</title>
     <link>https://hahaen.github.io/css%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</link>
     <pubDate>Wed, 31 Aug 2022 23:14:18 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://hahaen.github.io/css%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</guid>
-    <description><![CDATA[内容]]></description>
+    <description><![CDATA[CSS基础用法]]></description>
 </item><item>
     <title>Element</title>
     <link>https://hahaen.github.io/element/</link>
