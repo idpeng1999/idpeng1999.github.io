@@ -8,8 +8,9 @@
     <title>电商</title>
     <link>https://hahaen.github.io/%E7%94%B5%E5%95%86/</link>
     <pubDate>Thu, 21 Apr 2022 20:56:03 &#43;0800</pubDate>
-    <author>作者</author>
+    <author>hahaen</author>
     <guid>https://hahaen.github.io/%E7%94%B5%E5%95%86/</guid>
     <description><![CDATA[高并发三种处理方式 系统拆分 缓存 MQ 做项目的时候，如果我们有个变量，我们需要在上下文一直传递下去，那这个时候怎么去弄呢？ 可以用Threadloc]]></description>
-</item></channel>
+</item>
+</channel>
 </rss>

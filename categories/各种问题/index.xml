@@ -8,29 +8,33 @@
     <title>Idea启动异常</title>
     <link>https://hahaen.github.io/idea%E5%90%AF%E5%8A%A8%E5%BC%82%E5%B8%B8/</link>
     <pubDate>Sun, 29 May 2022 21:57:42 &#43;0800</pubDate>
-    <author>作者</author>
+    <author>hahaen</author>
     <guid>https://hahaen.github.io/idea%E5%90%AF%E5%8A%A8%E5%BC%82%E5%B8%B8/</guid>
     <description><![CDATA[双击bin目录下的idea.bat 报错 1 ERROR - llij.ide.plugins.PluginManager - java.net.BindException: Address already in use: bind 参考 运行两个命令成功解决。 1 2 3 net stop winnat net start winnat]]></description>
-</item><item>
+</item>
+<item>
     <title>Idea自用插件记录</title>
     <link>https://hahaen.github.io/idea%E8%87%AA%E7%94%A8%E6%8F%92%E4%BB%B6%E8%AE%B0%E5%BD%95/</link>
     <pubDate>Fri, 20 May 2022 22:13:06 &#43;0800</pubDate>
-    <author>作者</author>
+    <author>hahaen</author>
     <guid>https://hahaen.github.io/idea%E8%87%AA%E7%94%A8%E6%8F%92%E4%BB%B6%E8%AE%B0%E5%BD%95/</guid>
     <description><![CDATA[插件备份]]></description>
-</item><item>
+</item>
+<item>
     <title>Docker挂载问题解决</title>
     <link>https://hahaen.github.io/docker%E6%8C%82%E8%BD%BD%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
     <pubDate>Tue, 09 Nov 2021 23:24:00 &#43;0800</pubDate>
-    <author>作者</author>
+    <author>hahaen</author>
     <guid>https://hahaen.github.io/docker%E6%8C%82%E8%BD%BD%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</guid>
     <description><![CDATA[题目地址 docker desktop win10挂载问题解决 系统：win10 docker pull blindpirate/hcsp-quiz 尝试自己编写一个docker run命令，完成以下要求： 使用交互式命令行模式(-it)]]></description>
-</item><item>
+</item>
+<item>
     <title>Idea个人使用问题解决办法</title>
     <link>https://hahaen.github.io/idea%E4%B8%AA%E4%BA%BA%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
     <pubDate>Tue, 02 Nov 2021 16:35:38 &#43;0800</pubDate>
-    <author>作者</author>
+    <author>hahaen</author>
     <guid>https://hahaen.github.io/idea%E4%B8%AA%E4%BA%BA%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
     <description><![CDATA[idea版本2021.2.1 连接mysql报错 删除这三个就测试成功]]></description>
-</item></channel>
+</item>
+</channel>
 </rss>

@@ -8,22 +8,25 @@
     <title>Nginx</title>
     <link>https://hahaen.github.io/nginx/</link>
     <pubDate>Sun, 21 Aug 2022 19:48:51 &#43;0800</pubDate>
-    <author>作者</author>
+    <author>hahaen</author>
     <guid>https://hahaen.github.io/nginx/</guid>
     <description><![CDATA[Nginx为什么要做这个动静分离？ 因为我们网站要去优化，而他的重点就是在于我们要去静态化我们的网站嘛，然后我们网站静态化呢，它的关键点就是要]]></description>
-</item><item>
+</item>
+<item>
     <title>分布式部署</title>
     <link>https://hahaen.github.io/%E5%88%86%E5%B8%83%E5%BC%8F%E9%83%A8%E7%BD%B2/</link>
     <pubDate>Sun, 20 Mar 2022 20:18:11 &#43;0800</pubDate>
-    <author>作者</author>
+    <author>hahaen</author>
     <guid>https://hahaen.github.io/%E5%88%86%E5%B8%83%E5%BC%8F%E9%83%A8%E7%BD%B2/</guid>
     <description><![CDATA[服务器配置java injdk.cn 各种JAVA JDK的镜像分发 配置docker 下载代码 如 ： 1 git clone https://github.com/hahaen/wxshop.git 启动MySQL 1 docker run -d -v `pwd`/wxshop-data:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=wxshop --name=wxshop-mysql mysql 需要改成自己地]]></description>
-</item><item>
+</item>
+<item>
     <title>Linux常用命令行</title>
     <link>https://hahaen.github.io/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
     <pubDate>Thu, 09 Sep 2021 17:07:23 &#43;0800</pubDate>
-    <author>作者</author>
+    <author>hahaen</author>
     <guid>https://hahaen.github.io/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
     <description><![CDATA[ls命令 list 的缩写,可以查看文件权限(包括目录、文件夹、文件权限),查看目录信息。 1 2 3 4 5 6 7 ls -a 列出目录所有文件，包含以.开始的隐藏文件 ls]]></description>
-</item></channel>
+</item>
+</channel>
 </rss>
