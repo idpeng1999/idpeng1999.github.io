@@ -4,7 +4,15 @@
         <link>https://hahaen.github.io/categories/%E5%90%84%E7%A7%8D%E9%97%AE%E9%A2%98/</link>
         <description>各种问题 - 分类 - 哈哈博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>630606938@qq.com (hahaen)</managingEditor>
-            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 29 May 2022 21:57:42 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/%E5%90%84%E7%A7%8D%E9%97%AE%E9%A2%98/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 30 Jan 2023 16:32:58 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/%E5%90%84%E7%A7%8D%E9%97%AE%E9%A2%98/" rel="self" type="application/rss+xml" /><item>
+    <title>IDEA乱码Tomcat控制台乱码</title>
+    <link>https://hahaen.github.io/idea%E4%B9%B1%E7%A0%81tomcat%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B9%B1%E7%A0%81/</link>
+    <pubDate>Mon, 30 Jan 2023 16:32:58 &#43;0800</pubDate>
+    <author>hahaen</author>
+    <guid>https://hahaen.github.io/idea%E4%B9%B1%E7%A0%81tomcat%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B9%B1%E7%A0%81/</guid>
+    <description><![CDATA[修改IDEA文件编码格式 IDEA中配置Tomcat 修改IDEA的配置文件 Tomcat控制台乱码修改Tomcat配置文件]]></description>
+</item>
+<item>
     <title>Idea启动异常</title>
     <link>https://hahaen.github.io/idea%E5%90%AF%E5%8A%A8%E5%BC%82%E5%B8%B8/</link>
     <pubDate>Sun, 29 May 2022 21:57:42 &#43;0800</pubDate>

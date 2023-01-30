@@ -4,9 +4,25 @@
         <link>https://hahaen.github.io/</link>
         <description>关于 哈哈博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>630606938@qq.com (hahaen)</managingEditor>
-            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 30 Jan 2023 14:25:26 &#43;0800</lastBuildDate>
+            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 30 Jan 2023 16:32:58 &#43;0800</lastBuildDate>
             <atom:link href="https://hahaen.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>IDEA乱码Tomcat控制台乱码</title>
+    <link>https://hahaen.github.io/idea%E4%B9%B1%E7%A0%81tomcat%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B9%B1%E7%A0%81/</link>
+    <pubDate>Mon, 30 Jan 2023 16:32:58 &#43;0800</pubDate>
+    <author>hahaen</author>
+    <guid>https://hahaen.github.io/idea%E4%B9%B1%E7%A0%81tomcat%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B9%B1%E7%A0%81/</guid>
+    <description><![CDATA[修改IDEA文件编码格式 IDEA中配置Tomcat 修改IDEA的配置文件 Tomcat控制台乱码修改Tomcat配置文件]]></description>
+</item>
+<item>
+    <title>Linux漏洞修复</title>
+    <link>https://hahaen.github.io/linux%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D/</link>
+    <pubDate>Mon, 30 Jan 2023 16:07:19 &#43;0800</pubDate>
+    <author>hahaen</author>
+    <guid>https://hahaen.github.io/linux%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D/</guid>
+    <description><![CDATA[yum 安装、卸载、升级软件 用YUM安装软件包命令: yum install xxxx 用YUM删除软件包命令: yum remove xxxx 使用YUM查找软件包: yum search ~ 列出所有可更新的软件包: yum list updates]]></description>
+</item>
+<item>
     <title>Mysql Linux命令行教程</title>
     <link>https://hahaen.github.io/mysql-linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%95%99%E7%A8%8B/</link>
     <pubDate>Mon, 30 Jan 2023 14:25:26 &#43;0800</pubDate>
@@ -69,22 +85,6 @@
     <author>hahaen</author>
     <guid>https://hahaen.github.io/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</guid>
     <description><![CDATA[什么是消息队列？ 首先队列是先进先出，消息队列MQ可以简单理解成把要传输的数据放在队列中，主要解决应用耦合、异步消息、流量削锋等问题， 我认为大]]></description>
-</item>
-<item>
-    <title>双亲委派模型</title>
-    <link>https://hahaen.github.io/%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%A8%A1%E5%9E%8B/</link>
-    <pubDate>Sun, 21 Aug 2022 20:49:55 &#43;0800</pubDate>
-    <author>hahaen</author>
-    <guid>https://hahaen.github.io/%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%A8%A1%E5%9E%8B/</guid>
-    <description><![CDATA[什么是双亲委派模型? 如果一个类加载器收到了类加载的请求，它首先不会自己去加载这个类，而是把这个请求委派给父类加载器去完成， 每一层的类加载器都]]></description>
-</item>
-<item>
-    <title>Elasticsearch</title>
-    <link>https://hahaen.github.io/elasticsearch/</link>
-    <pubDate>Sun, 21 Aug 2022 20:35:31 &#43;0800</pubDate>
-    <author>hahaen</author>
-    <guid>https://hahaen.github.io/elasticsearch/</guid>
-    <description><![CDATA[讲讲Elasticsearch是什么？原理?有什么用？如何使用？ ES是一个分布式、可扩展、实时的搜索与数据分析引擎。ES不仅仅只是全文搜索，]]></description>
 </item>
 </channel>
 </rss>

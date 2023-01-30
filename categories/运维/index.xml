@@ -4,7 +4,15 @@
         <link>https://hahaen.github.io/categories/%E8%BF%90%E7%BB%B4/</link>
         <description>运维 - 分类 - 哈哈博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>630606938@qq.com (hahaen)</managingEditor>
-            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 21 Aug 2022 19:48:51 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/%E8%BF%90%E7%BB%B4/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 30 Jan 2023 16:07:19 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/%E8%BF%90%E7%BB%B4/" rel="self" type="application/rss+xml" /><item>
+    <title>Linux漏洞修复</title>
+    <link>https://hahaen.github.io/linux%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D/</link>
+    <pubDate>Mon, 30 Jan 2023 16:07:19 &#43;0800</pubDate>
+    <author>hahaen</author>
+    <guid>https://hahaen.github.io/linux%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D/</guid>
+    <description><![CDATA[yum 安装、卸载、升级软件 用YUM安装软件包命令: yum install xxxx 用YUM删除软件包命令: yum remove xxxx 使用YUM查找软件包: yum search ~ 列出所有可更新的软件包: yum list updates]]></description>
+</item>
+<item>
     <title>Nginx</title>
     <link>https://hahaen.github.io/nginx/</link>
     <pubDate>Sun, 21 Aug 2022 19:48:51 &#43;0800</pubDate>
