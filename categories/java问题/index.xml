@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>java问题 - 分类 - 哈哈博客</title>
+        <link>https://hahaen.github.io/categories/java%E9%97%AE%E9%A2%98/</link>
+        <description>java问题 - 分类 - 哈哈博客</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>630606938@qq.com (hahaen)</managingEditor>
+            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 31 Jan 2023 12:05:28 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/java%E9%97%AE%E9%A2%98/" rel="self" type="application/rss+xml" /><item>
+    <title>Springboot打包时报错</title>
+    <link>https://hahaen.github.io/springboot%E6%89%93%E5%8C%85%E6%97%B6%E6%8A%A5%E9%94%99/</link>
+    <pubDate>Tue, 31 Jan 2023 12:05:28 &#43;0800</pubDate>
+    <author>hahaen</author>
+    <guid>https://hahaen.github.io/springboot%E6%89%93%E5%8C%85%E6%97%B6%E6%8A%A5%E9%94%99/</guid>
+    <description><![CDATA[程序包com.sun.image.codec.jpeg不存在 出现原因: JPEGCodec类在JDK1.7之后移除，使用 JDK1.8 打包时会报错。 第一种]]></description>
+</item>
+</channel>
+</rss>

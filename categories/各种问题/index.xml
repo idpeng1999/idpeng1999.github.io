@@ -4,13 +4,21 @@
         <link>https://hahaen.github.io/categories/%E5%90%84%E7%A7%8D%E9%97%AE%E9%A2%98/</link>
         <description>各种问题 - 分类 - 哈哈博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>630606938@qq.com (hahaen)</managingEditor>
-            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 30 Jan 2023 16:32:58 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/%E5%90%84%E7%A7%8D%E9%97%AE%E9%A2%98/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 31 Jan 2023 09:43:00 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/%E5%90%84%E7%A7%8D%E9%97%AE%E9%A2%98/" rel="self" type="application/rss+xml" /><item>
+    <title>Tomcat端口被占用找不到进程</title>
+    <link>https://hahaen.github.io/tomcat%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E6%89%BE%E4%B8%8D%E5%88%B0%E8%BF%9B%E7%A8%8B/</link>
+    <pubDate>Tue, 31 Jan 2023 09:43:00 &#43;0800</pubDate>
+    <author>hahaen</author>
+    <guid>https://hahaen.github.io/tomcat%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E6%89%BE%E4%B8%8D%E5%88%B0%E8%BF%9B%E7%A8%8B/</guid>
+    <description><![CDATA[CMD终止 找出占用1099端口的进程,进入windows命令，查看什么进程占用了1099端口 使用命令:netstat -aon|findstr 1099 找出占用1099端口]]></description>
+</item>
+<item>
     <title>IDEA乱码Tomcat控制台乱码</title>
     <link>https://hahaen.github.io/idea%E4%B9%B1%E7%A0%81tomcat%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B9%B1%E7%A0%81/</link>
     <pubDate>Mon, 30 Jan 2023 16:32:58 &#43;0800</pubDate>
     <author>hahaen</author>
     <guid>https://hahaen.github.io/idea%E4%B9%B1%E7%A0%81tomcat%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B9%B1%E7%A0%81/</guid>
-    <description><![CDATA[修改IDEA文件编码格式 IDEA中配置Tomcat 修改IDEA的配置文件 Tomcat控制台乱码修改Tomcat配置文件]]></description>
+    <description><![CDATA[修改IDEA文件编码格式 IDEA中配置Tomcat 配置Tomcat时，VM options填入-Dfile.encoding=UTF-8 (选填]]></description>
 </item>
 <item>
     <title>Idea启动异常</title>
