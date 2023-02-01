@@ -19,7 +19,9 @@
 ### 2.下载并安装Ruby语言环境
 
 * 下载地址: [https://rubyinstaller.org/downloads/](https://rubyinstaller.org/downloads/)
-* 安装`rubyinstaller-devkit-3.0.4-1-x64.exe`
+* 安装`rubyinstaller-devkit-3.0.4-1-x64.exe`(未上传)
+
+![下载](/img/Redis集群搭建/5.png)
 
 
 ### 3.下载ruby环境下Redis的驱动
