@@ -4,7 +4,15 @@
         <link>https://hahaen.github.io/categories/java%E7%9F%A5%E8%AF%86/</link>
         <description>java知识 - 分类 - 哈哈博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>630606938@qq.com (hahaen)</managingEditor>
-            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 01 Feb 2023 11:05:46 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/java%E7%9F%A5%E8%AF%86/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 16 Feb 2023 15:36:00 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/java%E7%9F%A5%E8%AF%86/" rel="self" type="application/rss+xml" /><item>
+    <title>敏感词过滤</title>
+    <link>https://hahaen.github.io/%E6%95%8F%E6%84%9F%E8%AF%8D%E8%BF%87%E6%BB%A4/</link>
+    <pubDate>Thu, 16 Feb 2023 15:36:00 &#43;0800</pubDate>
+    <author>hahaen</author>
+    <guid>https://hahaen.github.io/%E6%95%8F%E6%84%9F%E8%AF%8D%E8%BF%87%E6%BB%A4/</guid>
+    <description><![CDATA[教程地址 github教程地址 sensitive-word Maven 引入 1 2 3 4 5 &lt;dependency&gt; &lt;groupId&gt;com.github.houbb&lt;/groupId&gt; &lt;artifactId&gt;sensitive-word&lt;/artifactId&gt; &lt;version&gt;0.2.0&lt;/version&gt; &lt;/dependency&gt; 创建敏感词表 sensitive_word 1 2 3 4 5 6 DROP TABLE IF EXISTS `sensitive_word`; CREATE TABLE `sensitive_word` ( `id` bigint NOT NULL AUTO_INCREMENT, `words` varchar(300) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL, PRIMARY KEY (`id`) USING BTREE]]></description>
+</item>
+<item>
     <title>图片加水印</title>
     <link>https://hahaen.github.io/%E5%9B%BE%E7%89%87%E5%8A%A0%E6%B0%B4%E5%8D%B0/</link>
     <pubDate>Wed, 01 Feb 2023 11:05:46 &#43;0800</pubDate>
@@ -75,14 +83,6 @@
     <author>hahaen</author>
     <guid>https://hahaen.github.io/servlet/</guid>
     <description><![CDATA[讲讲Servlet？ Java Servlet(谁为特) 是运行在 Web 服务器或应用服务器上的程序， 它是作为来自 Web 浏览器或其他 HTTP 客户端的请求和 HTTP 服务器上的数]]></description>
-</item>
-<item>
-    <title>Mybatis</title>
-    <link>https://hahaen.github.io/mybatis/</link>
-    <pubDate>Sun, 21 Aug 2022 19:38:30 &#43;0800</pubDate>
-    <author>hahaen</author>
-    <guid>https://hahaen.github.io/mybatis/</guid>
-    <description><![CDATA[Mybatis的xml,xml这个映射文件，和mybatis内部数据结构之间的这个映射关系是什么样的？ 这个映射关系，就是我们的Mybatis]]></description>
 </item>
 </channel>
 </rss>
