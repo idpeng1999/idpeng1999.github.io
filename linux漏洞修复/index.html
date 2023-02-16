@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hahaen.github.io\/linux%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D\/"
-        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  321 ,
+        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  525 ,
         "url": "https:\/\/hahaen.github.io\/linux%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D\/","datePublished": "2023-01-30T16:07:19+08:00","dateModified": "2023-01-30T16:07:19+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/hahaen.github.io\/images\/avatar.png"},"author": {
@@ -104,8 +104,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Linux漏洞修复</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>hahaen</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%BF%90%E7%BB%B4/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>运维</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-30">2023-01-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 321 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-30">2023-01-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 525 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -119,6 +119,11 @@
         <li><a href="#查看tomcat是否安装使用管理员权限">查看tomcat是否安装(使用管理员权限)</a></li>
         <li><a href="#升级当前sudo版本使用管理员权限">升级当前sudo版本(使用管理员权限)</a></li>
         <li><a href="#升级polkit版本使用管理员权限">升级polkit版本(使用管理员权限)</a></li>
+        <li><a href="#检测到目标url存在http-host头攻击漏洞">检测到目标URL存在http host头攻击漏洞</a>
+          <ul>
+            <li><a href="#nginx修复方式">nginx修复方式</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -166,6 +171,58 @@
 <li>查看版本: <code>rpm -qa polkit</code></li>
 <li>修复命令为: <code>sudo yum update -y polkit</code></li>
 </ol>
+<h2 id="检测到目标url存在http-host头攻击漏洞">检测到目标URL存在http host头攻击漏洞</h2>
+<h3 id="nginx修复方式">nginx修复方式</h3>
+<p>在 <code>http { </code> 下的 <code>server {</code> 里添加</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">	server_name  xxxx1 xxxx2;
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	set $flag 0;
+</span></span><span class="line"><span class="cl">		if ($http_Host != &#39;xxxx1:端口&#39;) {
+</span></span><span class="line"><span class="cl">         set $flag &#34;${flag}1&#34;;
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">        if ($http_Host != &#39;xxxx2:端口&#39;) {
+</span></span><span class="line"><span class="cl">         set $flag &#34;${flag}2&#34;;
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">        if ($flag = &#34;012&#34;) {
+</span></span><span class="line"><span class="cl">         return 403;
+</span></span><span class="line"><span class="cl">        }
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>解释</p>
+<ul>
+<li><code>xxxx1:端口</code> 和 <code>xxxx2:端口</code>代表 nginx 放行地址，不为则返回403</li>
+</ul>
+<p>验证</p>
+<ul>
+<li>打开postman</li>
+<li>调用随意的一个访问接口，能通</li>
+<li>修改 Headers 下的 Host ，再次调用，返回403</li>
+<li>则修复成功</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Linux%e6%bc%8f%e6%b4%9e%e4%bf%ae%e5%a4%8d/1.png"
+        data-srcset="/img/Linux%e6%bc%8f%e6%b4%9e%e4%bf%ae%e5%a4%8d/1.png, /img/Linux%e6%bc%8f%e6%b4%9e%e4%bf%ae%e5%a4%8d/1.png 1.5x, /img/Linux%e6%bc%8f%e6%b4%9e%e4%bf%ae%e5%a4%8d/1.png 2x"
+        data-sizes="auto"
+        alt="/img/Linux漏洞修复/1.png"
+        title="Linux漏洞修复" /></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">

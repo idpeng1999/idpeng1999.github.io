@@ -36,6 +36,39 @@
 1. 查看版本: `rpm -qa polkit`
 2. 修复命令为: `sudo yum update -y polkit`
 
+## 检测到目标URL存在http host头攻击漏洞
+
+### nginx修复方式
+
+在 `http { ` 下的 `server {` 里添加  
+```
+	server_name  xxxx1 xxxx2;
+	
+	set $flag 0;
+		if ($http_Host != 'xxxx1:端口') {
+         set $flag "${flag}1";
+        }
+        if ($http_Host != 'xxxx2:端口') {
+         set $flag "${flag}2";
+        }
+        if ($flag = "012") {
+         return 403;
+        }
+```
+
+解释
+
+* `xxxx1:端口` 和 `xxxx2:端口`代表 nginx 放行地址，不为则返回403
+
+验证
+
+* 打开postman
+* 调用随意的一个访问接口，能通
+* 修改 Headers 下的 Host ，再次调用，返回403
+* 则修复成功
+
+![Linux漏洞修复](/img/Linux漏洞修复/1.png)
+
 
 
 
