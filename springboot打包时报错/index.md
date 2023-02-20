@@ -45,7 +45,7 @@ ImageIO.write(tag,"jpeg",out);
 
 ```
 
-![配置](/img/Springboot打包时报错/img.png)
+![配置](/img/Springboot打包时报错/1.png)
 
 
 
