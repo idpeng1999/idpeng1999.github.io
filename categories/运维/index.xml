@@ -18,7 +18,7 @@
     <pubDate>Sun, 21 Aug 2022 19:48:51 &#43;0800</pubDate>
     <author>hahaen</author>
     <guid>https://hahaen.github.io/nginx/</guid>
-    <description><![CDATA[Nginx为什么要做这个动静分离？ 因为我们网站要去优化，而他的重点就是在于我们要去静态化我们的网站嘛，然后我们网站静态化呢，它的关键点就是要]]></description>
+    <description><![CDATA[Linux下Nginx命令 默认安装位置 /usr/local/nginx 检测 /usr/local/nginx/sbin/nginx -t 重启 /usr/local/nginx/sbin/nginx -s reload Windows下Nginx命令 进入安装目录 启动 start nginx 或者 nginx.exe 建议使用第一种，第二种会使]]></description>
 </item>
 <item>
     <title>分布式部署</title>

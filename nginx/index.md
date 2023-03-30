@@ -1,5 +1,25 @@
 # Nginx
 
+
+## Linux下Nginx命令
+
+1. 默认安装位置 `/usr/local/nginx`
+2. 检测 `/usr/local/nginx/sbin/nginx -t`
+3. 重启 `/usr/local/nginx/sbin/nginx -s reload`
+
+## Windows下Nginx命令
+
+1. 进入安装目录
+2. 启动 `start nginx` 或者 `nginx.exe` 建议使用第一种，第二种会使你的cmd窗口一直处于执行中，不能进行其他命令操作。
+3. 停止 `nginx.exe -s stop`
+4. 重新载入 `nginx.exe -s reload`
+5. 查看版本 `nginx -v`
+
+## nginx中的超时设置，请求超时、响应等待超时等
+
+[参考](https://www.cnblogs.com/lemon-flm/p/8352194.html)
+
+
 ## Nginx为什么要做这个动静分离？
 
 * 因为我们网站要去优化，而他的重点就是在于我们要去静态化我们的网站嘛，然后我们网站静态化呢，它的关键点就是要把这个动静分离，

@@ -15,11 +15,11 @@
     <description><![CDATA[jasypt加密 使用参考教程 pom.xml引入依赖 1 2 3 4 5 6 &lt;dependency&gt; &lt;groupId&gt;com.github.ulisesbocchio&lt;/groupId&gt; &lt;artifactId&gt;jasypt-spring-boot-starter&lt;/artifactId&gt; &lt;version&gt;3.0.4&lt;/version&gt; &lt;/dependency&gt; 写一个main函数将我们的密码进行加密 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15]]></description>
 </item>
 <item>
-    <title>Linux安装MySQL教程</title>
-    <link>https://hahaen.github.io/linux%E5%AE%89%E8%A3%85mysql%E6%95%99%E7%A8%8B/</link>
+    <title>安装MySQL教程</title>
+    <link>https://hahaen.github.io/%E5%AE%89%E8%A3%85mysql%E6%95%99%E7%A8%8B/</link>
     <pubDate>Wed, 29 Mar 2023 22:00:48 &#43;0800</pubDate>
     <author>hahaen</author>
-    <guid>https://hahaen.github.io/linux%E5%AE%89%E8%A3%85mysql%E6%95%99%E7%A8%8B/</guid>
+    <guid>https://hahaen.github.io/%E5%AE%89%E8%A3%85mysql%E6%95%99%E7%A8%8B/</guid>
     <description><![CDATA[安装教程参考1 安装教程参考2 赋权限教程 linux安装(压缩包方式) 官网下载安装 MySQl5.7 MySQl8 注意事项 centos7对应下载 Linux Generic 检查服务器是否有MySQ]]></description>
 </item>
 <item>
