@@ -4,9 +4,17 @@
         <link>https://hahaen.github.io/</link>
         <description>关于 哈哈博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>630606938@qq.com (hahaen)</managingEditor>
-            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 16 Feb 2023 15:36:00 &#43;0800</lastBuildDate>
+            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 29 Mar 2023 22:00:48 &#43;0800</lastBuildDate>
             <atom:link href="https://hahaen.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Linux安装MySQL教程</title>
+    <link>https://hahaen.github.io/linux%E5%AE%89%E8%A3%85mysql%E6%95%99%E7%A8%8B/</link>
+    <pubDate>Wed, 29 Mar 2023 22:00:48 &#43;0800</pubDate>
+    <author>hahaen</author>
+    <guid>https://hahaen.github.io/linux%E5%AE%89%E8%A3%85mysql%E6%95%99%E7%A8%8B/</guid>
+    <description><![CDATA[安装教程参考1 安装教程参考2 赋权限教程 linux安装(压缩包方式) 官网下载安装 MySQl5.7 MySQl8 注意事项 centos7对应下载 Linux Generic 检查服务器是否有MySQ]]></description>
+</item>
+<item>
     <title>敏感词过滤</title>
     <link>https://hahaen.github.io/%E6%95%8F%E6%84%9F%E8%AF%8D%E8%BF%87%E6%BB%A4/</link>
     <pubDate>Thu, 16 Feb 2023 15:36:00 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
     <author>hahaen</author>
     <guid>https://hahaen.github.io/gitbash%E4%BB%A3%E7%A0%81%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3/</guid>
     <description><![CDATA[拉取远程代码报错，强制覆盖本地代码或保留本地修改插入远程修改 保留本机所做修改，拉取服务器代码，并入本地 git stash git pull git stash pop 拉取服务器代码，覆盖本地]]></description>
-</item>
-<item>
-    <title>Tomcat端口被占用找不到进程</title>
-    <link>https://hahaen.github.io/tomcat%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E6%89%BE%E4%B8%8D%E5%88%B0%E8%BF%9B%E7%A8%8B/</link>
-    <pubDate>Tue, 31 Jan 2023 09:43:00 &#43;0800</pubDate>
-    <author>hahaen</author>
-    <guid>https://hahaen.github.io/tomcat%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E6%89%BE%E4%B8%8D%E5%88%B0%E8%BF%9B%E7%A8%8B/</guid>
-    <description><![CDATA[CMD终止 找出占用1099端口的进程,进入windows命令，查看什么进程占用了1099端口 使用命令:netstat -aon|findstr 1099 找出占用1099端口]]></description>
 </item>
 </channel>
 </rss>

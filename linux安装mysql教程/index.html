@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Linux安装MySQL教程 - 哈哈博客</title><meta name="Description" content="关于 哈哈博客"><meta property="og:title" content="Linux安装MySQL教程" />
+<meta property="og:description" content="安装教程参考1 安装教程参考2 赋权限教程 linux安装(压缩包方式) 官网下载安装 MySQl5.7 MySQl8 注意事项 centos7对应下载 Linux Generic 检查服务器是否有MySQ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hahaen.github.io/linux%E5%AE%89%E8%A3%85mysql%E6%95%99%E7%A8%8B/" /><meta property="og:image" content="https://hahaen.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-29T22:00:48+08:00" />
+<meta property="article:modified_time" content="2023-03-29T22:00:48+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hahaen.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Linux安装MySQL教程"/>
+<meta name="twitter:description" content="安装教程参考1 安装教程参考2 赋权限教程 linux安装(压缩包方式) 官网下载安装 MySQl5.7 MySQl8 注意事项 centos7对应下载 Linux Generic 检查服务器是否有MySQ"/>
+<meta name="application-name" content="哈哈博客">
+<meta name="apple-mobile-web-app-title" content="哈哈博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hahaen.github.io/linux%E5%AE%89%E8%A3%85mysql%E6%95%99%E7%A8%8B/" /><link rel="prev" href="https://hahaen.github.io/%E6%95%8F%E6%84%9F%E8%AF%8D%E8%BF%87%E6%BB%A4/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Linux安装MySQL教程",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hahaen.github.io\/linux%E5%AE%89%E8%A3%85mysql%E6%95%99%E7%A8%8B\/"
+        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  1226 ,
+        "url": "https:\/\/hahaen.github.io\/linux%E5%AE%89%E8%A3%85mysql%E6%95%99%E7%A8%8B\/","datePublished": "2023-03-29T22:00:48+08:00","dateModified": "2023-03-29T22:00:48+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/hahaen.github.io\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "hahaen"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="哈哈博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>哈哈博客</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="https://github.com/hahaen" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="请输入关键词..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="哈哈博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>哈哈博客</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="请输入关键词..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="https://github.com/hahaen" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Linux安装MySQL教程</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>hahaen</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E7%9F%A5%E8%AF%86/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>java知识</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-29">2023-03-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1226 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#linux安装压缩包方式">linux安装(压缩包方式)</a>
+          <ul>
+            <li><a href="#官网下载安装">官网下载安装</a></li>
+            <li><a href="#检查服务器是否有mysql">检查服务器是否有MySQL</a></li>
+            <li><a href="#卸载centos7自带的mariadb">卸载CentOS7自带的mariadb</a>
+              <ul>
+                <li><a href="#为什么要卸载centos7自带的mariadb">为什么要卸载CentOS7自带的mariadb？</a></li>
+              </ul>
+            </li>
+            <li><a href="#创建mysql用户组">创建mysql用户组</a></li>
+            <li><a href="#上传服务器">上传服务器</a></li>
+            <li><a href="#安装mysql">安装MySQL</a></li>
+          </ul>
+        </li>
+        <li><a href="#创建mysql用户赋权限">创建mysql用户，赋权限</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><a href="https://blog.csdn.net/weixin_47617417/article/details/126009268" target="_blank" rel="noopener noreffer ">安装教程参考1</a>
+<a href="https://cloud.tencent.com/developer/article/1451186" target="_blank" rel="noopener noreffer ">安装教程参考2</a>
+<a href="https://www.jianshu.com/p/6cc7c1887ad2" target="_blank" rel="noopener noreffer ">赋权限教程</a></p>
+<h2 id="linux安装压缩包方式">linux安装(压缩包方式)</h2>
+<h3 id="官网下载安装">官网下载安装</h3>
+<ul>
+<li><a href="https://dev.mysql.com/downloads/mysql/5.7.html" target="_blank" rel="noopener noreffer ">MySQl5.7</a></li>
+<li><a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener noreffer ">MySQl8</a></li>
+</ul>
+<p>注意事项</p>
+<ol>
+<li>centos7对应下载 <code>Linux Generic</code></li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Linux%e5%ae%89%e8%a3%85MySQL%e6%95%99%e7%a8%8b/1.png"
+        data-srcset="/img/Linux%e5%ae%89%e8%a3%85MySQL%e6%95%99%e7%a8%8b/1.png, /img/Linux%e5%ae%89%e8%a3%85MySQL%e6%95%99%e7%a8%8b/1.png 1.5x, /img/Linux%e5%ae%89%e8%a3%85MySQL%e6%95%99%e7%a8%8b/1.png 2x"
+        data-sizes="auto"
+        alt="/img/Linux安装MySQL教程/1.png"
+        title="LinuxGeneric" /></p>
+<h3 id="检查服务器是否有mysql">检查服务器是否有MySQL</h3>
+<ol>
+<li><code>rpm -qa|grep mysql</code> 显示没有东西，便是没有安装过mysql</li>
+<li>如果安装过或者系统自带，便需要去查询所有的mysql对应的文件，进行卸载，全部删除</li>
+</ol>
+<ul>
+<li><code>whereis mysql</code></li>
+<li><code>find / -name mysql</code></li>
+</ul>
+<h3 id="卸载centos7自带的mariadb">卸载CentOS7自带的mariadb</h3>
+<ol>
+<li>查看系统自带的 <code>rpm -qa|grep mariadb</code></li>
+<li>卸载Mariadb <code>rpm -e --nodeps mariadb-libs-5.5.68-1.el7.x86_64</code></li>
+<li>查看etc下面是否有的my.cnf,<code>cat /etc/my.cnf</code>  有则删掉 <code>rm /etc/my.cnf</code></li>
+</ol>
+<h4 id="为什么要卸载centos7自带的mariadb">为什么要卸载CentOS7自带的mariadb？</h4>
+<ul>
+<li>首先centos7已经不支持mysql，因为收费，所以内部集成了mariadb，</li>
+<li>而安装mysql的话会和mariadb的文件冲突，所以需要先卸载掉mariadb。</li>
+</ul>
+<h3 id="创建mysql用户组">创建mysql用户组</h3>
+<ol>
+<li>检查有没有mysql用户组，没有便进行创建</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">  cat /etc/group <span class="p">|</span> grep mysql
+</span></span><span class="line"><span class="cl">  cat /etc/passwd <span class="p">|</span>grep mysql
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>创建MySQL用户组和用户</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">groupadd mysql
+</span></span><span class="line"><span class="cl">useradd -r -g mysql mysql
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="上传服务器">上传服务器</h3>
+<ul>
+<li>解压到当前mysql5.7.41 <code>tar -zxvf mysql-5.7.41-linux-glibc2.12-x86_64.tar.gz -C .</code></li>
+<li>改名 <code>mv mysql-5.7.41-linux-glibc2.12-x86_64 mysql5.7.41</code></li>
+<li>移动到默认位置 <code>/usr/local</code></li>
+</ul>
+<h3 id="安装mysql">安装MySQL</h3>
+<ol>
+<li>给用户组添加权限</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">chown -R mysql:mysql /usr/local/mysql5.7.41
+</span></span><span class="line"><span class="cl">chmod -R <span class="m">755</span> /usr/local/mysql5.7.41
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>进入bin目录，编译并初始化mysql，请务必记住这个密码</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> /usr/local/mysql5.7.41/bin
+</span></span><span class="line"><span class="cl">./mysqld --initialize --user<span class="o">=</span>mysql --datadir<span class="o">=</span>/usr/local/mysql5.7.41/data --basedir<span class="o">=</span>/usr/local/mysql5.7.41
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>编写etc目录下的my.cnf配置文件，并添加配置</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">//进入配置文件
+</span></span><span class="line"><span class="cl">vi /etc/my.cnf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">//在插入模式下编写,完成后保存,当然这个可以自己添加
+</span></span><span class="line"><span class="cl"><span class="o">[</span>mysqld<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">datadir</span><span class="o">=</span>/usr/local/mysql5.7.41/data
+</span></span><span class="line"><span class="cl"><span class="nv">port</span> <span class="o">=</span> <span class="m">3306</span>
+</span></span><span class="line"><span class="cl"><span class="nv">sql_mode</span><span class="o">=</span>NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
+</span></span><span class="line"><span class="cl">symbolic-links<span class="o">=</span><span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="nv">max_connections</span><span class="o">=</span><span class="m">400</span>
+</span></span><span class="line"><span class="cl"><span class="nv">innodb_file_per_table</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#表名大小写不明感1,敏感为0</span>
+</span></span><span class="line"><span class="cl"><span class="nv">lower_case_table_names</span><span class="o">=</span><span class="m">1</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>授予my.cnf 775权限</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">chmod -R <span class="m">775</span> /etc/my.cnf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>修改mysql5.7.41/support-files/目录下的mysql.server文件,如下图中5个位置的/usr/local/mysql全部修改成自己安装的目录</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/Linux%e5%ae%89%e8%a3%85MySQL%e6%95%99%e7%a8%8b/2.png"
+        data-srcset="/img/Linux%e5%ae%89%e8%a3%85MySQL%e6%95%99%e7%a8%8b/2.png, /img/Linux%e5%ae%89%e8%a3%85MySQL%e6%95%99%e7%a8%8b/2.png 1.5x, /img/Linux%e5%ae%89%e8%a3%85MySQL%e6%95%99%e7%a8%8b/2.png 2x"
+        data-sizes="auto"
+        alt="/img/Linux安装MySQL教程/2.png"
+        title="修改" /></p>
+<ol start="6">
+<li>启动服务，并添加软链接</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">// 查询服务
+</span></span><span class="line"><span class="cl">ps -ef<span class="p">|</span>grep mysql
+</span></span><span class="line"><span class="cl">ps -ef<span class="p">|</span>grep mysqld
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">// 启动服务
+</span></span><span class="line"><span class="cl">/usr/local/mysql5.7.41/support-files/mysql.server start
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">//添加软连接,并重启mysql 服务
+</span></span><span class="line"><span class="cl">ln -s /usr/local/mysql5.7.41/support-files/mysql.server /etc/init.d/mysql
+</span></span><span class="line"><span class="cl">ln -s /usr/local/mysql5.7.41/bin/mysql /usr/bin/mysql
+</span></span><span class="line"><span class="cl">//重启mysql服务
+</span></span><span class="line"><span class="cl">service mysql restart
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="7">
+<li>登录mysql，密码是之前让记住的，并修改密码</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"> // 登录
+</span></span><span class="line"><span class="cl"> mysql -u root -p
+</span></span><span class="line"><span class="cl"> // 修改密码
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> password <span class="k">for</span> root@localhost <span class="o">=</span> password<span class="o">(</span><span class="s1">&#39;你的密码&#39;</span><span class="o">)</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="8">
+<li>开启远程连接</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">use mysql<span class="p">;</span>
+</span></span><span class="line"><span class="cl">update user <span class="nb">set</span> user.Host<span class="o">=</span><span class="s1">&#39;%&#39;</span> where user.User<span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">flush privileges<span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="9">
+<li>
+<p>开放端口</p>
+</li>
+<li>
+<p>设置开启自启（按需选择）</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">//将服务文件拷贝到init.d下,并重命名为mysqld
+</span></span><span class="line"><span class="cl">cp /usr/local/mysql5.7.41/support-files/mysql.server /etc/init.d/mysqld
+</span></span><span class="line"><span class="cl">//赋予可执行权限
+</span></span><span class="line"><span class="cl">chmod +x /etc/init.d/mysqld
+</span></span><span class="line"><span class="cl">//添加服务
+</span></span><span class="line"><span class="cl">chkconfig --add mysqld
+</span></span><span class="line"><span class="cl">//显示服务列表
+</span></span><span class="line"><span class="cl">chkconfig --list
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="创建mysql用户赋权限">创建mysql用户，赋权限</h2>
+<p><a href="https://www.jianshu.com/p/6cc7c1887ad2" target="_blank" rel="noopener noreffer ">教程参考</a></p>
+<ol>
+<li>登录数据库(root权限，需要有mysql.user查看权限的用户）)</li>
+<li>创建用户 <code> create user 'hahaen'@'%' identified by '123456';</code></li>
+</ol>
+<ul>
+<li><code>hahaen</code>用户名</li>
+<li><code>123456</code>密码</li>
+<li><code>%</code>指定该用户在哪个主机上可以登陆,如果是本地用户可用localhost,如果想让该用户可以从任意远程主机登陆,可以使用通配符%</li>
+</ul>
+<ol start="3">
+<li>修改用户密码 <code>set password for hahaen=password('456789');</code></li>
+<li>删除用户 <code>drop user hahaen;</code></li>
+<li>授权</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">grant</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="o">*</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">hahaen</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># all :所有数据库权限，包括 select ,update ,insert ,delete 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">grant</span><span class="w"> </span><span class="k">select</span><span class="p">,</span><span class="k">insert</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">leo</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">hahaen</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># leo： 数据库名，表示该用户只可对该数据库进行操作
+</span></span></span><span class="line"><span class="cl"><span class="c1"># *： 表名，表示该用户只可对该表进行操作
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>取消用户的权限 <code>revoke select on leo .* from hahaen;</code></li>
+<li>查看用户权限 <code>show grants for hahaen ;</code></li>
+<li>更新数据库 <code>flush privileges;</code> 所有操作必须执行命令立即生效</li>
+</ol>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023-03-29</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E6%95%8F%E6%84%9F%E8%AF%8D%E8%BF%87%E6%BB%A4/" class="prev" rel="prev" title="敏感词过滤"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>敏感词过滤</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.104.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">hahaen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":1000},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

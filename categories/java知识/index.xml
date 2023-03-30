@@ -4,7 +4,15 @@
         <link>https://hahaen.github.io/categories/java%E7%9F%A5%E8%AF%86/</link>
         <description>java知识 - 分类 - 哈哈博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>630606938@qq.com (hahaen)</managingEditor>
-            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 16 Feb 2023 15:36:00 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/java%E7%9F%A5%E8%AF%86/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 29 Mar 2023 22:00:48 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/java%E7%9F%A5%E8%AF%86/" rel="self" type="application/rss+xml" /><item>
+    <title>Linux安装MySQL教程</title>
+    <link>https://hahaen.github.io/linux%E5%AE%89%E8%A3%85mysql%E6%95%99%E7%A8%8B/</link>
+    <pubDate>Wed, 29 Mar 2023 22:00:48 &#43;0800</pubDate>
+    <author>hahaen</author>
+    <guid>https://hahaen.github.io/linux%E5%AE%89%E8%A3%85mysql%E6%95%99%E7%A8%8B/</guid>
+    <description><![CDATA[安装教程参考1 安装教程参考2 赋权限教程 linux安装(压缩包方式) 官网下载安装 MySQl5.7 MySQl8 注意事项 centos7对应下载 Linux Generic 检查服务器是否有MySQ]]></description>
+</item>
+<item>
     <title>敏感词过滤</title>
     <link>https://hahaen.github.io/%E6%95%8F%E6%84%9F%E8%AF%8D%E8%BF%87%E6%BB%A4/</link>
     <pubDate>Thu, 16 Feb 2023 15:36:00 &#43;0800</pubDate>
@@ -75,14 +83,6 @@
     <author>hahaen</author>
     <guid>https://hahaen.github.io/elasticsearch/</guid>
     <description><![CDATA[讲讲Elasticsearch是什么？原理?有什么用？如何使用？ ES是一个分布式、可扩展、实时的搜索与数据分析引擎。ES不仅仅只是全文搜索，]]></description>
-</item>
-<item>
-    <title>Servlet</title>
-    <link>https://hahaen.github.io/servlet/</link>
-    <pubDate>Sun, 21 Aug 2022 20:05:54 &#43;0800</pubDate>
-    <author>hahaen</author>
-    <guid>https://hahaen.github.io/servlet/</guid>
-    <description><![CDATA[讲讲Servlet？ Java Servlet(谁为特) 是运行在 Web 服务器或应用服务器上的程序， 它是作为来自 Web 浏览器或其他 HTTP 客户端的请求和 HTTP 服务器上的数]]></description>
 </item>
 </channel>
 </rss>
