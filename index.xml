@@ -4,9 +4,17 @@
         <link>https://hahaen.github.io/</link>
         <description>关于 哈哈博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>630606938@qq.com (hahaen)</managingEditor>
-            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 29 Mar 2023 22:00:48 &#43;0800</lastBuildDate>
+            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 30 Mar 2023 10:09:50 &#43;0800</lastBuildDate>
             <atom:link href="https://hahaen.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>使用jasypt加密密码信息</title>
+    <link>https://hahaen.github.io/%E4%BD%BF%E7%94%A8jasypt%E5%8A%A0%E5%AF%86%E5%AF%86%E7%A0%81%E4%BF%A1%E6%81%AF/</link>
+    <pubDate>Thu, 30 Mar 2023 10:09:50 &#43;0800</pubDate>
+    <author>hahaen</author>
+    <guid>https://hahaen.github.io/%E4%BD%BF%E7%94%A8jasypt%E5%8A%A0%E5%AF%86%E5%AF%86%E7%A0%81%E4%BF%A1%E6%81%AF/</guid>
+    <description><![CDATA[jasypt加密 pom.xml引入依赖 1 2 3 4 5 6 &lt;dependency&gt; &lt;groupId&gt;com.github.ulisesbocchio&lt;/groupId&gt; &lt;artifactId&gt;jasypt-spring-boot-starter&lt;/artifactId&gt; &lt;version&gt;3.0.4&lt;/version&gt; &lt;/dependency&gt; 写一个main函数将我们的密码进行加密 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 public class JasyptTest { public]]></description>
+</item>
+<item>
     <title>Linux安装MySQL教程</title>
     <link>https://hahaen.github.io/linux%E5%AE%89%E8%A3%85mysql%E6%95%99%E7%A8%8B/</link>
     <pubDate>Wed, 29 Mar 2023 22:00:48 &#43;0800</pubDate>
@@ -77,14 +85,6 @@
     <author>hahaen</author>
     <guid>https://hahaen.github.io/html%E8%BD%AC%E5%9B%BE%E7%89%87/</guid>
     <description><![CDATA[方式一(png正常，jpg图片变红) 引入依赖 1 2 3 4 5 6 &lt;dependency&gt; &lt;groupId&gt;com.github.xuwei-k&lt;/groupId&gt; &lt;artifactId&gt;html2image&lt;/artifactId&gt; &lt;version&gt;0.1.0&lt;/version&gt; &lt;/dependency&gt; import gui.ava.html.image.generator.HtmlImageGenerator; java代码 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 public class TestGeneratePic { public static void main(String[] args) { generatePic();]]></description>
-</item>
-<item>
-    <title>GitBash代码冲突解决</title>
-    <link>https://hahaen.github.io/gitbash%E4%BB%A3%E7%A0%81%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3/</link>
-    <pubDate>Tue, 31 Jan 2023 09:50:36 &#43;0800</pubDate>
-    <author>hahaen</author>
-    <guid>https://hahaen.github.io/gitbash%E4%BB%A3%E7%A0%81%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3/</guid>
-    <description><![CDATA[拉取远程代码报错，强制覆盖本地代码或保留本地修改插入远程修改 保留本机所做修改，拉取服务器代码，并入本地 git stash git pull git stash pop 拉取服务器代码，覆盖本地]]></description>
 </item>
 </channel>
 </rss>

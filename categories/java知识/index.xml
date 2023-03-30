@@ -4,7 +4,15 @@
         <link>https://hahaen.github.io/categories/java%E7%9F%A5%E8%AF%86/</link>
         <description>java知识 - 分类 - 哈哈博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>630606938@qq.com (hahaen)</managingEditor>
-            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 29 Mar 2023 22:00:48 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/java%E7%9F%A5%E8%AF%86/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>630606938@qq.com (hahaen)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 30 Mar 2023 10:09:50 &#43;0800</lastBuildDate><atom:link href="https://hahaen.github.io/categories/java%E7%9F%A5%E8%AF%86/" rel="self" type="application/rss+xml" /><item>
+    <title>使用jasypt加密密码信息</title>
+    <link>https://hahaen.github.io/%E4%BD%BF%E7%94%A8jasypt%E5%8A%A0%E5%AF%86%E5%AF%86%E7%A0%81%E4%BF%A1%E6%81%AF/</link>
+    <pubDate>Thu, 30 Mar 2023 10:09:50 &#43;0800</pubDate>
+    <author>hahaen</author>
+    <guid>https://hahaen.github.io/%E4%BD%BF%E7%94%A8jasypt%E5%8A%A0%E5%AF%86%E5%AF%86%E7%A0%81%E4%BF%A1%E6%81%AF/</guid>
+    <description><![CDATA[jasypt加密 pom.xml引入依赖 1 2 3 4 5 6 &lt;dependency&gt; &lt;groupId&gt;com.github.ulisesbocchio&lt;/groupId&gt; &lt;artifactId&gt;jasypt-spring-boot-starter&lt;/artifactId&gt; &lt;version&gt;3.0.4&lt;/version&gt; &lt;/dependency&gt; 写一个main函数将我们的密码进行加密 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 public class JasyptTest { public]]></description>
+</item>
+<item>
     <title>Linux安装MySQL教程</title>
     <link>https://hahaen.github.io/linux%E5%AE%89%E8%A3%85mysql%E6%95%99%E7%A8%8B/</link>
     <pubDate>Wed, 29 Mar 2023 22:00:48 &#43;0800</pubDate>
@@ -75,14 +83,6 @@
     <author>hahaen</author>
     <guid>https://hahaen.github.io/%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%A8%A1%E5%9E%8B/</guid>
     <description><![CDATA[什么是双亲委派模型? 如果一个类加载器收到了类加载的请求，它首先不会自己去加载这个类，而是把这个请求委派给父类加载器去完成， 每一层的类加载器都]]></description>
-</item>
-<item>
-    <title>Elasticsearch</title>
-    <link>https://hahaen.github.io/elasticsearch/</link>
-    <pubDate>Sun, 21 Aug 2022 20:35:31 &#43;0800</pubDate>
-    <author>hahaen</author>
-    <guid>https://hahaen.github.io/elasticsearch/</guid>
-    <description><![CDATA[讲讲Elasticsearch是什么？原理?有什么用？如何使用？ ES是一个分布式、可扩展、实时的搜索与数据分析引擎。ES不仅仅只是全文搜索，]]></description>
 </item>
 </channel>
 </rss>
