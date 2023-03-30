@@ -15,7 +15,7 @@
 注意事项
 1. centos7对应下载 `Linux Generic`
 
-![LinuxGeneric](/img/Linux安装MySQL教程/1.png)
+![LinuxGeneric](/img/安装MySQL教程/1.png)
 
 ### 检查服务器是否有MySQL
 
@@ -93,7 +93,7 @@ chmod -R 775 /etc/my.cnf
 
 5. 修改mysql5.7.41/support-files/目录下的mysql.server文件,如下图中5个位置的/usr/local/mysql全部修改成自己安装的目录
 
-![修改](/img/Linux安装MySQL教程/2.png)
+![修改](/img/安装MySQL教程/2.png)
 
 6. 启动服务，并添加软链接
 ```shell
