@@ -8,8 +8,6 @@
 ## sensitive-word
 
 ![敏感词过滤](/img/敏感词过滤/1.png)
-![敏感词过滤](/img/敏感词过滤/3.png)
-![使用](/img/jasypt加密密码信息/1.png)
 
 ### Maven 引入
 
