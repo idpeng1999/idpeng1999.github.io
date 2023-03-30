@@ -10,7 +10,7 @@
     <pubDate>Thu, 30 Mar 2023 10:09:50 &#43;0800</pubDate>
     <author>hahaen</author>
     <guid>https://hahaen.github.io/%E4%BD%BF%E7%94%A8jasypt%E5%8A%A0%E5%AF%86%E5%AF%86%E7%A0%81%E4%BF%A1%E6%81%AF/</guid>
-    <description><![CDATA[jasypt加密 pom.xml引入依赖 1 2 3 4 5 6 &lt;dependency&gt; &lt;groupId&gt;com.github.ulisesbocchio&lt;/groupId&gt; &lt;artifactId&gt;jasypt-spring-boot-starter&lt;/artifactId&gt; &lt;version&gt;3.0.4&lt;/version&gt; &lt;/dependency&gt; 写一个main函数将我们的密码进行加密 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 public class JasyptTest { public]]></description>
+    <description><![CDATA[jasypt加密 使用参考教程 pom.xml引入依赖 1 2 3 4 5 6 &lt;dependency&gt; &lt;groupId&gt;com.github.ulisesbocchio&lt;/groupId&gt; &lt;artifactId&gt;jasypt-spring-boot-starter&lt;/artifactId&gt; &lt;version&gt;3.0.4&lt;/version&gt; &lt;/dependency&gt; 写一个main函数将我们的密码进行加密 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15]]></description>
 </item>
 <item>
     <title>Linux安装MySQL教程</title>

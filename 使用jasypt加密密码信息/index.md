@@ -3,6 +3,8 @@
 
 ## jasypt加密
 
+[使用参考教程](https://www.cnblogs.com/zhi-leaf/p/16628354.html)
+
 ### pom.xml引入依赖
 
 ```xml
@@ -50,7 +52,7 @@ jasypt:
 
 * ENC(密文)
 
-![使用](/img/使用jasypt加密密码信息/img.png)
+![使用](/img/使用jasypt加密密码信息/1.png)
 
 
 
