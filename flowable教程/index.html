@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Flowable教程 - 哈哈博客</title><meta name="Description" content="关于 哈哈博客"><meta property="og:title" content="Flowable教程" />
+<meta property="og:description" content="Flowable BPMN 用户手册 方法工具类 流程图 启动流程 1 2 3 // 启动流程 Map&lt;String, Object&gt; variables = new HashMap&lt;&gt;(); remoteFlowAbleService.startProcessByCodeAndId(ProcessConstants.XXXXXX, id, variables); ProcessConstants.XXXXXX 流程类型 id 业务id variables 流程变量 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hahaen.github.io/flowable%E6%95%99%E7%A8%8B/" /><meta property="og:image" content="https://hahaen.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-11-21T23:35:25+08:00" />
+<meta property="article:modified_time" content="2023-11-21T23:35:25+08:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hahaen.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Flowable教程"/>
+<meta name="twitter:description" content="Flowable BPMN 用户手册 方法工具类 流程图 启动流程 1 2 3 // 启动流程 Map&lt;String, Object&gt; variables = new HashMap&lt;&gt;(); remoteFlowAbleService.startProcessByCodeAndId(ProcessConstants.XXXXXX, id, variables); ProcessConstants.XXXXXX 流程类型 id 业务id variables 流程变量 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20"/>
+<meta name="application-name" content="哈哈博客">
+<meta name="apple-mobile-web-app-title" content="哈哈博客"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hahaen.github.io/flowable%E6%95%99%E7%A8%8B/" /><link rel="prev" href="https://hahaen.github.io/word%E5%AF%BC%E5%87%BA/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Flowable教程",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hahaen.github.io\/flowable%E6%95%99%E7%A8%8B\/"
+        },"image": ["https:\/\/hahaen.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","wordcount":  1966 ,
+        "url": "https:\/\/hahaen.github.io\/flowable%E6%95%99%E7%A8%8B\/","datePublished": "2023-11-21T23:35:25+08:00","dateModified": "2023-11-21T23:35:25+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": "https:\/\/hahaen.github.io\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "hahaen"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="哈哈博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>哈哈博客</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="https://github.com/hahaen" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="请输入关键词..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="哈哈博客"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>哈哈博客</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="请输入关键词..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="https://github.com/hahaen" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Flowable教程</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>hahaen</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java%E7%9F%A5%E8%AF%86/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>java知识</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-11-21">2023-11-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1966 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#方法工具类">方法工具类</a>
+          <ul>
+            <li><a href="#流程图">流程图</a></li>
+            <li><a href="#启动流程">启动流程</a></li>
+            <li><a href="#审核流程">审核流程</a></li>
+            <li><a href="#结束流程">结束流程</a></li>
+            <li><a href="#删除流程实例">删除流程实例</a></li>
+            <li><a href="#获取自己拥有的流程业务id">获取自己拥有的流程业务ID</a></li>
+            <li><a href="#获取待办任务对应的业务id">获取待办任务对应的业务ID</a></li>
+            <li><a href="#获取所有已办流程任务">获取所有已办流程任务</a></li>
+          </ul>
+        </li>
+        <li><a href="#表结构说明">表结构说明</a></li>
+        <li><a href="#问题">问题</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><a href="https://tkjohn.github.io/flowable-userguide/#bpmnJavaServiceTask" target="_blank" rel="noopener noreffer ">Flowable BPMN 用户手册</a></p>
+<h2 id="方法工具类">方法工具类</h2>
+<h3 id="流程图">流程图</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/flowable%e6%95%99%e7%a8%8b/1.png"
+        data-srcset="/img/flowable%e6%95%99%e7%a8%8b/1.png, /img/flowable%e6%95%99%e7%a8%8b/1.png 1.5x, /img/flowable%e6%95%99%e7%a8%8b/1.png 2x"
+        data-sizes="auto"
+        alt="/img/flowable教程/1.png"
+        title="1" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/img/flowable%e6%95%99%e7%a8%8b/2.png"
+        data-srcset="/img/flowable%e6%95%99%e7%a8%8b/2.png, /img/flowable%e6%95%99%e7%a8%8b/2.png 1.5x, /img/flowable%e6%95%99%e7%a8%8b/2.png 2x"
+        data-sizes="auto"
+        alt="/img/flowable教程/2.png"
+        title="2" /></p>
+<h3 id="启动流程">启动流程</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 启动流程
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">variables</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="n">remoteFlowAbleService</span><span class="o">.</span><span class="na">startProcessByCodeAndId</span><span class="o">(</span><span class="n">ProcessConstants</span><span class="o">.</span><span class="na">XXXXXX</span><span class="o">,</span> <span class="n">id</span><span class="o">,</span> <span class="n">variables</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>ProcessConstants.XXXXXX 流程类型</li>
+<li>id 业务id</li>
+<li>variables 流程变量</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 根据流程类型和业务ID启动流程
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param code
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param id
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Transactional</span><span class="o">(</span><span class="n">rollbackFor</span> <span class="o">=</span> <span class="n">Exception</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">WfTaskVo</span> <span class="nf">startProcessByCodeAndId</span><span class="o">(</span><span class="n">String</span> <span class="n">code</span><span class="o">,</span> <span class="n">Long</span> <span class="n">id</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">variables</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ProcessDefinition</span> <span class="n">procDef</span> <span class="o">=</span> <span class="n">repositoryService</span><span class="o">.</span><span class="na">createProcessDefinitionQuery</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">processDefinitionCategory</span><span class="o">(</span><span class="n">code</span><span class="o">).</span><span class="na">latestVersion</span><span class="o">().</span><span class="na">singleResult</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">ObjectUtil</span><span class="o">.</span><span class="na">isNotNull</span><span class="o">(</span><span class="n">procDef</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">procDef</span><span class="o">.</span><span class="na">isSuspended</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">throw</span> <span class="k">new</span> <span class="n">ServiceException</span><span class="o">(</span><span class="s">&#34;流程已被挂起，请先激活流程&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 设置流程发起人Id到流程中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">String</span> <span class="n">userIdStr</span> <span class="o">=</span> <span class="n">TaskUtils</span><span class="o">.</span><span class="na">getUserId</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">identityService</span><span class="o">.</span><span class="na">setAuthenticatedUserId</span><span class="o">(</span><span class="n">userIdStr</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">variables</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">BpmnXMLConstants</span><span class="o">.</span><span class="na">ATTRIBUTE_EVENT_START_INITIATOR</span><span class="o">,</span> <span class="n">userIdStr</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 设置流程状态为进行中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">variables</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">ProcessConstants</span><span class="o">.</span><span class="na">PROCESS_STATUS_KEY</span><span class="o">,</span> <span class="n">ProcessStatus</span><span class="o">.</span><span class="na">RUNNING</span><span class="o">.</span><span class="na">getStatus</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 发起流程实例
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">ProcessInstance</span> <span class="n">processInstance</span> <span class="o">=</span> <span class="n">runtimeService</span><span class="o">.</span><span class="na">startProcessInstanceById</span><span class="o">(</span><span class="n">procDef</span><span class="o">.</span><span class="na">getId</span><span class="o">(),</span> <span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">id</span><span class="o">),</span> <span class="n">variables</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//processInstance无法经controller层Jason化返回，构建返回vo
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">WfTaskVo</span> <span class="n">vo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">WfTaskVo</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">vo</span><span class="o">.</span><span class="na">setBusinessKey</span><span class="o">(</span><span class="n">processInstance</span><span class="o">.</span><span class="na">getBusinessKey</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="n">vo</span><span class="o">.</span><span class="na">setProcInsId</span><span class="o">(</span><span class="n">processInstance</span><span class="o">.</span><span class="na">getProcessInstanceId</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">vo</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="k">throw</span> <span class="k">new</span> <span class="n">ServiceException</span><span class="o">(</span><span class="s">&#34;流程启动错误&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="审核流程">审核流程</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">        <span class="n">WfTaskBo</span> <span class="n">wfTask</span> <span class="o">=</span> <span class="k">new</span> <span class="n">WfTaskBo</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">wfTask</span><span class="o">.</span><span class="na">setVariables</span><span class="o">(</span><span class="n">info</span><span class="o">.</span><span class="na">getVariables</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="n">wfTask</span><span class="o">.</span><span class="na">setBusinessKey</span><span class="o">(</span><span class="n">info</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="n">wfTask</span><span class="o">.</span><span class="na">setComment</span><span class="o">(</span><span class="n">info</span><span class="o">.</span><span class="na">getContent</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 走流程
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">remoteFlowAbleService</span><span class="o">.</span><span class="na">completeTaskByBusId</span><span class="o">(</span><span class="n">wfTask</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>info.getVariables() 流程变量</li>
+<li>info.getId() 业务id</li>
+<li>info.getContent() 审核意见</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 根据业务ID完成当前用户的任务
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@Transactional</span><span class="o">(</span><span class="n">rollbackFor</span> <span class="o">=</span> <span class="n">Exception</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">completeTaskByBusId</span><span class="o">(</span><span class="n">WfTaskBo</span> <span class="n">info</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">variables</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="na">getVariables</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Task</span> <span class="n">task</span> <span class="o">=</span> <span class="n">taskService</span><span class="o">.</span><span class="na">createTaskQuery</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">processInstanceBusinessKey</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">info</span><span class="o">.</span><span class="na">getBusinessKey</span><span class="o">()))</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">singleResult</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">Objects</span><span class="o">.</span><span class="na">isNull</span><span class="o">(</span><span class="n">task</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">throw</span> <span class="k">new</span> <span class="n">ServiceException</span><span class="o">(</span><span class="s">&#34;任务不存在&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 获取 bpmn 模型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">BpmnModel</span> <span class="n">bpmnModel</span> <span class="o">=</span> <span class="n">repositoryService</span><span class="o">.</span><span class="na">getBpmnModel</span><span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">getProcessDefinitionId</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">DelegationState</span><span class="o">.</span><span class="na">PENDING</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">getDelegationState</span><span class="o">()))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">StringUtils</span><span class="o">.</span><span class="na">isNotEmpty</span><span class="o">(</span><span class="n">info</span><span class="o">.</span><span class="na">getComment</span><span class="o">()))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">taskService</span><span class="o">.</span><span class="na">addComment</span><span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">getId</span><span class="o">(),</span> <span class="n">task</span><span class="o">.</span><span class="na">getProcessInstanceId</span><span class="o">(),</span> <span class="n">FlowComment</span><span class="o">.</span><span class="na">DELEGATE</span><span class="o">.</span><span class="na">getType</span><span class="o">(),</span> <span class="n">info</span><span class="o">.</span><span class="na">getComment</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="n">taskService</span><span class="o">.</span><span class="na">resolveTask</span><span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">StringUtils</span><span class="o">.</span><span class="na">isNotEmpty</span><span class="o">(</span><span class="n">info</span><span class="o">.</span><span class="na">getComment</span><span class="o">()))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">             <span class="c1">// 添加审批意见
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">taskService</span><span class="o">.</span><span class="na">addComment</span><span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">getId</span><span class="o">(),</span> <span class="n">task</span><span class="o">.</span><span class="na">getProcessInstanceId</span><span class="o">(),</span> <span class="n">FlowComment</span><span class="o">.</span><span class="na">NORMAL</span><span class="o">.</span><span class="na">getType</span><span class="o">(),</span> <span class="n">info</span><span class="o">.</span><span class="na">getComment</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">taskService</span><span class="o">.</span><span class="na">setAssignee</span><span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">getId</span><span class="o">(),</span> <span class="n">TaskUtils</span><span class="o">.</span><span class="na">getUserId</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">ObjectUtil</span><span class="o">.</span><span class="na">isNotEmpty</span><span class="o">(</span><span class="n">variables</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 获取模型信息
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">String</span> <span class="n">localScopeValue</span> <span class="o">=</span> <span class="n">ModelUtils</span><span class="o">.</span><span class="na">getUserTaskAttributeValue</span><span class="o">(</span><span class="n">bpmnModel</span><span class="o">,</span> <span class="n">task</span><span class="o">.</span><span class="na">getTaskDefinitionKey</span><span class="o">(),</span> <span class="n">ProcessConstants</span><span class="o">.</span><span class="na">PROCESS_FORM_LOCAL_SCOPE</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">boolean</span> <span class="n">localScope</span> <span class="o">=</span> <span class="n">Convert</span><span class="o">.</span><span class="na">toBool</span><span class="o">(</span><span class="n">localScopeValue</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">taskService</span><span class="o">.</span><span class="na">complete</span><span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">getId</span><span class="o">(),</span> <span class="n">variables</span><span class="o">,</span> <span class="n">localScope</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">taskService</span><span class="o">.</span><span class="na">complete</span><span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="结束流程">结束流程</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span> <span class="n">procInstId</span> <span class="o">=</span> <span class="n">remoteFlowAbleService</span><span class="o">.</span><span class="na">getProcessInstanceIdById</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">id</span><span class="o">)).</span><span class="na">getMsg</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">WfTaskBo</span> <span class="n">delBo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">WfTaskBo</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">delBo</span><span class="o">.</span><span class="na">setProcInsId</span><span class="o">(</span><span class="n">procInstId</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">remoteFlowAbleService</span><span class="o">.</span><span class="na">stopProcess</span><span class="o">(</span><span class="n">delBo</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>getProcessInstanceIdById 根据业务id获取流程实例id</li>
+<li>procInstId 流程实例id</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 根据id获取ProcessInstanceId
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param id
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getProcessInstanceIdById</span><span class="o">(</span><span class="n">String</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ProcessInstance</span> <span class="n">processInstance</span> <span class="o">=</span> <span class="n">runtimeService</span><span class="o">.</span><span class="na">createProcessInstanceQuery</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">processInstanceBusinessKey</span><span class="o">(</span><span class="n">id</span><span class="o">).</span><span class="na">singleResult</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">procInstId</span> <span class="o">=</span> <span class="n">processInstance</span><span class="o">.</span><span class="na">getProcessInstanceId</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">procInstId</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 取消申请
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param bo
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">stopProcess</span><span class="o">(</span><span class="n">WfTaskBo</span> <span class="n">bo</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&gt;</span> <span class="n">task</span> <span class="o">=</span> <span class="n">taskService</span><span class="o">.</span><span class="na">createTaskQuery</span><span class="o">().</span><span class="na">processInstanceId</span><span class="o">(</span><span class="n">bo</span><span class="o">.</span><span class="na">getProcInsId</span><span class="o">()).</span><span class="na">list</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">CollectionUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">task</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">throw</span> <span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="s">&#34;流程未启动或已执行完成，取消申请失败&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">ProcessInstance</span> <span class="n">processInstance</span> <span class="o">=</span> <span class="n">runtimeService</span><span class="o">.</span><span class="na">createProcessInstanceQuery</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">processInstanceId</span><span class="o">(</span><span class="n">bo</span><span class="o">.</span><span class="na">getProcInsId</span><span class="o">()).</span><span class="na">singleResult</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">BpmnModel</span> <span class="n">bpmnModel</span> <span class="o">=</span> <span class="n">repositoryService</span><span class="o">.</span><span class="na">getBpmnModel</span><span class="o">(</span><span class="n">processInstance</span><span class="o">.</span><span class="na">getProcessDefinitionId</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">Objects</span><span class="o">.</span><span class="na">nonNull</span><span class="o">(</span><span class="n">bpmnModel</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Process</span> <span class="n">process</span> <span class="o">=</span> <span class="n">bpmnModel</span><span class="o">.</span><span class="na">getMainProcess</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">List</span><span class="o">&lt;</span><span class="n">EndEvent</span><span class="o">&gt;</span> <span class="n">endNodes</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="na">findFlowElementsOfType</span><span class="o">(</span><span class="n">EndEvent</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">CollectionUtils</span><span class="o">.</span><span class="na">isNotEmpty</span><span class="o">(</span><span class="n">endNodes</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Authentication</span><span class="o">.</span><span class="na">setAuthenticatedUserId</span><span class="o">(</span><span class="n">TaskUtils</span><span class="o">.</span><span class="na">getUserId</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//                taskService.addComment(task.getId(), processInstance.getProcessInstanceId(), FlowComment.STOP.getType(),
+</span></span></span><span class="line"><span class="cl"><span class="c1">//                        StringUtils.isBlank(flowTaskVo.getComment()) ? &#34;取消申请&#34; : flowTaskVo.getComment());
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="c1">// 获取当前流程最后一个节点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">String</span> <span class="n">endId</span> <span class="o">=</span> <span class="n">endNodes</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">).</span><span class="na">getId</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">List</span><span class="o">&lt;</span><span class="n">Execution</span><span class="o">&gt;</span> <span class="n">executions</span> <span class="o">=</span> <span class="n">runtimeService</span><span class="o">.</span><span class="na">createExecutionQuery</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                        <span class="o">.</span><span class="na">parentId</span><span class="o">(</span><span class="n">processInstance</span><span class="o">.</span><span class="na">getProcessInstanceId</span><span class="o">()).</span><span class="na">list</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">executionIds</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">executions</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">execution</span> <span class="o">-&gt;</span> <span class="n">executionIds</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">execution</span><span class="o">.</span><span class="na">getId</span><span class="o">()));</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">// 变更流程为已结束状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">runtimeService</span><span class="o">.</span><span class="na">createChangeActivityStateBuilder</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                        <span class="o">.</span><span class="na">moveExecutionsToSingleActivityId</span><span class="o">(</span><span class="n">executionIds</span><span class="o">,</span> <span class="n">endId</span><span class="o">).</span><span class="na">changeState</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="删除流程实例">删除流程实例</h3>
+<ul>
+<li>需要先结束流程再删除</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">remoteFlowAbleService</span><span class="o">.</span><span class="na">deleteProcessByIds</span><span class="o">(</span><span class="n">procInstId</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span><span class="o">[]</span> <span class="n">instanceIds</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="n">1</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl"><span class="n">instanceIds</span><span class="o">[</span><span class="n">0</span><span class="o">]</span> <span class="o">=</span> <span class="n">procInstId</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">iWfProcessService</span><span class="o">.</span><span class="na">deleteProcessByIds</span><span class="o">(</span><span class="n">instanceIds</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 删除流程
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param instanceIds
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Transactional</span><span class="o">(</span><span class="n">rollbackFor</span> <span class="o">=</span> <span class="n">Exception</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deleteProcessByIds</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">instanceIds</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ids</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">instanceIds</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 校验流程是否结束
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">long</span> <span class="n">activeInsCount</span> <span class="o">=</span> <span class="n">runtimeService</span><span class="o">.</span><span class="na">createProcessInstanceQuery</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">            <span class="o">.</span><span class="na">processInstanceIds</span><span class="o">(</span><span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;(</span><span class="n">ids</span><span class="o">)).</span><span class="na">active</span><span class="o">().</span><span class="na">count</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">activeInsCount</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">throw</span> <span class="k">new</span> <span class="n">ServiceException</span><span class="o">(</span><span class="s">&#34;不允许删除进行中的流程实例&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 删除历史流程实例
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">historyService</span><span class="o">.</span><span class="na">bulkDeleteHistoricProcessInstances</span><span class="o">(</span><span class="n">ids</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="获取自己拥有的流程业务id">获取自己拥有的流程业务ID</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Long</span><span class="o">&gt;</span> <span class="n">ownIds</span> <span class="o">=</span> <span class="n">remoteFlowAbleService</span><span class="o">.</span><span class="na">getOwnProcessBusinessIds</span><span class="o">(</span><span class="n">ProcessConstants</span><span class="o">.</span><span class="na">XXXXXX</span><span class="o">).</span><span class="na">getData</span><span class="o">();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>ProcessConstants.XXXXXX 流程类型</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 获取自己拥有的流程业务ID
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param code
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Transactional</span><span class="o">(</span><span class="n">rollbackFor</span> <span class="o">=</span> <span class="n">Exception</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Long</span><span class="o">&gt;</span> <span class="nf">getOwnProcessBusinessIds</span><span class="o">(</span><span class="n">String</span> <span class="n">code</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">Long</span><span class="o">&gt;</span> <span class="n">ids</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ProcessQuery</span> <span class="n">processQuery</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ProcessQuery</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">HistoricProcessInstanceQuery</span> <span class="n">historicProcessInstanceQuery</span> <span class="o">=</span> <span class="n">historyService</span><span class="o">.</span><span class="na">createHistoricProcessInstanceQuery</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">startedBy</span><span class="o">(</span><span class="n">TaskUtils</span><span class="o">.</span><span class="na">getUserId</span><span class="o">())</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">processDefinitionCategory</span><span class="o">(</span><span class="n">code</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">orderByProcessInstanceStartTime</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">desc</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 构建搜索条件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">ProcessUtils</span><span class="o">.</span><span class="na">buildProcessSearch</span><span class="o">(</span><span class="n">historicProcessInstanceQuery</span><span class="o">,</span> <span class="n">processQuery</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Long</span> <span class="n">count</span> <span class="o">=</span> <span class="n">historicProcessInstanceQuery</span><span class="o">.</span><span class="na">count</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">HistoricProcessInstance</span><span class="o">&gt;</span> <span class="n">historicProcessInstanceList</span> <span class="o">=</span> <span class="n">historicProcessInstanceQuery</span><span class="o">.</span><span class="na">list</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="n">HistoricProcessInstance</span> <span class="n">hisIns</span> <span class="o">:</span> <span class="n">historicProcessInstanceList</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 获取业务数据ID（即业务主键）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">String</span> <span class="n">businessDataId</span> <span class="o">=</span> <span class="n">hisIns</span><span class="o">.</span><span class="na">getBusinessKey</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(!</span><span class="n">Constants</span><span class="o">.</span><span class="na">NULL</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">businessDataId</span><span class="o">)</span> <span class="o">||</span> <span class="n">StringUtils</span><span class="o">.</span><span class="na">isNotBlank</span><span class="o">(</span><span class="n">businessDataId</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">ids</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">Long</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">businessDataId</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ids</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="获取待办任务对应的业务id">获取待办任务对应的业务ID</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">List</span><span class="o">&lt;</span><span class="n">Long</span><span class="o">&gt;</span> <span class="n">ids</span> <span class="o">=</span> <span class="n">remoteFlowAbleService</span><span class="o">.</span><span class="na">getUserBusinessIds</span><span class="o">(</span><span class="n">ProcessConstants</span><span class="o">.</span><span class="na">XXXXXX</span><span class="o">).</span><span class="na">getData</span><span class="o">();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>ProcessConstants.XXXXXX 流程类型</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 获取待办任务对应的业务ID
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param code 流程分类标识
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Transactional</span><span class="o">(</span><span class="n">rollbackFor</span> <span class="o">=</span> <span class="n">Exception</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Long</span><span class="o">&gt;</span> <span class="nf">getUserBusinessIds</span><span class="o">(</span><span class="n">String</span> <span class="n">code</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">Long</span><span class="o">&gt;</span> <span class="n">ids</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ProcessQuery</span> <span class="n">processQuery</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ProcessQuery</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">TaskQuery</span> <span class="n">taskQuery</span> <span class="o">=</span> <span class="n">taskService</span><span class="o">.</span><span class="na">createTaskQuery</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">active</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">includeProcessVariables</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">taskCandidateOrAssigned</span><span class="o">(</span><span class="n">TaskUtils</span><span class="o">.</span><span class="na">getUserId</span><span class="o">())</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">taskCandidateGroupIn</span><span class="o">(</span><span class="n">TaskUtils</span><span class="o">.</span><span class="na">getCandidateGroup</span><span class="o">())</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">orderByTaskCreateTime</span><span class="o">().</span><span class="na">desc</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 构建搜索条件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">ProcessUtils</span><span class="o">.</span><span class="na">buildProcessSearch</span><span class="o">(</span><span class="n">taskQuery</span><span class="o">,</span> <span class="n">processQuery</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Long</span> <span class="n">count</span> <span class="o">=</span> <span class="n">taskQuery</span><span class="o">.</span><span class="na">count</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&gt;</span> <span class="n">taskList</span> <span class="o">=</span> <span class="n">taskQuery</span><span class="o">.</span><span class="na">list</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="n">Task</span> <span class="n">task</span> <span class="o">:</span> <span class="n">taskList</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 获取流程实例ID
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">String</span> <span class="n">processInstanceId</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="na">getProcessInstanceId</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">ProcessInstance</span> <span class="n">processInstance</span> <span class="o">=</span> <span class="n">runtimeService</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">createProcessInstanceQuery</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">processInstanceId</span><span class="o">(</span><span class="n">processInstanceId</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">processDefinitionCategory</span><span class="o">(</span><span class="n">code</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">singleResult</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">(</span><span class="n">processInstance</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">// 获取业务数据ID（即业务主键）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">String</span> <span class="n">businessDataId</span> <span class="o">=</span> <span class="n">processInstance</span><span class="o">.</span><span class="na">getBusinessKey</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="o">(</span><span class="n">StringUtils</span><span class="o">.</span><span class="na">isNotEmpty</span><span class="o">(</span><span class="n">businessDataId</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">ids</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">Long</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">businessDataId</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ids</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="获取所有已办流程任务">获取所有已办流程任务</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// 获取所有已办流程任务
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">WfTaskVo</span><span class="o">&gt;</span> <span class="n">allWfTaskVo</span> <span class="o">=</span> <span class="n">remoteFlowAbleService</span><span class="o">.</span><span class="na">customGetAllProcessTasksbyType</span><span class="o">(</span><span class="n">bo</span><span class="o">.</span><span class="na">getProcessName</span><span class="o">()).</span><span class="na">getData</span><span class="o">();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>bo.getProcessName() 流程名称</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">    <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 获取所有已办流程任务
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param processName
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">WfTaskVo</span><span class="o">&gt;</span> <span class="nf">customGetAllProcessTasksbyType</span><span class="o">(</span><span class="n">String</span> <span class="n">processName</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">HistoricTaskInstanceQuery</span> <span class="n">taskInstanceQuery</span> <span class="o">=</span> <span class="n">historyService</span><span class="o">.</span><span class="na">createHistoricTaskInstanceQuery</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">includeProcessVariables</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">finished</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">orderByHistoricTaskInstanceEndTime</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="na">desc</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(!</span><span class="n">SecurityUtils</span><span class="o">.</span><span class="na">getLoginUser</span><span class="o">().</span><span class="na">getSysUser</span><span class="o">().</span><span class="na">isAdmin</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">taskInstanceQuery</span> <span class="o">=</span> <span class="n">taskInstanceQuery</span><span class="o">.</span><span class="na">taskAssignee</span><span class="o">(</span><span class="n">TaskUtils</span><span class="o">.</span><span class="na">getUserId</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 构建搜索条件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">ProcessQuery</span> <span class="n">processQuery</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ProcessQuery</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">processQuery</span><span class="o">.</span><span class="na">setProcessName</span><span class="o">(</span><span class="n">processName</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ProcessUtils</span><span class="o">.</span><span class="na">buildProcessSearch</span><span class="o">(</span><span class="n">taskInstanceQuery</span><span class="o">,</span> <span class="n">processQuery</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">HistoricTaskInstance</span><span class="o">&gt;</span> <span class="n">historicTaskInstanceList</span> <span class="o">=</span> <span class="n">taskInstanceQuery</span><span class="o">.</span><span class="na">list</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">WfTaskVo</span><span class="o">&gt;</span> <span class="n">hisTaskList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="n">HistoricTaskInstance</span> <span class="n">histTask</span> <span class="o">:</span> <span class="n">historicTaskInstanceList</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">WfTaskVo</span> <span class="n">flowTask</span> <span class="o">=</span> <span class="k">new</span> <span class="n">WfTaskVo</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 当前流程信息
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">flowTask</span><span class="o">.</span><span class="na">setTaskId</span><span class="o">(</span><span class="n">histTask</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 审批人员信息
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">flowTask</span><span class="o">.</span><span class="na">setCreateTime</span><span class="o">(</span><span class="n">histTask</span><span class="o">.</span><span class="na">getCreateTime</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="n">flowTask</span><span class="o">.</span><span class="na">setFinishTime</span><span class="o">(</span><span class="n">histTask</span><span class="o">.</span><span class="na">getEndTime</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="n">flowTask</span><span class="o">.</span><span class="na">setDuration</span><span class="o">(</span><span class="n">DateUtil</span><span class="o">.</span><span class="na">formatBetween</span><span class="o">(</span><span class="n">histTask</span><span class="o">.</span><span class="na">getDurationInMillis</span><span class="o">(),</span> <span class="n">BetweenFormatter</span><span class="o">.</span><span class="na">Level</span><span class="o">.</span><span class="na">SECOND</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">            <span class="n">flowTask</span><span class="o">.</span><span class="na">setProcDefId</span><span class="o">(</span><span class="n">histTask</span><span class="o">.</span><span class="na">getProcessDefinitionId</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="n">flowTask</span><span class="o">.</span><span class="na">setTaskDefKey</span><span class="o">(</span><span class="n">histTask</span><span class="o">.</span><span class="na">getTaskDefinitionKey</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="n">flowTask</span><span class="o">.</span><span class="na">setTaskName</span><span class="o">(</span><span class="n">histTask</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1">// 流程定义信息
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">ProcessDefinition</span> <span class="n">pd</span> <span class="o">=</span> <span class="n">repositoryService</span><span class="o">.</span><span class="na">createProcessDefinitionQuery</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">processDefinitionId</span><span class="o">(</span><span class="n">histTask</span><span class="o">.</span><span class="na">getProcessDefinitionId</span><span class="o">())</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">singleResult</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">flowTask</span><span class="o">.</span><span class="na">setDeployId</span><span class="o">(</span><span class="n">pd</span><span class="o">.</span><span class="na">getDeploymentId</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="n">flowTask</span><span class="o">.</span><span class="na">setProcDefName</span><span class="o">(</span><span class="n">pd</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="n">flowTask</span><span class="o">.</span><span class="na">setProcDefVersion</span><span class="o">(</span><span class="n">pd</span><span class="o">.</span><span class="na">getVersion</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="n">flowTask</span><span class="o">.</span><span class="na">setProcInsId</span><span class="o">(</span><span class="n">histTask</span><span class="o">.</span><span class="na">getProcessInstanceId</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="n">flowTask</span><span class="o">.</span><span class="na">setHisProcInsId</span><span class="o">(</span><span class="n">histTask</span><span class="o">.</span><span class="na">getProcessInstanceId</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1">// 流程发起人信息
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">HistoricProcessInstance</span> <span class="n">historicProcessInstance</span> <span class="o">=</span> <span class="n">historyService</span><span class="o">.</span><span class="na">createHistoricProcessInstanceQuery</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">processInstanceId</span><span class="o">(</span><span class="n">histTask</span><span class="o">.</span><span class="na">getProcessInstanceId</span><span class="o">())</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">.</span><span class="na">singleResult</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Long</span> <span class="n">userId</span> <span class="o">=</span> <span class="n">Long</span><span class="o">.</span><span class="na">parseLong</span><span class="o">(</span><span class="n">historicProcessInstance</span><span class="o">.</span><span class="na">getStartUserId</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="n">String</span> <span class="n">nickName</span> <span class="o">=</span> <span class="n">remoteUserService</span><span class="o">.</span><span class="na">selectNickNameById</span><span class="o">(</span><span class="n">userId</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">flowTask</span><span class="o">.</span><span class="na">setStartUserId</span><span class="o">(</span><span class="n">userId</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">flowTask</span><span class="o">.</span><span class="na">setStartUserName</span><span class="o">(</span><span class="n">nickName</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 业务ID
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">flowTask</span><span class="o">.</span><span class="na">setBusinessKey</span><span class="o">(</span><span class="n">historicProcessInstance</span><span class="o">.</span><span class="na">getBusinessKey</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1">// 流程变量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">flowTask</span><span class="o">.</span><span class="na">setProcVars</span><span class="o">(</span><span class="n">histTask</span><span class="o">.</span><span class="na">getProcessVariables</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">hisTaskList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">flowTask</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">hisTaskList</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="表结构说明">表结构说明</h2>
+<p><a href="https://www.cnblogs.com/phyger/p/14067201.html" target="_blank" rel="noopener noreffer ">参考链接</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">ACT_RE_*      :      ’RE’表示repository（存储）。RepositoryService接口操作的表。带此前缀的表包含的是静态信息，如，流程定义，流程的资源（图片，规则等）。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ACT_RU_*      :      ’RU’表示runtime。这是运行时的表存储着流程变量，用户任务，变量，职责（job）等运行时的数据。flowable只存储实例执行期间的运行时数据，当流程实例结束时，将删除这些记录。这就保证了这些运行时的表小且快。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ACT_ID_*      :      ’ID’表示identity(组织机构)。这些表包含标识的信息，如用户，用户组，等等。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ACT_HI_*      :      ’HI’表示history。就是这些表包含着历史的相关数据，如结束的流程实例，变量，任务，等等。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ACT_GE_*      :      普通数据，各种情况都使用的数据。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="问题">问题</h2>
+<ul>
+<li>flowable已经执行完毕的流程去哪找？</li>
+</ul>
+<p><a href="https://blog.51cto.com/u_9806927/5845891" target="_blank" rel="noopener noreffer ">参考链接</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023-11-21</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/word%E5%AF%BC%E5%87%BA/" class="prev" rel="prev" title="Word导出"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Word导出</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.104.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">hahaen</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":1000},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
